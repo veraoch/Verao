@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
             $(this).removeClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
+            $(this).children('span').text(objectL10n.openMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
             $(this).addClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
+            $(this).children('span').text(objectL10n.closeMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');

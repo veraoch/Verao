@@ -1,0 +1,17 @@
+.main-sidebar {
+  background: white;
+  padding: $baseline-height * 1.5 $column * 3;
+
+  &:after {
+    @include clearfix;
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .main-sidebar {
+    float: left;
+    width: $column * 11;
+    padding: $baseline-height * 1.5 $column;
+  }
+}

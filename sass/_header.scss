@@ -1,0 +1,14 @@
+.title-container {
+  float: left;
+}
+.site-title {
+
+  a {
+    border: none;
+  }
+}
+.tagline {
+  @extend %twelve-pixels;
+  color: $color-gray-40;
+  margin: 0;
+}

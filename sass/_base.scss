@@ -27,6 +27,7 @@ body {
 .main {
   background: $color-gray-98;
   margin: 0 auto;
+  padding: $baseline-height * 1.25 $column * 3;
 }
 .loop-container {
 
@@ -40,15 +41,18 @@ p {
 a {
   text-decoration: none;
   border-bottom: solid 1px $color-blue;
+  color: $color-gray-20;
 
   &:link,
   &:visited {
     border-color: $color-gray-90;
+    color: $color-gray-20;
   }
   &:hover,
   &:active,
   &:focus {
     border-color: $color-gray-20;
+    color: $color-gray-20;
   }
 }
 
@@ -281,4 +285,43 @@ a img {
 .max-width {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media all and (min-width: $six-hundred) {
+
+  body {
+    padding: $baseline-height / 2;
+  }
+}
+
+@media all and (min-width: $eight-hundred ) {
+
+  body {
+    padding: $baseline-height;
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  body {
+    padding: 0;
+  }
+  .main {
+    float: left;
+    width: $column * 25;
+  }
+}
+
+@media all and (min-width: $one-thousand) {
+
+  body {
+    padding: $baseline-height / 2;
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  body {
+    padding: $baseline-height;
+  }
 }
