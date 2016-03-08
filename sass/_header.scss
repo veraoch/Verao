@@ -12,3 +12,18 @@
   color: $color-gray-40;
   margin: 0;
 }
+@media all and (min-width: $eight-hundred) {
+
+  .site-title {
+    font-size: 1.3125em; /* 21px / 16px */
+    line-height: 1.143; /* 24px */
+  }
+}
+
+@media all and (min-width: $one-thousand) {
+
+  .site-title {
+    font-size: 1.75em; /* 28px / 16px */
+    line-height: 1.357; /* 38px */
+  }
+}

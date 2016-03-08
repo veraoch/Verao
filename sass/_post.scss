@@ -1,8 +1,25 @@
+.post-title {
+
+  a {
+    border: none;
+  }
+}
+.post-byline {
+
+  span {
+    @extend %twelve-pixels;
+  }
+}
+.post-header {
+  margin-bottom: $baseline-height;
+}
 .featured-image {
   position: relative;
   height: 0;
   padding-bottom: 50%;
+  margin: $baseline-height 0;
   overflow: hidden;
+  outline: solid 3px white;
 
   > a {
     position: absolute;
@@ -11,6 +28,7 @@
     bottom: 0;
     left: 0;
     font-size: 0;
+    border: none;
 
     &:after {
       content: '';
@@ -55,6 +73,8 @@
   }
 }
 .post-content {
+  margin-top: $baseline-height;
+  padding-bottom: $baseline-height / 4;
 
   iframe {
     max-width: 100%;
@@ -66,4 +86,42 @@
 /***** Temporary *****/
 .sticky-status {
   display: none;
+}
+
+@media all and (min-width: $six-hundred) {
+
+  .post-title {
+    font-size: 1.3125em; /* 21px / 16px */
+    line-height: 1.143; /* 24px */
+  }
+}
+
+@media all and (min-width: $eight-hundred) {
+
+  .post-title {
+    font-size: 1.75em; /* 28px / 16px */
+    line-height: 1.357; /* 38px */
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .featured-image {
+    left: -$column * 3 * 1.8947;
+    width: 100% + ($column * 3 * 1.8597);
+    padding-bottom: 57.75%;
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .post-header {
+    margin-bottom: $baseline-height * 2;
+  }
+  .featured-image {
+    margin: $baseline-height * 1.5 0;
+  }
+  .post-content {
+    margin-top: $baseline-height * 1.5;
+  }
 }

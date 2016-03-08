@@ -10,8 +10,18 @@
 @media all and (min-width: $nine-hundred) {
 
   .main-sidebar {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
     width: $column * 11;
     padding: $baseline-height * 1.5 $column;
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .main-sidebar {
+    padding: $baseline-height * 2 $column * 2;
   }
 }

@@ -1,0 +1,22 @@
+.blog,
+.archive,
+.search {
+
+  .post {
+    position: relative;
+    margin-top: $baseline-height * 1.25;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -999px;
+      right: -999px;
+      height: 1px;
+      background: $color-gray-94;
+    }
+  }
+}
