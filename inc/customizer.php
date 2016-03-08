@@ -1,9 +1,9 @@
 <?php
 
 /* Add customizer panels, sections, settings, and controls */
-add_action( 'customize_register', 'ct_ct_theme_name_add_customizer_content' );
+add_action( 'customize_register', 'ct_cele_add_customizer_content' );
 
-function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
+function ct_cele_add_customizer_content( $wp_customize ) {
 
 	/***** Reorder default sections *****/
 
@@ -12,7 +12,7 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	// check if exists in case user has no pages
 	if ( is_object( $wp_customize->get_section( 'static_front_page' ) ) ) {
 		$wp_customize->get_section( 'static_front_page' )->priority = 5;
-		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'ct_theme_name' );
+		$wp_customize->get_section( 'static_front_page' )->title    = __( 'Front Page', 'cele' );
 	}
 
 	/***** Add PostMessage Support *****/
@@ -23,8 +23,8 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	/***** Logo Upload *****/
 
 	// section
-	$wp_customize->add_section( 'ct_ct_theme_name_logo_upload', array(
-		'title'    => __( 'Logo', 'ct_theme_name' ),
+	$wp_customize->add_section( 'ct_cele_logo_upload', array(
+		'title'    => __( 'Logo', 'cele' ),
 		'priority' => 20
 	) );
 	// Upload - setting
@@ -34,8 +34,8 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	// Upload - control
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize, 'logo_image', array(
-			'label'    => __( 'Upload custom logo.', 'ct_theme_name' ),
-			'section'  => 'ct_ct_theme_name_logo_upload',
+			'label'    => __( 'Upload custom logo.', 'cele' ),
+			'section'  => 'ct_cele_logo_upload',
 			'settings' => 'logo_upload'
 		)
 	) );
@@ -61,16 +61,16 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	/***** Social Media Icons *****/
 
 	// get the social sites array
-	$social_sites = ct_ct_theme_name_social_array();
+	$social_sites = ct_cele_social_array();
 
 	// set a priority used to order the social sites
 	$priority = 5;
 
 	// section
-	$wp_customize->add_section( 'ct_ct_theme_name_social_media_icons', array(
-		'title'       => __( 'Social Media Icons', 'ct_theme_name' ),
+	$wp_customize->add_section( 'ct_cele_social_media_icons', array(
+		'title'       => __( 'Social Media Icons', 'cele' ),
 		'priority'    => 25,
-		'description' => __( 'Add the URL for each of your social profiles.', 'ct_theme_name' )
+		'description' => __( 'Add the URL for each of your social profiles.', 'cele' )
 	) );
 
 	// create a setting and control for each social site
@@ -79,12 +79,12 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 		if ( $social_site == 'email' ) {
 			// setting
 			$wp_customize->add_setting( $social_site, array(
-				'sanitize_callback' => 'ct_ct_theme_name_sanitize_email'
+				'sanitize_callback' => 'ct_cele_sanitize_email'
 			) );
 			// control
 			$wp_customize->add_control( $social_site, array(
-				'label'    => __( 'Email Address', 'ct_theme_name' ),
-				'section'  => 'ct_ct_theme_name_social_media_icons',
+				'label'    => __( 'Email Address', 'cele' ),
+				'section'  => 'ct_cele_social_media_icons',
 				'priority' => $priority
 			) );
 		} else {
@@ -126,7 +126,7 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 			if ( $social_site == 'skype' ) {
 				// setting
 				$wp_customize->add_setting( $social_site, array(
-					'sanitize_callback' => 'ct_ct_theme_name_sanitize_skype'
+					'sanitize_callback' => 'ct_cele_sanitize_skype'
 				) );
 			} else {
 				// setting
@@ -138,7 +138,7 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 			$wp_customize->add_control( $social_site, array(
 				'type'     => 'url',
 				'label'    => $label,
-				'section'  => 'ct_ct_theme_name_social_media_icons',
+				'section'  => 'ct_cele_social_media_icons',
 				'priority' => $priority
 			) );
 		}
@@ -149,48 +149,48 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	/***** Search Bar *****/
 
 	// section
-	$wp_customize->add_section( 'ct_theme_name_search_bar', array(
-		'title'    => __( 'Search Bar', 'ct_theme_name' ),
+	$wp_customize->add_section( 'cele_search_bar', array(
+		'title'    => __( 'Search Bar', 'cele' ),
 		'priority' => 37
 	) );
 	// setting
 	$wp_customize->add_setting( 'search_bar', array(
 		'default'           => 'hide',
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_all_show_hide_settings'
+		'sanitize_callback' => 'ct_cele_sanitize_all_show_hide_settings'
 	) );
 	// control
 	$wp_customize->add_control( 'search_bar', array(
 		'type'    => 'radio',
-		'label'   => __( 'Show search bar at top of site?', 'ct_theme_name' ),
-		'section' => 'ct_theme_name_search_bar',
+		'label'   => __( 'Show search bar at top of site?', 'cele' ),
+		'section' => 'cele_search_bar',
 		'setting' => 'search_bar',
 		'choices' => array(
-			'show' => __( 'Show', 'ct_theme_name' ),
-			'hide' => __( 'Hide', 'ct_theme_name' )
+			'show' => __( 'Show', 'cele' ),
+			'hide' => __( 'Hide', 'cele' )
 		),
 	) );
 
 	/***** Blog *****/
 
 	// section
-	$wp_customize->add_section( 'ct_theme_name_blog', array(
-		'title'    => __( 'Blog', 'ct_theme_name' ),
+	$wp_customize->add_section( 'cele_blog', array(
+		'title'    => __( 'Blog', 'cele' ),
 		'priority' => 45
 	) );
 	// setting
 	$wp_customize->add_setting( 'full_post', array(
 		'default'           => 'no',
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_yes_no_settings'
+		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
 	) );
 	// control
 	$wp_customize->add_control( 'full_post', array(
-		'label'    => __( 'Show full posts on blog?', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_blog',
+		'label'    => __( 'Show full posts on blog?', 'cele' ),
+		'section'  => 'cele_blog',
 		'settings' => 'full_post',
 		'type'     => 'radio',
 		'choices'  => array(
-			'yes' => __( 'Yes', 'ct_theme_name' ),
-			'no'  => __( 'No', 'ct_theme_name' )
+			'yes' => __( 'Yes', 'cele' ),
+			'no'  => __( 'No', 'cele' )
 		)
 	) );
 	// setting
@@ -200,20 +200,20 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	) );
 	// control
 	$wp_customize->add_control( 'excerpt_length', array(
-		'label'    => __( 'Excerpt word count', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_blog',
+		'label'    => __( 'Excerpt word count', 'cele' ),
+		'section'  => 'cele_blog',
 		'settings' => 'excerpt_length',
 		'type'     => 'number'
 	) );
 	// Read More text - setting
 	$wp_customize->add_setting( 'read_more_text', array(
-		'default'           => __( 'Continue Reading', 'ct_theme_name' ),
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_text'
+		'default'           => __( 'Continue Reading', 'cele' ),
+		'sanitize_callback' => 'ct_cele_sanitize_text'
 	) );
 	// Read More text - control
 	$wp_customize->add_control( 'read_more_text', array(
-		'label'    => __( 'Read More button text', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_blog',
+		'label'    => __( 'Read More button text', 'cele' ),
+		'section'  => 'cele_blog',
 		'settings' => 'read_more_text',
 		'type'     => 'text'
 	) );
@@ -221,60 +221,60 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
 	/***** Additional Options *****/
 
 	// section
-	$wp_customize->add_section( 'ct_theme_name_additional', array(
-		'title'    => __( 'Additional Options', 'ct_theme_name' ),
+	$wp_customize->add_section( 'cele_additional', array(
+		'title'    => __( 'Additional Options', 'cele' ),
 		'priority' => 70
 	) );
 	// extra-wide post - setting
 	$wp_customize->add_setting( 'full_width_post', array(
 		'default'           => 'yes',
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_yes_no_settings'
+		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
 	) );
 	// extra-wide post - control
 	$wp_customize->add_control( 'full_width_post', array(
-		'label'    => __( 'Make first post on blog extra wide?', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_additional',
+		'label'    => __( 'Make first post on blog extra wide?', 'cele' ),
+		'section'  => 'cele_additional',
 		'settings' => 'full_width_post',
 		'type'     => 'radio',
 		'choices'  => array(
-			'yes' => __( 'Yes', 'ct_theme_name' ),
-			'no'  => __( 'No', 'ct_theme_name' )
+			'yes' => __( 'Yes', 'cele' ),
+			'no'  => __( 'No', 'cele' )
 		)
 	) );
 	// author byline - setting
 	$wp_customize->add_setting( 'author_byline', array(
 		'default'           => 'no',
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_yes_no_settings'
+		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
 	) );
 	// author byline - control
 	$wp_customize->add_control( 'author_byline', array(
-		'label'    => __( 'Display post author name in byline?', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_additional',
+		'label'    => __( 'Display post author name in byline?', 'cele' ),
+		'section'  => 'cele_additional',
 		'settings' => 'author_byline',
 		'type'     => 'radio',
 		'choices'  => array(
-			'yes' => __( 'Yes', 'ct_theme_name' ),
-			'no'  => __( 'No', 'ct_theme_name' )
+			'yes' => __( 'Yes', 'cele' ),
+			'no'  => __( 'No', 'cele' )
 		)
 	) );
 
 	/***** Custom CSS *****/
 
 	// section
-	$wp_customize->add_section( 'ct_theme_name_custom_css', array(
-		'title'    => __( 'Custom CSS', 'ct_theme_name' ),
+	$wp_customize->add_section( 'cele_custom_css', array(
+		'title'    => __( 'Custom CSS', 'cele' ),
 		'priority' => 75
 	) );
 	// setting
 	$wp_customize->add_setting( 'custom_css', array(
-		'sanitize_callback' => 'ct_ct_theme_name_sanitize_css',
+		'sanitize_callback' => 'ct_cele_sanitize_css',
 		'transport'         => 'postMessage'
 	) );
 	// control
 	$wp_customize->add_control( 'custom_css', array(
 		'type'     => 'textarea',
-		'label'    => __( 'Add Custom CSS Here:', 'ct_theme_name' ),
-		'section'  => 'ct_theme_name_custom_css',
+		'label'    => __( 'Add Custom CSS Here:', 'cele' ),
+		'section'  => 'cele_custom_css',
 		'settings' => 'custom_css'
 	) );
 }
@@ -285,11 +285,11 @@ function ct_ct_theme_name_add_customizer_content( $wp_customize ) {
  * Sanitize settings with show/hide as options
  * Used in: search bar
  */
-function ct_ct_theme_name_sanitize_all_show_hide_settings( $input ) {
+function ct_cele_sanitize_all_show_hide_settings( $input ) {
 
 	$valid = array(
-		'show' => __( 'Show', 'ct_theme_name' ),
-		'hide' => __( 'Hide', 'ct_theme_name' )
+		'show' => __( 'Show', 'cele' ),
+		'hide' => __( 'Hide', 'cele' )
 	);
 
 	return array_key_exists( $input, $valid ) ? $input : '';
@@ -299,30 +299,30 @@ function ct_ct_theme_name_sanitize_all_show_hide_settings( $input ) {
  * sanitize email address
  * Used in: Social Media Icons
  */
-function ct_ct_theme_name_sanitize_email( $input ) {
+function ct_cele_sanitize_email( $input ) {
 	return sanitize_email( $input );
 }
 
 // sanitize yes/no settings
-function ct_ct_theme_name_sanitize_yes_no_settings( $input ) {
+function ct_cele_sanitize_yes_no_settings( $input ) {
 
 	$valid = array(
-		'yes' => __( 'Yes', 'ct_theme_name' ),
-		'no'  => __( 'No', 'ct_theme_name' )
+		'yes' => __( 'Yes', 'cele' ),
+		'no'  => __( 'No', 'cele' )
 	);
 
 	return array_key_exists( $input, $valid ) ? $input : '';
 }
 
-function ct_ct_theme_name_sanitize_text( $input ) {
+function ct_cele_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function ct_ct_theme_name_sanitize_skype( $input ) {
+function ct_cele_sanitize_skype( $input ) {
 	return esc_url_raw( $input, array( 'http', 'https', 'skype' ) );
 }
 
-function ct_ct_theme_name_sanitize_css( $css ) {
+function ct_cele_sanitize_css( $css ) {
 	$css = wp_kses( $css, array( '\'', '\"' ) );
 	$css = str_replace( '&gt;', '>', $css );
 
@@ -331,10 +331,10 @@ function ct_ct_theme_name_sanitize_css( $css ) {
 
 /***** Helper Functions *****/
 
-function ct_ct_theme_name_customize_preview_js() {
+function ct_cele_customize_preview_js() {
 
-	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/ct_theme_name-pro/\" target=\"_blank\">" . __( 'View the Ct_theme_name Pro Plugin', 'ct_theme_name' ) . " <span>&rarr;</span></a></div>')</script>";
-	echo apply_filters( 'ct_ct_theme_name_customizer_ad', $content );
+	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/cele-pro/\" target=\"_blank\">" . __( 'View the Cele Pro Plugin', 'cele' ) . " <span>&rarr;</span></a></div>')</script>";
+	echo apply_filters( 'ct_cele_customizer_ad', $content );
 }
 
-add_action( 'customize_controls_print_footer_scripts', 'ct_ct_theme_name_customize_preview_js' );
+add_action( 'customize_controls_print_footer_scripts', 'ct_cele_customize_preview_js' );

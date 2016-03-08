@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                 options: {
                     domainPath: '/languages',
                     exclude: ['library/.*/.*'],
-                    potFilename: 'ct_theme_name.pot',
+                    potFilename: 'cele.pot',
                     type: 'wp-theme',
                     processPot: function( pot ) {
                         var translation,
@@ -117,14 +117,14 @@ module.exports = function(grunt) {
             zip: {
                 command: [
                     // delete existing copies (if they exist)
-                    'rm -R /Users/bensibley/Documents/compete-themes/dist/ct_theme_name || true',
-                    'rm -R /Users/bensibley/Documents/compete-themes/dist/ct_theme_name.zip || true',
+                    'rm -R /Users/bensibley/Documents/compete-themes/dist/cele || true',
+                    'rm -R /Users/bensibley/Documents/compete-themes/dist/cele.zip || true',
                     // copy folder without any project/meta files
-                    'rsync -r /Applications/MAMP/htdocs/wordpress/wp-content/themes/ct_theme_name /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
+                    'rsync -r /Applications/MAMP/htdocs/wordpress/wp-content/themes/cele /Users/bensibley/Documents/compete-themes/dist/ <%= excludeFiles %>',
                     // open dist
                     'cd /Users/bensibley/Documents/compete-themes/dist/',
-                    // zip the ct_theme_name folder
-                    'zip -r ct_theme_name.zip ct_theme_name'
+                    // zip the cele folder
+                    'zip -r cele.zip cele'
                 ].join('&&')
             }
         }
