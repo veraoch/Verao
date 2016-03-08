@@ -2,19 +2,16 @@
 
 $primary-font-stack: 'Open Sans', sans-serif;
 $baseline-height: 1.5em;
-$column: 3.125%;
+$column: 2.7778%;
 
 /* Theme Colors */
 
-$color-gray-93: #EDEDED;
-$color-gray-87: #DEDEDE;
-$color-gray-85: #D9D9D9;
-$color-gray-70: #B3B3B3;
-$color-gray-67: #ABABAB;
+$color-gray-98: #E6E6E6;
+$color-gray-94: #F0F0F0;
+$color-gray-90: #E6E6E6;
 $color-gray-40: #666666;
-$color-gray-33: #545454;
-$color-gray-23: #3a3a3a;
-$color-gray-17: #2B2B2B;
+$color-gray-20: #333333;
+$color-blue: #A5D3ED;
 
 /* Media Query widths */
 
@@ -81,22 +78,6 @@ $tencent-weibo: #20b8e5;
 }
 
 /***** Silent Classes *****/
-
-// 67px font
-%sixty-seven-pixels {
-  font-size: 4.188em; /* 67px / 16px */
-  line-height: 1.343; /* 90px */
-}
-// 51px font
-%fifty-one-pixels {
-  font-size: 3.188em; /* 51px / 16px */
-  line-height: 1.314; /* 67px */
-}
-// 38px font
-%thirty-eight-pixels {
-  font-size: 2.375em; /* 38px / 16px */
-  line-height: 1.342; /* 51px */
-}
 // 28px font
 %twenty-eight-pixels {
   font-size: 1.75em; /* 28px / 16px */
@@ -106,6 +87,16 @@ $tencent-weibo: #20b8e5;
 %twenty-one-pixels {
   font-size: 1.3125em; /* 21px / 16px */
   line-height: 1.143; /* 24px */
+}
+// 18px font
+%eighteen-pixels {
+  font-size: 1.125em; /* 18px / 16px */
+  line-height: 1.333; /* 24px */
+}
+// 14px font
+%fourteen-pixels {
+  font-size: 0.875em; /* 14px / 16px */
+  line-height: 1.714; /* 24px */
 }
 // 12px font
 %twelve-pixels {

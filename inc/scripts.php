@@ -3,7 +3,7 @@
 // Front-end scripts
 function ct_cele_load_scripts_styles() {
 
-	wp_enqueue_style( 'ct-cele-google-fonts', '//fonts.googleapis.com/css?family=Playfair+Display:400|Raleway:400,700,400italic' );
+	wp_enqueue_style( 'ct-cele-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300italic,600' );
 
 	wp_enqueue_script( 'ct-cele-js', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '', true );
 	wp_localize_script( 'ct-cele-js', 'objectL10n', array(
