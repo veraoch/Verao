@@ -19,6 +19,9 @@
       background: $color-gray-94;
     }
   }
+  .post-content {
+    padding-bottom: $baseline-height / 4;
+  }
 }
 
 @media all and (min-width: $nine-hundred) {
@@ -33,6 +36,21 @@
         left: -$column * 3 * 1.9;
         right: -$column * 3 * 1.9;
       }
+    }
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .blog,
+  .archive,
+  .search {
+
+    .post {
+      margin-top: $baseline-height * 2;
+    }
+    .post-content {
+      padding-bottom: $baseline-height;
     }
   }
 }

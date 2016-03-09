@@ -1,0 +1,37 @@
+.widget {
+  color: $color-gray-40;
+  margin-bottom: $baseline-height * 1.5;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  > * {
+    @extend %fourteen-pixels;
+  }
+  ul,
+  ol {
+    list-style: none;
+    margin: 24px 0;
+
+    ul,
+    ol {
+      margin: 12px 12px 0;
+    }
+  }
+  li {
+    margin-bottom: 12px;
+  }
+}
+.widget-title {
+  font-size: 1em;
+  line-height: 1.5;
+  color: $color-gray-20;
+  margin-bottom: $baseline-height;
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .widget {
+    margin-bottom: $baseline-height * 2;
+  }
+}

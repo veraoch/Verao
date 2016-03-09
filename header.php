@@ -30,6 +30,7 @@
 				</div>
 			</header>
 			<?php do_action( 'after_header' ); ?>
+			<?php get_sidebar( 'primary' ); ?>
 		</div>
 		<section id="main" class="main" role="main">
 			<?php do_action( 'main_top' );

@@ -8,6 +8,14 @@
   &:hover {
     cursor: pointer;
   }
+  &:focus,
+  &.open {
+    outline: none;
+
+    svg g {
+       fill: $color-blue;
+     }
+  }
 }
 .menu-primary-container {
   max-height: 0;

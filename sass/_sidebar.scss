@@ -6,7 +6,38 @@
     @include clearfix;
   }
 }
+.sidebar-primary-container {
+  max-height: 0;
+  overflow: hidden;
 
+  &.open {
+    max-height: none;
+  }
+}
+.sidebar-primary {
+  margin-top: $baseline-height / 2;
+  padding-bottom: $baseline-height / 2;
+}
+
+@media all and (min-width: $seven-hundred) and (max-width: 56.1875em) {
+
+  .sidebar-primary {
+
+    .widget {
+      width: 46%;
+      float: left;
+      clear: left;
+
+      &:nth-child(even) {
+        float: right;
+        clear: none;
+      }
+    }
+    &:after {
+      @include clearfix;
+    }
+  }
+}
 @media all and (min-width: $nine-hundred) {
 
   .main-sidebar {
@@ -16,6 +47,9 @@
     min-height: calc(100% - 48px);
     width: $column * 11;
     padding: $baseline-height * 1.5 $column;
+  }
+  .sidebar-primary-container {
+    max-height: none;
   }
 }
 
@@ -29,5 +63,8 @@
 
   .main-sidebar {
     padding: $baseline-height * 2 $column * 2;
+  }
+  .sidebar-primary {
+    margin-top: $baseline-height;
   }
 }

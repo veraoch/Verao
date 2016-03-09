@@ -92,11 +92,13 @@ jQuery(document).ready(function($){
     var menuPrimaryItems = $('#menu-primary-items');
     var toggleDropdown = $('.toggle-dropdown');
     //var toggleSidebar = $('#toggle-sidebar');
-    //var sidebarPrimary = $('#sidebar-primary');
-    //var sidebarPrimaryContent = $('#sidebar-primary-content');
+    var sidebarPrimary = $('#sidebar-primary');
+    var sidebarPrimaryContainer = $('#sidebar-primary-container');
     //var sidebarWidgets = $('#sidebar-primary-widgets');
     //var socialMediaIcons = siteHeader.find('.social-media-icons');
     var menuLink = $('.menu-item').children('a');
+
+    assignMenuItemDelays();
 
     toggleNavigation.on('click', openPrimaryMenu);
     body.on('click', '#search-icon', openSearchBar);
@@ -106,6 +108,7 @@ jQuery(document).ready(function($){
         if( menuPrimaryContainer.hasClass('open') ) {
             menuPrimaryContainer.removeClass('open');
             $(this).removeClass('open');
+            sidebarPrimaryContainer.removeClass('open');
 
             // change screen reader text
             $(this).children('span').text(objectL10n.openMenu);
@@ -116,6 +119,7 @@ jQuery(document).ready(function($){
         } else {
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
+            sidebarPrimaryContainer.addClass('open');
 
             // change screen reader text
             $(this).children('span').text(objectL10n.closeMenu);
@@ -171,16 +175,17 @@ jQuery(document).ready(function($){
             }
         }
     }
-    /***** Need to refactor *****/
 
-    var counter = 0;
-    menuPrimaryItems.find('ul').each(function() {
-        $(this).children('li').each(function(){
-            $(this).css('transition-delay', '0.' + counter + 's');
-            counter++;
+    function assignMenuItemDelays(){
+        var counter = 0;
+        menuPrimaryItems.find('ul').each(function() {
+            $(this).children('li').each(function(){
+                $(this).css('transition-delay', '0.' + counter + 's');
+                counter++;
+            });
+            counter = 0;
         });
-        counter = 0;
-    });
+    }
 
     function openSearchBar(){
 
