@@ -33,6 +33,17 @@ li.pingback {
   &:last-child {
     border: none;
   }
+  &.bypostauthor {
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -$baseline-height;
+      left: 0;
+      border-left: solid 14px $color-blue;
+      border-bottom: solid 12px transparent;
+    }
+  }
 }
 .comment-author {
 

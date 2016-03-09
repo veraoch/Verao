@@ -589,6 +589,15 @@ li.comment:last-child,
 li.pingback:last-child {
   border: none;
 }
+li.comment.bypostauthor:before,
+li.pingback.bypostauthor:before {
+  content: '';
+  position: absolute;
+  top: -1.5em;
+  right: 0;
+  border-right: solid 14px #A5D3ED;
+  border-bottom: solid 12px transparent;
+}
 
 .comment-author .avatar {
   width: 48px;
