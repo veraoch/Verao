@@ -1,0 +1,20 @@
+.archive-header {
+  margin-bottom: $baseline-height;
+
+  h2 {
+    @extend %twelve-pixels;
+  }
+  p {
+    @extend %twelve-pixels;
+  }
+  i {
+    color: $color-gray-40;
+    margin-right: 4px;
+  }
+}
+@media all and (min-width: $eleven-hundred) {
+
+  .archive-header {
+    margin-bottom: $baseline-height * 1.5;
+  }
+}
