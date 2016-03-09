@@ -49,6 +49,7 @@ jQuery(document).ready(function($){
 
         // get the buttons parent (li)
         var menuItem = $(this).parent();
+        var subMenu = $(this).siblings('ul');
 
         // if already opened
         if( menuItem.hasClass('open') ) {
@@ -57,22 +58,37 @@ jQuery(document).ready(function($){
             menuItem.removeClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
+            $(this).children('span').text(objectL10n.openMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
+
+            subMenu.css('max-height', '0');
         } else {
 
             // add class to open the menu
             menuItem.addClass('open');
 
             // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
+            $(this).children('span').text(objectL10n.closeMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');
+
+            var subMenuHeight = 0;
+            subMenu.children('li').each(function(){
+                subMenuHeight = subMenuHeight + $(this).height();
+            });
+            subMenu.css('max-height', subMenuHeight);
         }
     }
+    /***** Need to refactor *****/
+
+    var counter = 0;
+    menuPrimaryItems.find('ul').children('li').each(function(){
+        $(this).css('transition-delay', '0.' + counter + 's');
+        counter++;
+    });
 
     function openSearchBar(){
 

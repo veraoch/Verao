@@ -58,11 +58,21 @@
       max-width: calc(100% - 36px);
     }
     ul {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
       margin: 0;
       padding: 0 0 0 $baseline-height / 2;
       border-left: solid 1px $color-gray-94;
+      transition: max-height 0.2s ease-in-out;
 
+      li {
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+
+        &:first-child {
+          margin-top: $baseline-height / 2;
+        }
+      }
       a {
         //color: $color-gray-80;
 
@@ -96,7 +106,15 @@
         transform: rotate(180deg);
       }
       > ul {
-        display: block;
+        max-height: 999px;
+
+        > li {
+          opacity: 1;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
       }
     }
   }
@@ -111,6 +129,7 @@
   background: none;
   color: $color-gray-40;
   border: solid 1px $color-gray-90;
+  transition: border-color 0.1s ease-in-out;
 
   &:hover {
     cursor: pointer;

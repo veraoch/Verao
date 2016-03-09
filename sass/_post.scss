@@ -1,7 +1,7 @@
 .post-title {
 
   a {
-    border: none;
+    @extend %lighten-link;
   }
 }
 .post-byline {

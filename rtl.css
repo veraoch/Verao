@@ -42,6 +42,19 @@ textarea, input[type="submit"], .tagline, .menu-primary a, .post-byline span {
   /* 18px */
 }
 
+.site-title a, .post-title a {
+  border: none;
+  color: #333333;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+}
+.site-title a:link, .post-title a:link, .site-title a:visited, .post-title a:visited {
+  color: #333333;
+}
+.site-title a:hover, .post-title a:hover, .site-title a:active, .post-title a:active, .site-title a:focus, .post-title a:focus {
+  color: #666666;
+}
+
 /*===== Basic Styles =====*/
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
@@ -93,6 +106,8 @@ a {
   text-decoration: none;
   border-bottom: solid 1px #A5D3ED;
   color: #333333;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
 }
 a:link {
   color: #333333;
@@ -104,6 +119,52 @@ a:visited {
 a:hover, a:active, a:focus {
   border-color: #333333;
   color: #333333;
+}
+
+.post-byline a,
+.post-content a,
+.menu-primary a {
+  position: relative;
+}
+.post-byline a:after,
+.post-content a:after,
+.menu-primary a:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  left: 100%;
+  height: 1px;
+  background: #333333;
+  -webkit-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
+}
+.post-byline a:hover, .post-byline a:active, .post-byline a:focus,
+.post-content a:hover,
+.post-content a:active,
+.post-content a:focus,
+.menu-primary a:hover,
+.menu-primary a:active,
+.menu-primary a:focus {
+  border-color: #A5D3ED;
+}
+.post-byline a:hover:after, .post-byline a:active:after, .post-byline a:focus:after,
+.post-content a:hover:after,
+.post-content a:active:after,
+.post-content a:focus:after,
+.menu-primary a:hover:after,
+.menu-primary a:active:after,
+.menu-primary a:focus:after {
+  left: 0;
+}
+.post-byline a:visited:hover, .post-byline a:visited:active, .post-byline a:visited:focus,
+.post-content a:visited:hover,
+.post-content a:visited:active,
+.post-content a:visited:focus,
+.menu-primary a:visited:hover,
+.menu-primary a:visited:active,
+.menu-primary a:visited:focus {
+  border-color: #E6E6E6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -503,10 +564,6 @@ a img {
   float: right;
 }
 
-.site-title a {
-  border: none;
-}
-
 .tagline {
   color: #666666;
   margin: 0;
@@ -585,10 +642,27 @@ a img {
 .menu-primary-items .page_item_has_children ul,
 .menu-unset > ul .menu-item-has-children ul,
 .menu-unset > ul .page_item_has_children ul {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
   margin: 0;
   padding: 0 0.75em 0 0;
   border-right: solid 1px #F0F0F0;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+}
+.menu-primary-items .menu-item-has-children ul li,
+.menu-primary-items .page_item_has_children ul li,
+.menu-unset > ul .menu-item-has-children ul li,
+.menu-unset > ul .page_item_has_children ul li {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.menu-primary-items .menu-item-has-children ul li:first-child,
+.menu-primary-items .page_item_has_children ul li:first-child,
+.menu-unset > ul .menu-item-has-children ul li:first-child,
+.menu-unset > ul .page_item_has_children ul li:first-child {
+  margin-top: 0.75em;
 }
 .menu-primary-items .menu-item-has-children.open > button,
 .menu-primary-items .page_item_has_children.open > button,
@@ -602,7 +676,19 @@ a img {
 .menu-primary-items .page_item_has_children.open > ul,
 .menu-unset > ul .menu-item-has-children.open > ul,
 .menu-unset > ul .page_item_has_children.open > ul {
-  display: block;
+  max-height: 999px;
+}
+.menu-primary-items .menu-item-has-children.open > ul > li,
+.menu-primary-items .page_item_has_children.open > ul > li,
+.menu-unset > ul .menu-item-has-children.open > ul > li,
+.menu-unset > ul .page_item_has_children.open > ul > li {
+  opacity: 1;
+}
+.menu-primary-items .menu-item-has-children.open > ul > li:first-child,
+.menu-primary-items .page_item_has_children.open > ul > li:first-child,
+.menu-unset > ul .menu-item-has-children.open > ul > li:first-child,
+.menu-unset > ul .page_item_has_children.open > ul > li:first-child {
+  margin-top: 0;
 }
 
 .toggle-dropdown {
@@ -615,6 +701,8 @@ a img {
   background: none;
   color: #666666;
   border: solid 1px #E6E6E6;
+  -webkit-transition: border-color 0.1s ease-in-out;
+  transition: border-color 0.1s ease-in-out;
 }
 .toggle-dropdown:hover {
   cursor: pointer;
@@ -661,10 +749,6 @@ a img {
     font-size: 0.75em;
   }
 }
-.post-title a {
-  border: none;
-}
-
 .post-header {
   margin-bottom: 1.5em;
 }

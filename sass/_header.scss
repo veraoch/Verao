@@ -4,7 +4,7 @@
 .site-title {
 
   a {
-    border: none;
+    @extend %lighten-link;
   }
 }
 .tagline {
