@@ -1,3 +1,22 @@
 .site-footer {
   clear: both;
+  padding: $baseline-height / 2 $column * 3;
+
+  span {
+    @extend %twelve-pixels;
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .site-footer {
+    padding-left: $column * 14;
+  }
+}
+
+@media all and (min-width: $one-thousand) {
+
+  .site-footer {
+    padding-bottom: 0;
+  }
 }

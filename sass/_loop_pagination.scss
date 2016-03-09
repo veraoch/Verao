@@ -1,0 +1,23 @@
+.pagination {
+  margin: $baseline-height * 1.25 0;
+
+  .current {
+    font-weight: 600;
+  }
+  a,
+  span {
+    @extend %fourteen-pixels;
+    display: inline-block;
+    margin-right: 24px;
+  }
+  .dots {
+    margin: 0 12px 0 -12px;
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .pagination {
+    margin: $baseline-height * 2 0;
+  }
+}

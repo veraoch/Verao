@@ -13,10 +13,26 @@
       content: '';
       position: absolute;
       bottom: 0;
-      left: -999px;
-      right: -999px;
+      left: -$column * 3 * 1.2;
+      right: -$column * 3 * 1.2;
       height: 1px;
       background: $color-gray-94;
+    }
+  }
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .blog,
+  .archive,
+  .search {
+
+    .post {
+
+      &:after {
+        left: -$column * 3 * 1.9;
+        right: -$column * 3 * 1.9;
+      }
     }
   }
 }

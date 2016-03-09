@@ -26,7 +26,6 @@
 				</button>
 				<div id="menu-primary-container" class="menu-primary-container">
 					<?php get_template_part( 'menu', 'primary' ); ?>
-					<?php get_template_part( 'content/search-bar' ); ?>
 					<?php ct_cele_social_icons_output(); ?>
 				</div>
 			</header>

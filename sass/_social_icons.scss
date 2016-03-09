@@ -1,0 +1,336 @@
+.social-media-icons {
+  list-style: none;
+  margin: $baseline-height 0;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    margin-right: $baseline-height / 4;
+  }
+  a {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border: solid 1px $color-gray-90;
+    border-radius: 50%;
+    z-index: 9;
+    color: $color-gray-40;
+    transition: all 0.2s ease-in-out;
+
+    &:link,
+    &:visited {
+      color: $color-gray-40;
+      border-color: $color-gray-90;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      color: white;
+
+      &:after {
+        transform: scale(1);
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      transform: scale(0);
+      z-index: -1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+.social-media-icons {
+
+  .twitter {
+
+    &:after {
+      background: $twitter;
+    }
+  }
+  .facebook {
+
+    &:after {
+      background: $facebook;
+    }
+  }
+  .google-plus {
+
+    &:after {
+      background: $googleplus;
+    }
+  }
+  .flickr {
+
+    &:after {
+      background: $flickr;
+    }
+  }
+  .pinterest {
+
+    &:after {
+      background: $pinterest;
+    }
+  }
+  .youtube {
+
+    &:after {
+      background: $youtube;
+    }
+  }
+  .vimeo {
+
+    &:after {
+      background: $vimeo;
+    }
+  }
+  .tumblr {
+
+    &:after {
+      background: $tumblr;
+    }
+  }
+  .dribbble {
+
+    &:after {
+      background: $dribbble;
+    }
+  }
+  .rss {
+
+    &:after {
+      background: $rss;
+    }
+  }
+  .linkedin {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $linkedin;
+    }
+  }
+  .instagram {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $instagram;
+    }
+  }
+  .reddit {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $reddit;
+    }
+  }
+  .soundcloud {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $soundcloud;
+    }
+  }
+  .spotify {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $spotify;
+    }
+  }
+  .vine {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $vine;
+    }
+  }
+  .yahoo {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $yahoo;
+    }
+  }
+  .behance {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $behance;
+    }
+  }
+  .codepen {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $codepen;
+    }
+  }
+  .delicious {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $delicious;
+    }
+  }
+  .stumbleupon {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $stumbleupon;
+    }
+  }
+  .deviantart {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $deviantart;
+    }
+  }
+  .digg {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $digg;
+    }
+  }
+  .github {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $github;
+    }
+  }
+  .hacker-news {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $hacker-news;
+    }
+  }
+  .foursquare {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $foursquare;
+    }
+  }
+  .slack {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $slack;
+    }
+  }
+  .slideshare {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $slideshare;
+    }
+  }
+  .skype {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $skype;
+    }
+  }
+  .whatsapp {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $whatsapp;
+    }
+  }
+  .qq {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $qq;
+    }
+  }
+  .wechat {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $wechat;
+    }
+  }
+  .xing {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $xing;
+    }
+  }
+  .paypal {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $paypal;
+    }
+  }
+  .steam {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $steam;
+    }
+  }
+  .vk {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $vk;
+    }
+  }
+  .weibo {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $weibo;
+    }
+  }
+  .tencent-weibo {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: $tencent-weibo;
+    }
+  }
+}
