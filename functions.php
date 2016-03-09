@@ -60,9 +60,10 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<div class="comment-author">
 				<?php
-				echo get_avatar( get_comment_author_email(), 36, '', get_comment_author() );
+				echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 				?>
 				<span class="author-name"><?php comment_author_link(); ?></span>
+				<span class="comment-date"><?php comment_date(); ?></span>
 			</div>
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
@@ -72,13 +73,13 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 				<?php comment_text(); ?>
 			</div>
 			<div class="comment-footer">
-				<span class="comment-date"><?php comment_date(); ?></span>
 				<?php comment_reply_link( array_merge( $args, array(
 					'reply_text' => __( 'Reply', 'cele' ),
 					'depth'      => $depth,
-					'max_depth'  => $args['max_depth']
+					'max_depth'  => $args['max_depth'],
+					'after'     => '<i class="fa fa-reply"></i>'
 				) ) ); ?>
-				<?php edit_comment_link( __( 'Edit', 'cele' ) ); ?>
+				<?php edit_comment_link( __( 'Edit', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil"></i></div>' ); ?>
 			</div>
 		</article>
 		<?php
@@ -96,21 +97,21 @@ if ( ! function_exists( 'ct_cele_update_fields' ) ) {
 		$fields['author'] =
 			'<p class="comment-form-author">
 	            <label for="author">' . __( "Name", "cele" ) . $label . '</label>
-	            <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+	            <input id="author" name="author" type="text" placeholder="' . __( "Jane Doe", "cele" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
 	            <label for="email">' . __( "Email", "cele" ) . $label . '</label>
-	            <input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
+	            <input id="email" name="email" type="email" placeholder="' . __( "name@email.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['url'] =
 			'<p class="comment-form-url">
 	            <label for="url">' . __( "Website", "cele" ) . '</label>
-	            <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	            <input id="url" name="url" type="url"  placeholder="http://google.com" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
 

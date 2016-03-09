@@ -63,7 +63,10 @@ a {
 .post-content,
 .menu-primary,
 .site-footer,
-.pagination {
+.pagination,
+.post-categories,
+.further-reading,
+.comment {
 
   a {
     position: relative;
@@ -215,16 +218,23 @@ img,
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea {
   @extend %twelve-pixels;
+  font-weight: 300;
   width: 100%;
   font-family: $primary-font-stack;
-  padding: 10px 12px;
+  padding: 8px 12px;
   max-width: $baseline-height * 10 * 1.85;
-  background: white;
+  background: $color-gray-98;
   color: $color-gray-20;
   border: solid 1px $color-gray-90;
   border-radius: 3px;
   -webkit-appearance: none;
   transition: all 0.1s ease-in-out;
+
+  &:focus {
+    background: white;
+    border-color: $color-gray-70;
+    outline: none;
+  }
 }
 textarea {
   max-width: $baseline-height * 15 * 1.85;
@@ -232,10 +242,12 @@ textarea {
 }
 input[type="submit"] {
   @extend %twelve-pixels;
+  font-weight: 300;
   font-family: $primary-font-stack;
-  padding: 10px 12px;
-  color: white;
+  padding: 8px 16px;
+  color: $color-gray-20;
   border: solid 1px $color-blue;
+  background: none;
   border-radius: 3px;
   -webkit-appearance: none;
   transition: all 0.1s ease-in-out;
