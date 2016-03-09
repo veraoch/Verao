@@ -50,6 +50,7 @@ jQuery(document).ready(function($){
         // get the buttons parent (li)
         var menuItem = $(this).parent();
         var subMenu = $(this).siblings('ul');
+        var parentList = menuItem.parent();
 
         // if already opened
         if( menuItem.hasClass('open') ) {
@@ -80,14 +81,22 @@ jQuery(document).ready(function($){
                 subMenuHeight = subMenuHeight + $(this).height();
             });
             subMenu.css('max-height', subMenuHeight);
+
+            // parent ul - expand to include open child submenu
+            if ( parentList.hasClass('sub-menu') ) {
+                parentList.css('max-height', parseInt(parentList.css('max-height')) + subMenuHeight + 'px');
+            }
         }
     }
     /***** Need to refactor *****/
 
     var counter = 0;
-    menuPrimaryItems.find('ul').children('li').each(function(){
-        $(this).css('transition-delay', '0.' + counter + 's');
-        counter++;
+    menuPrimaryItems.find('ul').each(function() {
+        $(this).children('li').each(function(){
+            $(this).css('transition-delay', '0.' + counter + 's');
+            counter++;
+        });
+        counter = 0;
     });
 
     function openSearchBar(){
