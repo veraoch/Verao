@@ -21,18 +21,6 @@ function ct_cele_load_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	/* Load Polyfills */
-
-	wp_enqueue_script( 'ct-cele-html5-shiv', get_template_directory_uri() . '/js/build/html5shiv.min.js' );
-
-	wp_enqueue_script( 'ct-cele-respond', get_template_directory_uri() . '/js/build/respond.min.js', '', '', true );
-
-	// prevent fatal error on < WP 4.2 (load files unconditionally instead)
-	if ( function_exists( 'wp_script_add_data' ) ) {
-		wp_script_add_data( 'ct-cele-html5-shiv', 'conditional', 'IE 8' );
-		wp_script_add_data( 'ct-cele-respond', 'conditional', 'IE 8' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'ct_cele_load_scripts_styles' );
 
@@ -58,6 +46,5 @@ add_action( 'customize_controls_enqueue_scripts', 'ct_cele_enqueue_customizer_sc
  */
 function ct_cele_enqueue_customizer_post_message_scripts() {
 	wp_enqueue_script( 'ct-cele-customizer-post-message-js', get_template_directory_uri() . '/js/build/postMessage.min.js', array( 'jquery' ), '', true );
-
 }
 add_action( 'customize_preview_init', 'ct_cele_enqueue_customizer_post_message_scripts' );

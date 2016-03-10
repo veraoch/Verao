@@ -176,6 +176,47 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		'type'     => 'text'
 	) );
 
+	/***** Display Controls *****/
+
+	// section
+	$wp_customize->add_section( 'cele_display', array(
+		'title'       => __( 'Display Controls', 'cele' ),
+		'priority'    => 55,
+		'description' => sprintf( __( 'Want more options like these? Check out the <a target="_blank" href="%s"> Cele Pro plugin</a>.', 'cele' ), 'https://www.competethemes.com/cele-pro/' )
+	) );
+	// setting - post author
+	$wp_customize->add_setting( 'display_post_author', array(
+		'default'           => 'show',
+		'sanitize_callback' => 'ct_cele_sanitize_show_hide'
+	) );
+	// control - post author
+	$wp_customize->add_control( 'display_post_author', array(
+		'type'    => 'radio',
+		'label'   => __( 'Post author name in byline', 'cele' ),
+		'section' => 'cele_display',
+		'setting' => 'display_post_author',
+		'choices' => array(
+			'show' => __( 'Show', 'cele' ),
+			'hide' => __( 'Hide', 'cele' )
+		)
+	) );
+	// setting - post date
+	$wp_customize->add_setting( 'display_post_date', array(
+		'default'           => 'show',
+		'sanitize_callback' => 'ct_cele_sanitize_show_hide'
+	) );
+	// control - post author
+	$wp_customize->add_control( 'display_post_date', array(
+		'type'    => 'radio',
+		'label'   => __( 'Post date in byline', 'cele' ),
+		'section' => 'cele_display',
+		'setting' => 'display_post_date',
+		'choices' => array(
+			'show' => __( 'Show', 'cele' ),
+			'hide' => __( 'Hide', 'cele' )
+		)
+	) );
+
 	/***** Custom CSS *****/
 
 	// section
@@ -203,7 +244,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
  * Sanitize settings with show/hide as options
  * Used in: search bar
  */
-function ct_cele_sanitize_all_show_hide_settings( $input ) {
+function ct_cele_sanitize_show_hide( $input ) {
 
 	$valid = array(
 		'show' => __( 'Show', 'cele' ),
