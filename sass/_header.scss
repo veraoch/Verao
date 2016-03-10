@@ -12,6 +12,11 @@
   color: $color-gray-40;
   margin: 0;
 }
+.logo {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
 
 @media all and (min-width: $eight-hundred) {
 

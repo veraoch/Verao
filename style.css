@@ -840,6 +840,12 @@ li.pingback.bypostauthor:before {
   margin: 0;
 }
 
+.logo {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
 @media all and (min-width: 50em) {
   .site-title {
     font-size: 1.3125em;
@@ -1376,12 +1382,12 @@ li.pingback.bypostauthor:before {
 }
 .social-media-icons {
   list-style: none;
-  margin: 1.5em 0;
+  margin: 1.5em 0 1.125em;
 }
 .social-media-icons li {
   display: inline-block;
   text-align: center;
-  margin-right: 0.375em;
+  margin: 0 0.375em 0.375em 0;
 }
 .social-media-icons a {
   position: relative;
@@ -1542,4 +1548,8 @@ li.pingback.bypostauthor:before {
 }
 .social-media-icons .tencent-weibo:after {
   background: #20b8e5;
+}
+.social-media-icons .email:after,
+.social-media-icons .email-form:after {
+  background: #666666;
 }

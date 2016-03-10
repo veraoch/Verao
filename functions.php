@@ -471,7 +471,7 @@ function ct_cele_custom_css_output() {
 
 	$custom_css = get_theme_mod( 'custom_css' );
 
-	if ( $custom_css ) {
+	if ( ! empty( $custom_css ) ) {
 		$custom_css = ct_cele_sanitize_css( $custom_css );
 
 		wp_add_inline_style( 'ct-cele-style', $custom_css );

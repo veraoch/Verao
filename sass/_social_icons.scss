@@ -1,11 +1,11 @@
 .social-media-icons {
   list-style: none;
-  margin: $baseline-height 0;
+  margin: $baseline-height 0 $baseline-height * .75;
 
   li {
     display: inline-block;
     text-align: center;
-    margin-right: $baseline-height / 4;
+    margin: 0 $baseline-height / 4 $baseline-height / 4 0;
   }
   a {
     position: relative;
@@ -281,6 +281,13 @@
 
     &:after {
       background: $tencent-weibo;
+    }
+  }
+  .email,
+  .email-form {
+
+    &:after {
+      background: $color-gray-40;
     }
   }
 }

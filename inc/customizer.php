@@ -39,24 +39,6 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 			'settings' => 'logo_upload'
 		)
 	) );
-	// Size - setting
-	$wp_customize->add_setting( 'logo_size', array(
-		'default'           => '48',
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage'
-	) );
-	// Size - control
-	$wp_customize->add_control( 'logo_size', array(
-		'label'    => __( 'Adjust the size of the logo', 'period' ),
-		'section'  => 'ct_period_logo_upload',
-		'settings' => 'logo_size',
-		'type'     => 'range',
-		'input_attrs' => array(
-			'min'  => 5,
-			'max'  => 750,
-			'step' => 1
-		)
-	) );
 
 	/***** Social Media Icons *****/
 
@@ -146,30 +128,6 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		$priority = $priority + 5;
 	}
 
-	/***** Search Bar *****/
-
-	// section
-	$wp_customize->add_section( 'cele_search_bar', array(
-		'title'    => __( 'Search Bar', 'cele' ),
-		'priority' => 37
-	) );
-	// setting
-	$wp_customize->add_setting( 'search_bar', array(
-		'default'           => 'hide',
-		'sanitize_callback' => 'ct_cele_sanitize_all_show_hide_settings'
-	) );
-	// control
-	$wp_customize->add_control( 'search_bar', array(
-		'type'    => 'radio',
-		'label'   => __( 'Show search bar at top of site?', 'cele' ),
-		'section' => 'cele_search_bar',
-		'setting' => 'search_bar',
-		'choices' => array(
-			'show' => __( 'Show', 'cele' ),
-			'hide' => __( 'Hide', 'cele' )
-		),
-	) );
-
 	/***** Blog *****/
 
 	// section
@@ -216,46 +174,6 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		'section'  => 'cele_blog',
 		'settings' => 'read_more_text',
 		'type'     => 'text'
-	) );
-
-	/***** Additional Options *****/
-
-	// section
-	$wp_customize->add_section( 'cele_additional', array(
-		'title'    => __( 'Additional Options', 'cele' ),
-		'priority' => 70
-	) );
-	// extra-wide post - setting
-	$wp_customize->add_setting( 'full_width_post', array(
-		'default'           => 'yes',
-		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
-	) );
-	// extra-wide post - control
-	$wp_customize->add_control( 'full_width_post', array(
-		'label'    => __( 'Make first post on blog extra wide?', 'cele' ),
-		'section'  => 'cele_additional',
-		'settings' => 'full_width_post',
-		'type'     => 'radio',
-		'choices'  => array(
-			'yes' => __( 'Yes', 'cele' ),
-			'no'  => __( 'No', 'cele' )
-		)
-	) );
-	// author byline - setting
-	$wp_customize->add_setting( 'author_byline', array(
-		'default'           => 'no',
-		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
-	) );
-	// author byline - control
-	$wp_customize->add_control( 'author_byline', array(
-		'label'    => __( 'Display post author name in byline?', 'cele' ),
-		'section'  => 'cele_additional',
-		'settings' => 'author_byline',
-		'type'     => 'radio',
-		'choices'  => array(
-			'yes' => __( 'Yes', 'cele' ),
-			'no'  => __( 'No', 'cele' )
-		)
 	) );
 
 	/***** Custom CSS *****/
