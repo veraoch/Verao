@@ -35,8 +35,8 @@ function ct_cele_options_content() {
 			</p>
 		</div>
 		<div class="content content-premium-upgrade">
-			<h3><?php _e( 'Cele', 'cele' ); ?></h3>
-			<p><?php _e( 'Download the Cele Pro plugin and unlock custom colors, new layouts, sliders, and more', 'cele' ); ?>...</p>
+			<h3><?php _e( 'Cele Pro', 'cele' ); ?></h3>
+			<p><?php _e( 'Download the Cele Pro plugin and unlock custom colors, new fonts, sliders, and more', 'cele' ); ?>...</p>
 			<p>
 				<a target="_blank" class="button-primary"
 				   href="https://www.competethemes.com/cele-pro/"><?php _e( 'See Full Feature List', 'cele' ); ?></a>
