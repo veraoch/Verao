@@ -96,6 +96,7 @@ body {
   background: #FAFAFA;
   margin: 0 auto;
   padding: 1.875em 8.3334%;
+  min-height: 100vh;
 }
 
 .loop-container:after {
@@ -709,18 +710,15 @@ li.pingback.bypostauthor:before {
   }
 }
 .site-footer {
+  position: relative;
   clear: both;
   padding: 0.75em 8.3334%;
+  background: #F0F0F0;
 }
 
 @media all and (min-width: 56.25em) {
   .site-footer {
     padding-left: 38.8892%;
-  }
-}
-@media all and (min-width: 62.5em) {
-  .site-footer {
-    padding-bottom: 0;
   }
 }
 /**

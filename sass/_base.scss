@@ -29,6 +29,7 @@ body {
   background: $color-gray-98;
   margin: 0 auto;
   padding: $baseline-height * 1.25 $column * 3;
+  min-height: 100vh;
 }
 .loop-container {
 

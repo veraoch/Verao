@@ -85,6 +85,7 @@ jQuery(document).ready(function($){
 
     var body = $('body');
     var main = $('#main');
+    var overflowContainer = $('#overflow-container');
     var siteHeader = $('#site-header');
     var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
@@ -92,19 +93,25 @@ jQuery(document).ready(function($){
     var menuPrimary = $('#menu-primary');
     var menuPrimaryItems = $('#menu-primary-items');
     var toggleDropdown = $('.toggle-dropdown');
-    //var toggleSidebar = $('#toggle-sidebar');
     var sidebar = $('#main-sidebar');
     var sidebarPrimary = $('#sidebar-primary');
     var sidebarPrimaryContainer = $('#sidebar-primary-container');
     var sidebarInner = $('#sidebar-inner');
-    //var sidebarWidgets = $('#sidebar-primary-widgets');
-    //var socialMediaIcons = siteHeader.find('.social-media-icons');
     var menuLink = $('.menu-item').children('a');
 
     assignMenuItemDelays();
+    setMainMinHeight();
 
     toggleNavigation.on('click', openPrimaryMenu);
-    body.on('click', '#search-icon', openSearchBar);
+
+    // if sidebar height is less than window, fixed position and quit
+    if ( sidebarPrimary.outerHeight(true) < window.innerHeight ) {
+        sidebar.addClass('fixed');
+    } else {
+        // start watching scroll
+        $(window).on('scroll resize', positionSidebar);
+        var lastScrollTop = 0;
+    }
 
     function openPrimaryMenu() {
 
@@ -155,6 +162,12 @@ jQuery(document).ready(function($){
             $(this).attr('aria-expanded', 'false');
 
             subMenu.css('max-height', '0');
+
+            subMenu.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+                function(e) {
+                    // in case sidebar now taller than .main
+                    setMainMinHeight();
+                });
         } else {
 
             // add class to open the menu
@@ -176,6 +189,11 @@ jQuery(document).ready(function($){
             if ( parentList.hasClass('sub-menu') ) {
                 parentList.css('max-height', parseInt(parentList.css('max-height')) + subMenuHeight + 'px');
             }
+            parentList.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+                function(e) {
+                    // in case sidebar now taller than .main
+                    setMainMinHeight();
+                });
         }
     }
 
@@ -190,50 +208,11 @@ jQuery(document).ready(function($){
         });
     }
 
-    function openSearchBar(){
+    function positionSidebar() {
 
-        if( $(this).hasClass('open') ) {
-
-            $(this).removeClass('open');
-            socialMediaIcons.removeClass('fade');
-
-            // make search input inaccessible to keyboards
-            siteHeader.find('.search-field').attr('tabindex', -1);
-
-            // handle mobile width search bar sizing
-            if( window.innerWidth < 900 ) {
-                siteHeader.find('.search-form').attr('style', '');
-            }
-        } else {
-
-            $(this).addClass('open');
-            socialMediaIcons.addClass('fade');
-
-            // make search input keyboard accessible
-            siteHeader.find('.search-field').attr('tabindex', 0);
-
-            // handle mobile width search bar sizing
-            if( window.innerWidth < 800 ) {
-
-                // distance to other side (35px is width of icon space)
-                var leftDistance = window.innerWidth * 0.83332 - 35;
-
-                siteHeader.find('.search-form').css('left', -leftDistance + 'px')
-            }
+        if ( window.innerWidth < 900 ) {
+            return;
         }
-    }
-
-    // if height is less than window, fixed position and quit
-    if ( sidebarPrimary.outerHeight(true) < window.innerHeight ) {
-        sidebar.addClass('fixed');
-    } else {
-        // start watching scroll
-        $(window).on('scroll resize', updatePinnedState);
-        var lastScrollTop = 0;
-    }
-
-    function updatePinnedState() {
-
         var windowBottom = $(window).scrollTop() + window.innerHeight;
         var sidebarBottom = sidebarInner.offset().top + sidebarInner.outerHeight(true);
         var scrolledUp = false;
@@ -249,16 +228,20 @@ jQuery(document).ready(function($){
             sidebar.css('top', sidebar.offset().top - 24 + 'px');
             sidebar.removeClass('fixed-bottom');
             sidebar.addClass('down-page');
-        } else if ( scrolledUp == true && sidebar.hasClass('down-page') && sidebar.offset().top >= $(window).scrollTop() ) {
+        }
+        // fix to top of screen until scrolled all the way up
+        else if ( scrolledUp == true && sidebar.hasClass('down-page') && sidebar.offset().top >= $(window).scrollTop() ) {
             sidebar.removeClass('down-page');
             sidebar.addClass('fixed-top');
             sidebar.css('top', '');
         }
+        // scrolled to top, reset
         else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(sidebar.css('margin-top')) ) {
             sidebar.removeClass('fixed-top');
         }
+        // if fixed to top, but now scrolling down
         else if ( sidebar.hasClass('fixed-top') && scrolledUp == false ) {
-            sidebar.css('top', sidebar.offset().top + 'px');
+            sidebar.css('top', sidebar.offset().top - 24 + 'px');
             sidebar.removeClass('fixed-top');
             sidebar.addClass('down-page');
         }
@@ -267,8 +250,12 @@ jQuery(document).ready(function($){
             sidebar.addClass('fixed-bottom');
             sidebar.removeClass('down-page');
             sidebar.css('top', '');
-
         }
+    }
+
+    // increase main height when needed so fixed sidebar can be scrollable
+    function setMainMinHeight() {
+        main.css('min-height', sidebarInner.outerHeight(true) + sidebar.offset().top);
     }
 
     /* allow keyboard access/visibility for dropdown menu items */

@@ -1,6 +1,8 @@
 .site-footer {
+  position: relative;
   clear: both;
   padding: $baseline-height / 2 $column * 3;
+  background: $color-gray-94;
 
   span {
     @extend %twelve-pixels;
@@ -11,12 +13,5 @@
 
   .site-footer {
     padding-left: $column * 14;
-  }
-}
-
-@media all and (min-width: $one-thousand) {
-
-  .site-footer {
-    padding-bottom: 0;
   }
 }
