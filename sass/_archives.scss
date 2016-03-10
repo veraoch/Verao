@@ -2,7 +2,7 @@
 .archive,
 .search {
 
-  .post {
+  .entry {
     position: relative;
     margin-top: $baseline-height * 1.25;
 
@@ -30,7 +30,7 @@
   .archive,
   .search {
 
-    .post {
+    .entry {
 
       &:after {
         left: -$column * 3 * 1.9;
@@ -46,7 +46,7 @@
   .archive,
   .search {
 
-    .post {
+    .entry {
       margin-top: $baseline-height * 2;
     }
     .post-content {

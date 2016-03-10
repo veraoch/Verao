@@ -82,7 +82,7 @@ jQuery(document).ready(function($){
 
             subMenu.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
                 function(e) {
-                    // in case sidebar now taller than .main
+                    // in case sidebar now shorter than .main
                     setMainMinHeight();
                 });
         } else {

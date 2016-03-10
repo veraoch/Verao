@@ -247,6 +247,7 @@ input[type="submit"] {
   font-weight: 300;
   font-family: $primary-font-stack;
   padding: 8px 16px;
+  min-width: $baseline-height * 5;
   color: $color-gray-20;
   border: solid 1px $color-blue;
   background: none;
@@ -265,7 +266,6 @@ input[type="submit"] {
 }
 
 input[type="search"] {
-  margin-right: $baseline-height;
   padding-right: $baseline-height / 4; /* so safari 'x' doesn't get cut off */
 }
 ::-webkit-input-placeholder {

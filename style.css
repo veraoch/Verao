@@ -393,6 +393,7 @@ input[type="submit"] {
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   padding: 8px 16px;
+  min-width: 7.5em;
   color: #333333;
   border: solid 1px #A5D3ED;
   background: none;
@@ -409,7 +410,6 @@ input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:fo
 }
 
 input[type="search"] {
-  margin-right: 1.5em;
   padding-right: 0.375em;
   /* so safari 'x' doesn't get cut off */
 }
@@ -551,20 +551,20 @@ a img {
     margin-bottom: 2.25em;
   }
 }
-.blog .post,
-.archive .post,
-.search .post {
+.blog .entry,
+.archive .entry,
+.search .entry {
   position: relative;
   margin-top: 1.875em;
 }
-.blog .post:first-child,
-.archive .post:first-child,
-.search .post:first-child {
+.blog .entry:first-child,
+.archive .entry:first-child,
+.search .entry:first-child {
   margin-top: 0;
 }
-.blog .post:after,
-.archive .post:after,
-.search .post:after {
+.blog .entry:after,
+.archive .entry:after,
+.search .entry:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -580,17 +580,17 @@ a img {
 }
 
 @media all and (min-width: 56.25em) {
-  .blog .post:after,
-  .archive .post:after,
-  .search .post:after {
+  .blog .entry:after,
+  .archive .entry:after,
+  .search .entry:after {
     left: -15.83346%;
     right: -15.83346%;
   }
 }
 @media all and (min-width: 68.75em) {
-  .blog .post,
-  .archive .post,
-  .search .post {
+  .blog .entry,
+  .archive .entry,
+  .search .entry {
     margin-top: 3em;
   }
   .blog .post-content,
@@ -1204,95 +1204,10 @@ li.pingback.bypostauthor:before {
     padding: 2.25em 0;
   }
 }
-.site-header .search-form-container {
-  position: absolute;
-  top: 22px;
-  right: 1.5em;
-}
-.site-header .search-form-container button {
-  position: relative;
-  z-index: 9;
-  background: none;
-  border: none;
-  margin: 5px -10px 0 0;
-  padding: 6px 10px;
-  font-size: 1em;
-  line-height: 1.5;
-}
-.site-header .search-form-container button:hover {
-  cursor: pointer;
-}
-.site-header .search-form-container button:focus {
-  outline: none;
-}
-.site-header .search-form-container button:focus i {
-  color: #333333;
-}
-.site-header .search-form-container button.open + form {
-  opacity: 1;
-}
-.site-header .search-form-container i {
-  color: #666666;
-  z-index: -1;
-}
-.site-header .search-form-container form {
-  position: absolute;
-  top: 0;
-  right: -12px;
-  left: 0;
-  padding-top: 6px;
-  opacity: 0;
-  -webkit-transition: opacity 0.15s ease-in-out, left 0.15s ease-in-out;
-  transition: opacity 0.15s ease-in-out, left 0.15s ease-in-out;
-}
-.site-header .search-form-container .search-field {
-  max-width: none !important;
-  outline: none !important;
-  padding: 6px 12px !important;
-}
-.site-header .search-form-container .search-field::-webkit-search-decoration, .site-header .search-form-container .search-field::-webkit-search-cancel-button, .site-header .search-form-container .search-field::-webkit-search-results-button, .site-header .search-form-container .search-field::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-}
-.site-header .search-form-container .search-field::-ms-clear {
-  display: none;
-  width: 0;
-  height: 0;
-}
-.site-header .search-form-container .search-field::-ms-reveal {
-  display: none;
-  width: 0;
-  height: 0;
-}
-.site-header .search-form-container .search-field:focus {
-  background: #F0F0F0 !important;
-  outline: solid 1px #E6E6E6 !important;
+.search-form-container {
+  margin: 1.5em 0;
 }
 
-@media all and (min-width: 50em) {
-  .site-header .search-form-container {
-    position: relative;
-    float: right;
-    top: -6px;
-    right: 0;
-    z-index: 9;
-    text-align: right;
-    margin: 0 0 0 1.5em;
-  }
-  .site-header .search-form-container button {
-    margin: 0;
-    padding: 4px 10px;
-  }
-  .site-header .search-form-container button:hover {
-    cursor: pointer;
-  }
-  .site-header .search-form-container button.open + form {
-    left: -266px;
-  }
-  .site-header .search-form-container form {
-    padding-top: 0;
-    right: 0;
-  }
-}
 .main-sidebar {
   background: white;
   padding: 0 8.3334%;
@@ -1515,87 +1430,87 @@ li.pingback.bypostauthor:before {
 .social-media-icons .rss:after {
   background: #fa9b39;
 }
-.social-media-icons .linkedin:hover, .social-media-icons .linkedin:active, .social-media-icons .linkedin:focus {
+.social-media-icons .linkedin:after {
   background: #007bb6;
 }
-.social-media-icons .instagram:hover, .social-media-icons .instagram:active, .social-media-icons .instagram:focus {
+.social-media-icons .instagram:after {
   background: #517fa4;
 }
-.social-media-icons .reddit:hover, .social-media-icons .reddit:active, .social-media-icons .reddit:focus {
+.social-media-icons .reddit:after {
   background: #cee3f8;
 }
-.social-media-icons .soundcloud:hover, .social-media-icons .soundcloud:active, .social-media-icons .soundcloud:focus {
+.social-media-icons .soundcloud:after {
   background: #ff3a00;
 }
-.social-media-icons .spotify:hover, .social-media-icons .spotify:active, .social-media-icons .spotify:focus {
+.social-media-icons .spotify:after {
   background: #81b71a;
 }
-.social-media-icons .vine:hover, .social-media-icons .vine:active, .social-media-icons .vine:focus {
+.social-media-icons .vine:after {
   background: #00b489;
 }
-.social-media-icons .yahoo:hover, .social-media-icons .yahoo:active, .social-media-icons .yahoo:focus {
+.social-media-icons .yahoo:after {
   background: #7B0099;
 }
-.social-media-icons .behance:hover, .social-media-icons .behance:active, .social-media-icons .behance:focus {
+.social-media-icons .behance:after {
   background: #000;
 }
-.social-media-icons .codepen:hover, .social-media-icons .codepen:active, .social-media-icons .codepen:focus {
+.social-media-icons .codepen:after {
   background: #000;
 }
-.social-media-icons .delicious:hover, .social-media-icons .delicious:active, .social-media-icons .delicious:focus {
+.social-media-icons .delicious:after {
   background: #2a96ff;
 }
-.social-media-icons .stumbleupon:hover, .social-media-icons .stumbleupon:active, .social-media-icons .stumbleupon:focus {
+.social-media-icons .stumbleupon:after {
   background: #EB4823;
 }
-.social-media-icons .deviantart:hover, .social-media-icons .deviantart:active, .social-media-icons .deviantart:focus {
+.social-media-icons .deviantart:after {
   background: #bfce00;
 }
-.social-media-icons .digg:hover, .social-media-icons .digg:active, .social-media-icons .digg:focus {
+.social-media-icons .digg:after {
   background: #000;
 }
-.social-media-icons .github:hover, .social-media-icons .github:active, .social-media-icons .github:focus {
+.social-media-icons .github:after {
   background: #171515;
 }
-.social-media-icons .hacker-news:hover, .social-media-icons .hacker-news:active, .social-media-icons .hacker-news:focus {
+.social-media-icons .hacker-news:after {
   background: #ff6600;
 }
-.social-media-icons .foursquare:hover, .social-media-icons .foursquare:active, .social-media-icons .foursquare:focus {
+.social-media-icons .foursquare:after {
   background: #0072b1;
 }
-.social-media-icons .slack:hover, .social-media-icons .slack:active, .social-media-icons .slack:focus {
+.social-media-icons .slack:after {
   background: #47C09B;
 }
-.social-media-icons .slideshare:hover, .social-media-icons .slideshare:active, .social-media-icons .slideshare:focus {
+.social-media-icons .slideshare:after {
   background: #0282BD;
 }
-.social-media-icons .skype:hover, .social-media-icons .skype:active, .social-media-icons .skype:focus {
+.social-media-icons .skype:after {
   background: #02B8F2;
 }
-.social-media-icons .whatsapp:hover, .social-media-icons .whatsapp:active, .social-media-icons .whatsapp:focus {
+.social-media-icons .whatsapp:after {
   background: #6FDA51;
 }
-.social-media-icons .qq:hover, .social-media-icons .qq:active, .social-media-icons .qq:focus {
+.social-media-icons .qq:after {
   background: #3AA3E0;
 }
-.social-media-icons .wechat:hover, .social-media-icons .wechat:active, .social-media-icons .wechat:focus {
+.social-media-icons .wechat:after {
   background: #66C150;
 }
-.social-media-icons .xing:hover, .social-media-icons .xing:active, .social-media-icons .xing:focus {
+.social-media-icons .xing:after {
   background: #01656B;
 }
-.social-media-icons .paypal:hover, .social-media-icons .paypal:active, .social-media-icons .paypal:focus {
+.social-media-icons .paypal:after {
   background: #02A6E2;
 }
-.social-media-icons .steam:hover, .social-media-icons .steam:active, .social-media-icons .steam:focus {
+.social-media-icons .steam:after {
   background: #145f90;
 }
-.social-media-icons .vk:hover, .social-media-icons .vk:active, .social-media-icons .vk:focus {
+.social-media-icons .vk:after {
   background: #45668e;
 }
-.social-media-icons .weibo:hover, .social-media-icons .weibo:active, .social-media-icons .weibo:focus {
+.social-media-icons .weibo:after {
   background: #e6162d;
 }
-.social-media-icons .tencent-weibo:hover, .social-media-icons .tencent-weibo:active, .social-media-icons .tencent-weibo:focus {
+.social-media-icons .tencent-weibo:after {
   background: #20b8e5;
 }
