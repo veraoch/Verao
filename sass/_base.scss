@@ -385,17 +385,21 @@ a img {
 
 @media all and (min-width: $one-thousand) {
 
-  body {
-    padding: $baseline-height / 2;
+  //body {
+  //  padding: $baseline-height / 2;
+  //}
+  .main {
+    margin: $baseline-height / 2 $baseline-height / 2 0 0;
   }
 }
 
 @media all and (min-width: $eleven-hundred) {
 
-  body {
-    padding: $baseline-height;
-  }
+  //body {
+  //  padding: $baseline-height;
+  //}
   .main {
+    margin: $baseline-height $baseline-height 0 0;
     padding: $baseline-height * 2 $column * 3;
   }
 }

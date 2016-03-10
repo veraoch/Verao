@@ -1,10 +1,13 @@
 .main-sidebar {
   background: white;
-  padding: $baseline-height * 1.5 $column * 3;
+  padding: 0 $column * 3;
 
   &:after {
     @include clearfix;
   }
+}
+.sidebar-inner {
+  padding: $baseline-height * 1.5 0;
 }
 .sidebar-primary-container {
   max-height: 0;
@@ -46,7 +49,21 @@
     left: 0;
     min-height: calc(100% - 48px);
     width: $column * 11;
-    padding: $baseline-height * 1.5 $column;
+    padding: 0 $column;
+
+    &.fixed-bottom {
+      position: fixed;
+      top: auto;
+      bottom: 0;
+    }
+    &.fixed-top {
+      position: fixed;
+      top: -12px;
+      bottom: auto;
+    }
+  }
+  .sidebar-inner {
+    padding: $baseline-height * 1.5 0;
   }
   .sidebar-primary-container {
     max-height: none;
@@ -57,12 +74,24 @@
 
   .main-sidebar {
     min-height: calc(100% - 36px);
+    margin: $baseline-height / 2 0 0 $baseline-height / 2;
+    width: calc(30.5558% - 24px);
   }
 }
 @media all and (min-width: $eleven-hundred) {
 
   .main-sidebar {
-    padding: $baseline-height * 2 $column * 2;
+    min-height: calc(100% - 48px);
+    margin: $baseline-height 0 0 $baseline-height;
+    width: calc(30.5558% - 48px);
+    padding: 0 $column * 1.5;
+
+    &.fixed-top {
+      top: -24px;
+    }
+  }
+  .sidebar-inner {
+    padding: $baseline-height * 2 0;
   }
   .sidebar-primary {
     margin-top: $baseline-height;

@@ -527,16 +527,13 @@ a img {
   }
 }
 @media all and (min-width: 62.5em) {
-  body {
-    padding: 0.75em;
+  .main {
+    margin: 0.75em 0.75em 0 0;
   }
 }
 @media all and (min-width: 68.75em) {
-  body {
-    padding: 1.5em;
-  }
-
   .main {
+    margin: 1.5em 1.5em 0 0;
     padding: 3em 8.3334%;
   }
 }
@@ -1300,7 +1297,7 @@ li.pingback.bypostauthor:before {
 }
 .main-sidebar {
   background: white;
-  padding: 2.25em 8.3334%;
+  padding: 0 8.3334%;
 }
 .main-sidebar:after {
   content: ".";
@@ -1309,6 +1306,10 @@ li.pingback.bypostauthor:before {
   visibility: hidden;
   line-height: 0;
   height: 0;
+}
+
+.sidebar-inner {
+  padding: 2.25em 0;
 }
 
 .sidebar-primary-container {
@@ -1350,7 +1351,21 @@ li.pingback.bypostauthor:before {
     left: 0;
     min-height: calc(100% - 48px);
     width: 30.5558%;
-    padding: 2.25em 2.7778%;
+    padding: 0 2.7778%;
+  }
+  .main-sidebar.fixed-bottom {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+  }
+  .main-sidebar.fixed-top {
+    position: fixed;
+    top: -12px;
+    bottom: auto;
+  }
+
+  .sidebar-inner {
+    padding: 2.25em 0;
   }
 
   .sidebar-primary-container {
@@ -1360,11 +1375,23 @@ li.pingback.bypostauthor:before {
 @media all and (min-width: 62.5em) {
   .main-sidebar {
     min-height: calc(100% - 36px);
+    margin: 0.75em 0 0 0.75em;
+    width: calc(30.5558% - 24px);
   }
 }
 @media all and (min-width: 68.75em) {
   .main-sidebar {
-    padding: 3em 5.5556%;
+    min-height: calc(100% - 48px);
+    margin: 1.5em 0 0 1.5em;
+    width: calc(30.5558% - 48px);
+    padding: 0 4.1667%;
+  }
+  .main-sidebar.fixed-top {
+    top: -24px;
+  }
+
+  .sidebar-inner {
+    padding: 3em 0;
   }
 
   .sidebar-primary {

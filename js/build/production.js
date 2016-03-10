@@ -84,6 +84,7 @@
 jQuery(document).ready(function($){
 
     var body = $('body');
+    var main = $('#main');
     var siteHeader = $('#site-header');
     var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
@@ -92,8 +93,10 @@ jQuery(document).ready(function($){
     var menuPrimaryItems = $('#menu-primary-items');
     var toggleDropdown = $('.toggle-dropdown');
     //var toggleSidebar = $('#toggle-sidebar');
+    var sidebar = $('#main-sidebar');
     var sidebarPrimary = $('#sidebar-primary');
     var sidebarPrimaryContainer = $('#sidebar-primary-container');
+    var sidebarInner = $('#sidebar-inner');
     //var sidebarWidgets = $('#sidebar-primary-widgets');
     //var socialMediaIcons = siteHeader.find('.social-media-icons');
     var menuLink = $('.menu-item').children('a');
@@ -217,6 +220,54 @@ jQuery(document).ready(function($){
 
                 siteHeader.find('.search-form').css('left', -leftDistance + 'px')
             }
+        }
+    }
+
+    // if height is less than window, fixed position and quit
+    if ( sidebarPrimary.outerHeight(true) < window.innerHeight ) {
+        sidebar.addClass('fixed');
+    } else {
+        // start watching scroll
+        $(window).on('scroll resize', updatePinnedState);
+        var lastScrollTop = 0;
+    }
+
+    function updatePinnedState() {
+
+        var windowBottom = $(window).scrollTop() + window.innerHeight;
+        var sidebarBottom = sidebarInner.offset().top + sidebarInner.outerHeight(true);
+        var scrolledUp = false;
+        var st = $(this).scrollTop();
+
+        if (st < lastScrollTop){
+            scrolledUp = true;
+        }
+        lastScrollTop = st;
+
+        // if fixed to bottom and scrolling back up
+        if ( scrolledUp == true && sidebar.hasClass('fixed-bottom') ) {
+            sidebar.css('top', sidebar.offset().top - 24 + 'px');
+            sidebar.removeClass('fixed-bottom');
+            sidebar.addClass('down-page');
+        } else if ( scrolledUp == true && sidebar.hasClass('down-page') && sidebar.offset().top >= $(window).scrollTop() ) {
+            sidebar.removeClass('down-page');
+            sidebar.addClass('fixed-top');
+            sidebar.css('top', '');
+        }
+        else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(sidebar.css('margin-top')) ) {
+            sidebar.removeClass('fixed-top');
+        }
+        else if ( sidebar.hasClass('fixed-top') && scrolledUp == false ) {
+            sidebar.css('top', sidebar.offset().top + 'px');
+            sidebar.removeClass('fixed-top');
+            sidebar.addClass('down-page');
+        }
+        // if the bottom of the window is as low or lower than the bottom of the sidebar
+        else if ( windowBottom >= sidebarBottom && scrolledUp == false ) {
+            sidebar.addClass('fixed-bottom');
+            sidebar.removeClass('down-page');
+            sidebar.css('top', '');
+
         }
     }
 

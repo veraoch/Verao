@@ -12,25 +12,27 @@
 <div id="overflow-container" class="overflow-container">
 	<div id="max-width" class="max-width">
 		<div id="main-sidebar" class="main-sidebar">
-			<?php do_action( 'before_header' ); ?>
-			<header class="site-header" id="site-header" role="banner">
-				<div id="title-container" class="title-container">
-					<?php get_template_part( 'logo' ) ?>
-					<?php if ( get_bloginfo( 'description' ) ) {
-						echo '<p class="tagline">' . get_bloginfo( 'description' ) . '</p>';
-					} ?>
-				</div>
-				<button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
-					<span class="screen-reader-text"><?php _e( 'open menu', 'cele' ); ?></span>
-					<?php echo ct_cele_svg_output( 'toggle-navigation' ); ?>
-				</button>
-				<div id="menu-primary-container" class="menu-primary-container">
-					<?php get_template_part( 'menu', 'primary' ); ?>
-					<?php ct_cele_social_icons_output(); ?>
-				</div>
-			</header>
-			<?php do_action( 'after_header' ); ?>
-			<?php get_sidebar( 'primary' ); ?>
+			<div id="sidebar-inner" class="sidebar-inner">
+				<?php do_action( 'before_header' ); ?>
+				<header class="site-header" id="site-header" role="banner">
+					<div id="title-container" class="title-container">
+						<?php get_template_part( 'logo' ) ?>
+						<?php if ( get_bloginfo( 'description' ) ) {
+							echo '<p class="tagline">' . get_bloginfo( 'description' ) . '</p>';
+						} ?>
+					</div>
+					<button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
+						<span class="screen-reader-text"><?php _e( 'open menu', 'cele' ); ?></span>
+						<?php echo ct_cele_svg_output( 'toggle-navigation' ); ?>
+					</button>
+					<div id="menu-primary-container" class="menu-primary-container">
+						<?php get_template_part( 'menu', 'primary' ); ?>
+						<?php ct_cele_social_icons_output(); ?>
+					</div>
+				</header>
+				<?php do_action( 'after_header' ); ?>
+				<?php get_sidebar( 'primary' ); ?>
+			</div>
 		</div>
 		<section id="main" class="main" role="main">
 			<?php do_action( 'main_top' );
