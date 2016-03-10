@@ -23,6 +23,16 @@
     padding-bottom: $baseline-height / 4;
   }
 }
+.sticky-status {
+
+  span {
+    @extend %twelve-pixels;
+    display: inline-block;
+    padding: 2px 6px;
+    border: solid 1px $color-gray-90;
+    border-radius: 3px;
+  }
+}
 
 @media all and (min-width: $nine-hundred) {
 
