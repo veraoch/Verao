@@ -139,7 +139,8 @@ a:hover, a:active, a:focus {
 .post-categories a,
 .further-reading a,
 .comment a,
-.widget a {
+.widget a,
+.comment-pagination a {
   position: relative;
 }
 .post-byline a:after,
@@ -150,7 +151,8 @@ a:hover, a:active, a:focus {
 .post-categories a:after,
 .further-reading a:after,
 .comment a:after,
-.widget a:after {
+.widget a:after,
+.comment-pagination a:after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -185,7 +187,10 @@ a:hover, a:active, a:focus {
 .comment a:focus,
 .widget a:hover,
 .widget a:active,
-.widget a:focus {
+.widget a:focus,
+.comment-pagination a:hover,
+.comment-pagination a:active,
+.comment-pagination a:focus {
   border-color: #A5D3ED;
 }
 .post-byline a:hover:after, .post-byline a:active:after, .post-byline a:focus:after,
@@ -212,7 +217,10 @@ a:hover, a:active, a:focus {
 .comment a:focus:after,
 .widget a:hover:after,
 .widget a:active:after,
-.widget a:focus:after {
+.widget a:focus:after,
+.comment-pagination a:hover:after,
+.comment-pagination a:active:after,
+.comment-pagination a:focus:after {
   right: 0;
 }
 .post-byline a:visited:hover, .post-byline a:visited:active, .post-byline a:visited:focus,
@@ -239,7 +247,10 @@ a:hover, a:active, a:focus {
 .comment a:visited:focus,
 .widget a:visited:hover,
 .widget a:visited:active,
-.widget a:visited:focus {
+.widget a:visited:focus,
+.comment-pagination a:visited:hover,
+.comment-pagination a:visited:active,
+.comment-pagination a:visited:focus {
   border-color: #E6E6E6;
 }
 
@@ -698,6 +709,24 @@ li.pingback.bypostauthor:before {
 }
 .comment-respond input[type="submit"] {
   margin-top: 0.75em;
+}
+
+.comment-pagination p {
+  display: inline-block;
+  margin: 0 -4px 0 0;
+  width: 50%;
+}
+.comment-pagination .next-comment {
+  float: right;
+  text-align: right;
+}
+.comment-pagination:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 @media all and (min-width: 37.5em) {

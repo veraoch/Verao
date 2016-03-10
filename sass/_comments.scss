@@ -119,6 +119,23 @@ li.pingback {
     margin-top: $baseline-height / 2;
   }
 }
+
+.comment-pagination {
+
+  p {
+    display: inline-block;
+    margin: 0 -4px 0 0;
+    width: 50%;
+  }
+  .next-comment {
+    float: right;
+    text-align: right;
+  }
+  &:after {
+    @include clearfix;
+  }
+}
+
 @media all and (min-width: $six-hundred) {
 
   .comments-number h3,
