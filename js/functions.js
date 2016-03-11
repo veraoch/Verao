@@ -26,6 +26,7 @@ jQuery(document).ready(function($){
     setMainMinHeight();
     objectFitAdjustment();
     sidebarAdjustment();
+    menuKeyboardAccess();
 
     toggleNavigation.on('click', openPrimaryMenu);
     toggleDropdown.on('click', openDropdownMenu);
@@ -114,6 +115,9 @@ jQuery(document).ready(function($){
                     // in case sidebar now shorter than .main
                     setMainMinHeight();
                 });
+
+            // make child links/buttons keyboard inaccessible
+            menuKeyboardAccess(menuItem, 'close');
         } else {
 
             // add class to open the menu
@@ -140,6 +144,9 @@ jQuery(document).ready(function($){
                     // in case sidebar now taller than .main
                     setMainMinHeight();
                 });
+
+            // make child links/buttons keyboard accessible
+            menuKeyboardAccess(menuItem, 'open');
         }
     }
 
@@ -287,6 +294,22 @@ jQuery(document).ready(function($){
                         });
                     }
                 }
+            });
+        }
+    }
+
+    function menuKeyboardAccess(listItem, status){
+
+        var tabindex = 0;
+        if ( status == 'close' ) {
+            tabindex = -1;
+        }
+
+        if ( listItem) {
+            listItem.children('ul').children('li').children('a, button').attr('tabindex', tabindex);
+        } else {
+            menuPrimaryItems.find('ul').each(function() {
+                $(this).children('li').children().attr('tabindex', -1)
             });
         }
     }
