@@ -1314,12 +1314,10 @@ li.pingback.bypostauthor:before {
     position: absolute;
     top: 0;
     right: 0;
+    min-height: 100%;
     min-height: calc(100% - 48px);
     width: 30.5558%;
     padding: 0 2.7778%;
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
   .main-sidebar.fixed-bottom {
     position: fixed;
@@ -1330,6 +1328,10 @@ li.pingback.bypostauthor:before {
     position: fixed;
     top: 0;
     bottom: auto;
+  }
+  .main-sidebar.fixed {
+    position: fixed;
+    top: 0;
   }
 
   .logged-in .main-sidebar.fixed-top {
@@ -1414,6 +1416,63 @@ li.pingback.bypostauthor:before {
   line-height: 1.5;
   color: #333333;
   margin-bottom: 1.5em;
+}
+
+.widget_search input[type="search"] {
+  margin-bottom: 6px;
+}
+
+.widget_calendar table {
+  width: 100%;
+  text-align: center;
+}
+.widget_calendar caption {
+  margin-bottom: 6px;
+}
+.widget_calendar td,
+.widget_calendar th {
+  padding: 4px 0;
+}
+.widget_calendar #today {
+  border: solid 2px #A5D3ED;
+}
+.widget_calendar a {
+  border: none;
+}
+
+.widget_rss .widget-title img {
+  margin-left: 4px;
+}
+.widget_rss .widget-title a:first-child {
+  border: none;
+}
+.widget_rss .widget-title a:first-child:after {
+  display: none;
+}
+.widget_rss .widget-title a:hover, .widget_rss .widget-title a:active, .widget_rss .widget-title a:focus {
+  text-decoration: none;
+}
+.widget_rss .rssSummary {
+  margin: 0.75em 1.5em;
+  color: #666666;
+}
+.widget_rss .rssSummary + cite {
+  display: block;
+  margin: 0 1.5em 1.5em 0;
+}
+.widget_rss .rss-date {
+  font-style: italic;
+}
+.widget_rss li {
+  display: block;
+}
+.widget_rss cite,
+.widget_rss span {
+  margin-bottom: 1.5em;
+  display: block;
+}
+.widget_rss span + cite {
+  margin-top: -1.5em;
 }
 
 @media all and (min-width: 68.75em) {

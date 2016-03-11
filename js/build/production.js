@@ -128,13 +128,13 @@ jQuery(document).ready(function($){
     });
 
     // if sidebar height is less than window, fixed position and quit
-    if ( sidebarPrimary.outerHeight(true) < window.innerHeight ) {
+    if ( sidebarInner.outerHeight(true) < window.innerHeight ) {
         sidebar.addClass('fixed');
+        sidebarAdjustment();
     } else {
         // start watching scroll
         var lastScrollTop = 0;
         $(window).on('scroll resize', positionSidebar);
-
     }
 
     /* allow keyboard access/visibility for dropdown menu items */
@@ -309,6 +309,15 @@ jQuery(document).ready(function($){
         }
         if ( $('#wpadminbar').length > 0 ) {
             adjustment = adjustment + 32;
+
+            if ( sidebar.hasClass('fixed') ) {
+                sidebar.css('top', '32px');
+            }
+        }
+
+        if ( sidebar.hasClass('fixed') ) {
+            // b/c max-width won't always be all the way left
+            sidebar.css('left', maxWidth.offset().left);
         }
     }
 
