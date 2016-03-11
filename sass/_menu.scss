@@ -34,6 +34,10 @@
     display: inline-block;
     margin-bottom: 1em;
     clear: both;
+
+    &:focus {
+      outline: none;
+    }
   }
 }
 .menu-primary-items,

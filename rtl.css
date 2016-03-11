@@ -936,6 +936,9 @@ li.pingback.bypostauthor:before {
   margin-bottom: 1em;
   clear: both;
 }
+.menu-primary a:focus {
+  outline: none;
+}
 
 .menu-primary-items,
 .menu-unset > ul {
@@ -1311,6 +1314,8 @@ li.pingback.bypostauthor:before {
 }
 @media all and (min-width: 56.25em) {
   .main-sidebar {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     position: absolute;
     top: 0;
     right: 0;
