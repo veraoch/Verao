@@ -22,6 +22,7 @@ jQuery(document).ready(function($){
     }
     var adjustment = 24;
     var lastScrollTop = 0;
+    var scrollTracking = false;
 
     assignMenuItemDelays();
     setMainMinHeight();
@@ -58,9 +59,14 @@ jQuery(document).ready(function($){
                 sidebar.addClass('fixed');
                 sidebarAdjustment();
             } else {
-                lastScrollTop = 0;
-                $(window).on('scroll resize', positionSidebar);
+                // don't bind more than once
+                if ( scrollTracking == false ) {
+                    $(window).on('scroll resize', positionSidebar);
+                    scrollTracking = true;
+                }
             }
+        } else {
+            scrollTracking = false;
         }
     }
 
@@ -230,11 +236,11 @@ jQuery(document).ready(function($){
 
     function sidebarAdjustment() {
         // adjustment for how far sidebar is from the top of the page (admin bar + margins)
-        if ( window.innerWidth > 1199 ) {
+        if ( window.innerWidth >= 1100 ) {
             adjustment = 24;
-        } else if ( window.innerWidth > 1099 ) {
+        } else if ( window.innerWidth >= 1000 ) {
             adjustment = 12;
-        } else if ( window.innerWidth > 899 ) {
+        } else if ( window.innerWidth >= 8900 ) {
             adjustment = 0;
         }
         if ( $('#wpadminbar').length > 0 ) {
