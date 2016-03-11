@@ -941,6 +941,10 @@ li.pingback.bypostauthor:before {
 .menu-primary a:focus {
   outline: none;
 }
+.menu-primary li {
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+}
 
 .menu-primary-items,
 .menu-unset > ul {
