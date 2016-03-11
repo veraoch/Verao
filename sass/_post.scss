@@ -106,6 +106,7 @@
     &:hover,
     &:active,
     &:focus {
+      outline: none;
       border-color: $color-blue;
     }
   }

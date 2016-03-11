@@ -28,6 +28,7 @@
     &:active,
     &:focus {
       color: white;
+      outline: none;
 
       &:after {
         transform: scale(1);

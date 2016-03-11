@@ -138,13 +138,8 @@ jQuery(document).ready(function($){
         $(window).on('scroll resize', positionSidebar);
     }
 
-    /* allow keyboard access/visibility for dropdown menu items */
-    menuLink.focus(function(){
-        $(this).parents('ul').addClass('focused');
-    });
-    menuLink.focusout(function(){
-        $(this).parents('ul').removeClass('focused');
-    });
+    // open the menu to display the current page if inside a dropdown menu
+    $( '.current-menu-ancestor').addClass('open');
 
     function openPrimaryMenu() {
 

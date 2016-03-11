@@ -89,6 +89,7 @@ a {
     &:active,
     &:focus {
       border-color: $color-blue;
+      outline: none;
 
       &:after {
         right: 0;
@@ -262,6 +263,7 @@ input[type="submit"] {
   &:hover,
   &:active,
   &:focus {
+    outline: none;
     border-color: $color-gray-20;
   }
 }
