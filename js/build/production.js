@@ -120,6 +120,7 @@ jQuery(document).ready(function($){
         objectFitAdjustment();
         setupSidebar();
         sidebarAdjustment();
+        setMainMinHeight();
     });
 
     // Jetpack infinite scroll event that reloads posts.
