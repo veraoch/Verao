@@ -21,9 +21,11 @@ jQuery(document).ready(function($){
         adminBar = 32;
     }
     var adjustment = 24;
+    var lastScrollTop = 0;
 
     assignMenuItemDelays();
     setMainMinHeight();
+    setupSidebar();
     objectFitAdjustment();
     sidebarAdjustment();
     menuKeyboardAccess();
@@ -33,6 +35,7 @@ jQuery(document).ready(function($){
 
     $(window).resize(function(){
         objectFitAdjustment();
+        setupSidebar();
         sidebarAdjustment();
     });
 
@@ -45,14 +48,19 @@ jQuery(document).ready(function($){
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
     });
 
-    // if sidebar height is less than window, fixed position and quit
-    if ( sidebarInner.outerHeight(true) < window.innerHeight ) {
-        sidebar.addClass('fixed');
-        sidebarAdjustment();
-    } else {
-        // start watching scroll
-        var lastScrollTop = 0;
-        $(window).on('scroll resize', positionSidebar);
+    function setupSidebar(){
+
+        if ( window.innerWidth > 899 ) {
+
+            // if sidebar height is less than window, fixed position and quit
+            if ( sidebarInner.outerHeight(true) < window.innerHeight ) {
+                sidebar.addClass('fixed');
+                sidebarAdjustment();
+            } else {
+                lastScrollTop = 0;
+                $(window).on('scroll resize', positionSidebar);
+            }
+        }
     }
 
     // open the menu to display the current page if inside a dropdown menu
@@ -161,6 +169,7 @@ jQuery(document).ready(function($){
         if ( window.innerWidth < 900 ) {
             return;
         }
+
         var windowBottom = $(window).scrollTop() + window.innerHeight;
         var sidebarBottom = sidebarInner.offset().top + sidebarInner.outerHeight(true);
         var scrolledUp = false;
@@ -220,10 +229,11 @@ jQuery(document).ready(function($){
 
     function sidebarAdjustment() {
         // adjustment for how far sidebar is from the top of the page (admin bar + margins)
-        if ( window.innerWidth < 1100 ) {
+        if ( window.innerWidth > 1199 ) {
+            adjustment = 24;
+        } else if ( window.innerWidth > 1099 ) {
             adjustment = 12;
-        }
-        if ( window.innerWidth < 1000 ) {
+        } else if ( window.innerWidth > 899 ) {
             adjustment = 0;
         }
         if ( $('#wpadminbar').length > 0 ) {
