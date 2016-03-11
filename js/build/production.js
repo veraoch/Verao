@@ -244,13 +244,22 @@ jQuery(document).ready(function($){
         }
         lastScrollTop = st;
 
-        // adjustment for how far sidebar is from the top of the page
+        // adjustment for how far sidebar is from the top of the page (admin bar + margins)
         var adjustment = 24;
         if ( window.innerWidth < 1100 ) {
             adjustment = 12;
         }
+        if ( window.innerWidth < 1000 ) {
+            adjustment = 0;
+        }
         if ( $('#wpadminbar').length > 0 ) {
             adjustment = adjustment + 32;
+        }
+
+        // account for the admin bar
+        var adminBar = 0;
+        if ( body.hasClass('admin-bar') ) {
+            adminBar = 32;
         }
 
         // if fixed to bottom and scrolling back up
@@ -263,7 +272,7 @@ jQuery(document).ready(function($){
             sidebar.removeClass('fixed-bottom');
         }
         // fix to top of screen until scrolled all the way up
-        else if ( scrolledUp == true && sidebar.hasClass('down-page') && sidebar.offset().top >= $(window).scrollTop() ) {
+        else if ( scrolledUp == true && sidebar.hasClass('down-page') && (sidebar.offset().top - adminBar) >= $(window).scrollTop() ) {
             sidebar.removeClass('down-page');
             sidebar.addClass('fixed-top');
             // b/c max-width won't always be all the way left
@@ -291,12 +300,12 @@ jQuery(document).ready(function($){
         // if the bottom of the window is as low or lower than the bottom of the sidebar
         else if ( windowBottom >= sidebarBottom && scrolledUp == false ) {
             sidebar.addClass('fixed-bottom');
-            sidebar.removeClass('down-page');
             // b/c max-width won't always be all the way left
             sidebar.css({
                 'top': '',
                 'left': maxWidth.offset().left
             });
+            sidebar.removeClass('down-page');
         }
     }
 

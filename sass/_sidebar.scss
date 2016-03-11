@@ -62,6 +62,9 @@
       bottom: auto;
     }
   }
+  .logged-in .main-sidebar.fixed-top {
+    top: 32px;
+  }
   .sidebar-inner {
     padding: $baseline-height * 1.5 0;
   }
@@ -76,6 +79,13 @@
     min-height: calc(100% - 36px);
     margin: $baseline-height / 2 0 0 $baseline-height / 2;
     width: calc(30.5558% - 24px);
+
+    &.fixed-top {
+      top: -12px;
+    }
+  }
+  .logged-in .main-sidebar.fixed-top {
+    top: 20px;
   }
 }
 @media all and (min-width: $eleven-hundred) {
@@ -85,6 +95,13 @@
     margin: $baseline-height 0 0 $baseline-height;
     width: calc(30.5558% - 48px);
     padding: 0 $column * 1.5;
+
+    &.fixed-top {
+      top: -24px;
+    }
+  }
+  .logged-in .main-sidebar.fixed-top {
+    top: 8px;
   }
   .sidebar-inner {
     padding: $baseline-height * 2 0;

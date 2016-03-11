@@ -86,7 +86,7 @@
   font-style: italic;
 }
 .post-tags {
-  margin: $baseline-height 0;
+  margin: $baseline-height 0 $baseline-height *.75;
 
   ul {
     list-style: none;
@@ -94,7 +94,7 @@
   }
   li {
     display: inline-block;
-    margin-right: $baseline-height / 2;
+    margin: 0 $baseline-height / 2 $baseline-height / 4 0;
   }
   a {
     @extend %twelve-pixels;

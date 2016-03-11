@@ -46,6 +46,7 @@ li.pingback {
   }
 }
 .comment-author {
+  margin-bottom: $baseline-height;
 
   .avatar {
     width: 48px;
@@ -60,6 +61,18 @@ li.pingback {
   .comment-date {
     @extend %twelve-pixels;
     font-style: italic;
+  }
+}
+.comment-content {
+
+  ul,
+  ol {
+    margin: $baseline-height;
+
+    ul,
+    ol {
+      margin: 0 $baseline-height;
+    }
   }
 }
 .comment-footer {

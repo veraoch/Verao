@@ -657,6 +657,9 @@ li.pingback.bypostauthor:before {
   border-bottom: solid 12px transparent;
 }
 
+.comment-author {
+  margin-bottom: 1.5em;
+}
 .comment-author .avatar {
   width: 48px;
   height: 48px;
@@ -669,6 +672,17 @@ li.pingback.bypostauthor:before {
 }
 .comment-author .comment-date {
   font-style: italic;
+}
+
+.comment-content ul,
+.comment-content ol {
+  margin: 1.5em;
+}
+.comment-content ul ul,
+.comment-content ul ol,
+.comment-content ol ul,
+.comment-content ol ol {
+  margin: 0 1.5em;
 }
 
 .comment-footer {
@@ -1137,7 +1151,7 @@ li.pingback.bypostauthor:before {
 }
 
 .post-tags {
-  margin: 1.5em 0;
+  margin: 1.5em 0 1.125em;
 }
 .post-tags ul {
   list-style: none;
@@ -1145,7 +1159,7 @@ li.pingback.bypostauthor:before {
 }
 .post-tags li {
   display: inline-block;
-  margin-left: 0.75em;
+  margin: 0 0 0.375em 0.75em;
 }
 .post-tags a {
   display: inline-block;
@@ -1315,6 +1329,10 @@ li.pingback.bypostauthor:before {
     bottom: auto;
   }
 
+  .logged-in .main-sidebar.fixed-top {
+    top: 32px;
+  }
+
   .sidebar-inner {
     padding: 2.25em 0;
   }
@@ -1329,6 +1347,13 @@ li.pingback.bypostauthor:before {
     margin: 0.75em 0.75em 0 0;
     width: calc(30.5558% - 24px);
   }
+  .main-sidebar.fixed-top {
+    top: -12px;
+  }
+
+  .logged-in .main-sidebar.fixed-top {
+    top: 20px;
+  }
 }
 @media all and (min-width: 68.75em) {
   .main-sidebar {
@@ -1336,6 +1361,13 @@ li.pingback.bypostauthor:before {
     margin: 1.5em 1.5em 0 0;
     width: calc(30.5558% - 48px);
     padding: 0 4.1667%;
+  }
+  .main-sidebar.fixed-top {
+    top: -24px;
+  }
+
+  .logged-in .main-sidebar.fixed-top {
+    top: 8px;
   }
 
   .sidebar-inner {
