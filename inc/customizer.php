@@ -292,7 +292,7 @@ function ct_cele_sanitize_css( $css ) {
 
 function ct_cele_customize_preview_js() {
 
-	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/cele-pro/\" target=\"_blank\">" . __( 'View the Cele Pro Plugin', 'cele' ) . " <span>&rarr;</span></a></div>')</script>";
+	$content = "<script>jQuery('#customize-info').append('<div class=\"upgrades-ad\"><span>Add more features with <a href=\"https://www.competethemes.com/cele-pro/\" target=\"_blank\">Cele Pro <span class=\"ad-arrow\">&rarr;</span></a></span></div>')</script>";
 	echo apply_filters( 'ct_cele_customizer_ad', $content );
 }
 
