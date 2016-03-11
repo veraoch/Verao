@@ -3,6 +3,7 @@ jQuery(document).ready(function($){
     var body = $('body');
     var main = $('#main');
     var overflowContainer = $('#overflow-container');
+    var maxWidth = $('#max-width');
     var siteHeader = $('#site-header');
     var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
@@ -160,25 +161,47 @@ jQuery(document).ready(function($){
         }
         lastScrollTop = st;
 
+        // adjustment for how far sidebar is from the top of the page
+        var adjustment = 24;
+        if ( window.innerWidth < 1100 ) {
+            adjustment = 12;
+        }
+        if ( $('#wpadminbar').length > 0 ) {
+            adjustment = adjustment + 32;
+        }
+
         // if fixed to bottom and scrolling back up
         if ( scrolledUp == true && sidebar.hasClass('fixed-bottom') ) {
-            sidebar.css('top', sidebar.offset().top - 24 + 'px');
-            sidebar.removeClass('fixed-bottom');
+            sidebar.css({
+                'top': sidebar.offset().top - adjustment + 'px',
+                'left': ''
+            });
             sidebar.addClass('down-page');
+            sidebar.removeClass('fixed-bottom');
         }
         // fix to top of screen until scrolled all the way up
         else if ( scrolledUp == true && sidebar.hasClass('down-page') && sidebar.offset().top >= $(window).scrollTop() ) {
             sidebar.removeClass('down-page');
             sidebar.addClass('fixed-top');
-            sidebar.css('top', '');
+            // b/c max-width won't always be all the way left
+            sidebar.css({
+                'top': '',
+                'left': maxWidth.offset().left
+            });
         }
         // scrolled to top, reset
         else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(sidebar.css('margin-top')) ) {
             sidebar.removeClass('fixed-top');
+            sidebar.css({
+                'left': ''
+            });
         }
         // if fixed to top, but now scrolling down
         else if ( sidebar.hasClass('fixed-top') && scrolledUp == false ) {
-            sidebar.css('top', sidebar.offset().top - 24 + 'px');
+            sidebar.css({
+                'top': sidebar.offset().top - adjustment + 'px',
+                'left': ''
+            });
             sidebar.removeClass('fixed-top');
             sidebar.addClass('down-page');
         }
@@ -186,7 +209,11 @@ jQuery(document).ready(function($){
         else if ( windowBottom >= sidebarBottom && scrolledUp == false ) {
             sidebar.addClass('fixed-bottom');
             sidebar.removeClass('down-page');
-            sidebar.css('top', '');
+            // b/c max-width won't always be all the way left
+            sidebar.css({
+                'top': '',
+                'left': maxWidth.offset().left
+            });
         }
     }
 

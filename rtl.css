@@ -492,7 +492,8 @@ a img {
 }
 
 .max-width {
-  max-width: 1400px;
+  position: relative;
+  max-width: 1340px;
   margin: 0 auto;
 }
 
@@ -1310,7 +1311,7 @@ li.pingback.bypostauthor:before {
   }
   .main-sidebar.fixed-top {
     position: fixed;
-    top: -12px;
+    top: 0;
     bottom: auto;
   }
 
@@ -1336,9 +1337,6 @@ li.pingback.bypostauthor:before {
     width: calc(30.5558% - 48px);
     padding: 0 4.1667%;
   }
-  .main-sidebar.fixed-top {
-    top: -24px;
-  }
 
   .sidebar-inner {
     padding: 3em 0;
@@ -1346,6 +1344,12 @@ li.pingback.bypostauthor:before {
 
   .sidebar-primary {
     margin-top: 1.5em;
+  }
+}
+@media all and (min-width: 1340px) {
+  .main-sidebar {
+    width: 361px;
+    padding: 0 56px;
   }
 }
 .widget {

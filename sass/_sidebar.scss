@@ -58,7 +58,7 @@
     }
     &.fixed-top {
       position: fixed;
-      top: -12px;
+      top: 0;
       bottom: auto;
     }
   }
@@ -85,15 +85,20 @@
     margin: $baseline-height 0 0 $baseline-height;
     width: calc(30.5558% - 48px);
     padding: 0 $column * 1.5;
-
-    &.fixed-top {
-      top: -24px;
-    }
   }
   .sidebar-inner {
     padding: $baseline-height * 2 0;
   }
   .sidebar-primary {
     margin-top: $baseline-height;
+  }
+}
+
+@media all and (min-width: 1340px) {
+
+  // this way width/padding don't increase when fixed positioned
+  .main-sidebar {
+    width: 361px;
+    padding: 0 56px;
   }
 }
