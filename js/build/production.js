@@ -99,16 +99,23 @@ jQuery(document).ready(function($){
     var sidebarPrimaryContainer = $('#sidebar-primary-container');
     var sidebarInner = $('#sidebar-inner');
     var menuLink = $('.menu-item').children('a');
+    var adminBar = 0;
+    if ( body.hasClass('admin-bar') ) {
+        adminBar = 32;
+    }
+    var adjustment = 24;
 
     assignMenuItemDelays();
     setMainMinHeight();
     objectFitAdjustment();
+    sidebarAdjustment();
 
     toggleNavigation.on('click', openPrimaryMenu);
     toggleDropdown.on('click', openDropdownMenu);
 
     $(window).resize(function(){
         objectFitAdjustment();
+        sidebarAdjustment();
     });
 
     // Jetpack infinite scroll event that reloads posts.
@@ -125,8 +132,9 @@ jQuery(document).ready(function($){
         sidebar.addClass('fixed');
     } else {
         // start watching scroll
-        $(window).on('scroll resize', positionSidebar);
         var lastScrollTop = 0;
+        $(window).on('scroll resize', positionSidebar);
+
     }
 
     /* allow keyboard access/visibility for dropdown menu items */
@@ -244,24 +252,6 @@ jQuery(document).ready(function($){
         }
         lastScrollTop = st;
 
-        // adjustment for how far sidebar is from the top of the page (admin bar + margins)
-        var adjustment = 24;
-        if ( window.innerWidth < 1100 ) {
-            adjustment = 12;
-        }
-        if ( window.innerWidth < 1000 ) {
-            adjustment = 0;
-        }
-        if ( $('#wpadminbar').length > 0 ) {
-            adjustment = adjustment + 32;
-        }
-
-        // account for the admin bar
-        var adminBar = 0;
-        if ( body.hasClass('admin-bar') ) {
-            adminBar = 32;
-        }
-
         // if fixed to bottom and scrolling back up
         if ( scrolledUp == true && sidebar.hasClass('fixed-bottom') ) {
             sidebar.css({
@@ -306,6 +296,19 @@ jQuery(document).ready(function($){
                 'left': maxWidth.offset().left
             });
             sidebar.removeClass('down-page');
+        }
+    }
+
+    function sidebarAdjustment() {
+        // adjustment for how far sidebar is from the top of the page (admin bar + margins)
+        if ( window.innerWidth < 1100 ) {
+            adjustment = 12;
+        }
+        if ( window.innerWidth < 1000 ) {
+            adjustment = 0;
+        }
+        if ( $('#wpadminbar').length > 0 ) {
+            adjustment = adjustment + 32;
         }
     }
 

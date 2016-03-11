@@ -1317,6 +1317,9 @@ li.pingback.bypostauthor:before {
     min-height: calc(100% - 48px);
     width: 30.5558%;
     padding: 0 2.7778%;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .main-sidebar.fixed-bottom {
     position: fixed;

@@ -50,6 +50,8 @@
     min-height: calc(100% - 48px);
     width: $column * 11;
     padding: 0 $column;
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
 
     &.fixed-bottom {
       position: fixed;
