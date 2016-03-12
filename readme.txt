@@ -22,9 +22,10 @@ Cele includes the following features:
 
     * Custom logo
     * Social media icons
-    * Show full posts or experts
+    * Show full posts or excerpts
     * Custom excerpt length
-    * Make first post on blog extra wide
+    * Custom Read More button text
+    * Hide/Show display controls
     * Custom CSS
 
 Cele also has a premium plugin upgrade called Cele Pro that includes the following features:
@@ -32,11 +33,11 @@ Cele also has a premium plugin upgrade called Cele Pro that includes the followi
     * Custom colors
     * Featured sliders
     * Featured videos
-    * Additional layouts
     * Flexible header image
-    * Google fonts
-    * More widget areas
-    * Display controls
+    * Featured Image sizes
+    * New fonts
+    * Additional widget areas
+    * More Display controls
     * Custom footer text
 
 Cele Pro: https://www.competethemes.com/cele-pro/
@@ -66,6 +67,4 @@ Cele also uses:
 * Fitvids, by Chris Coyier & Dave Rupert, https://github.com/davatron5000/FitVids.js/, licensed under the WTFPL license.
 * Google Fonts, http://google.com/fonts, licensed under open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
 * Font Awesome by Dave Gandy, licensed under open source licenses, see: http://fortawesome.github.io/Font-Awesome/license/.
-* HTML5shiv by Alexander Farkas, Jonathan Neal, Paul Irish, John-David Dalton, and Remy Sharp, licensed under MIT/GPL2, see: https://github.com/aFarkas/html5shiv
-* Respond.js by Scott Jehl, licensed under MIT, see: https://github.com/scottjehl/Respond
-* New York city image in screenshot.png by Anthony Indraus, http://unsplash.com, licensed under Public Domain
+* Desert image in screenshot.png by Dika Soul Seva, https://unsplash.com/photos/zvf7cZ0PC20, licensed under Public Domain
