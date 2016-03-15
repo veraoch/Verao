@@ -1,8 +1,19 @@
 .site-footer {
   position: relative;
+  z-index: 2;
   clear: both;
   padding: $baseline-height / 2 $column * 3;
-  background: $color-gray-94;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-gray-94;
+    z-index: -1;
+  }
 
   span {
     @extend %twelve-pixels;
@@ -13,5 +24,27 @@
 
   .site-footer {
     padding-left: $column * 14;
+
+    &:after {
+      right: 12px;
+      left: 12px;
+    }
+    span {
+      margin-left: -12px;
+    }
+  }
+}
+
+@media all and (min-width: $eleven-hundred) {
+
+  .site-footer {
+
+    &:after {
+      right: 24px;
+      left: 24px;
+    }
+    span {
+      margin-left: -24px;
+    }
   }
 }
