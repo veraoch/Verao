@@ -87,6 +87,7 @@ jQuery(document).ready(function($){
     var main = $('#main');
     var overflowContainer = $('#overflow-container');
     var maxWidth = $('#max-width');
+    var headerImage = $('#header-image');
     var siteHeader = $('#site-header');
     var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
@@ -290,7 +291,7 @@ jQuery(document).ready(function($){
             });
         }
         // scrolled to top, reset
-        else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(sidebar.css('margin-top')) ) {
+        else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(overflowContainer.offset().top) ) {
             sidebar.removeClass('fixed-top');
             sidebar.css({
                 'left': ''
@@ -327,11 +328,14 @@ jQuery(document).ready(function($){
             adjustment = 0;
         }
         if ( $('#wpadminbar').length > 0 ) {
-            adjustment = adjustment + 32;
+            adjustment += 32;
 
             if ( sidebar.hasClass('fixed') ) {
                 sidebar.css('top', '32px');
             }
+        }
+        if ( headerImage.length > 0 ) {
+            adjustment += headerImage.outerHeight(true);
         }
 
         if ( sidebar.hasClass('fixed') ) {
