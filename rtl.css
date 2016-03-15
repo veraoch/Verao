@@ -1392,6 +1392,7 @@ li.pingback.bypostauthor:before {
 
   .sidebar-primary-container {
     max-height: none;
+    overflow: visible;
   }
 }
 @media all and (min-width: 62.5em) {
