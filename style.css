@@ -11,7 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blue, gray, silver, tan, white, light, fluid-layout, responsive-layout, two-columns, left-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: cele
 
-
 Cele WordPress Theme, Copyright 2016 Compete Themes
 Cele is distributed under the terms of the GNU GPL
 */
@@ -663,6 +662,14 @@ li.pingback.bypostauthor:before {
 
 .comment-author {
   margin-bottom: 1.5em;
+}
+.comment-author:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 .comment-author .avatar {
   width: 48px;

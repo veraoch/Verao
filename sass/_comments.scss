@@ -48,6 +48,9 @@ li.pingback {
 .comment-author {
   margin-bottom: $baseline-height;
 
+  &:after {
+    @include clearfix;
+  }
   .avatar {
     width: 48px;
     height: 48px;
