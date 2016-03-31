@@ -324,7 +324,7 @@ jQuery(document).ready(function($){
             adjustment = 24;
         } else if ( window.innerWidth >= 1000 ) {
             adjustment = 12;
-        } else if ( window.innerWidth >= 8900 ) {
+        } else if ( window.innerWidth >= 890 ) {
             adjustment = 0;
         }
         if ( $('#wpadminbar').length > 0 ) {
