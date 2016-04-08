@@ -1306,6 +1306,8 @@ li.pingback.bypostauthor:before {
 }
 
 .main-sidebar {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
   background: white;
   padding: 0 8.3334%;
 }
