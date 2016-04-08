@@ -2,7 +2,7 @@
 	<?php do_action( 'post_before' ); ?>
 	<article>
 		<div class='post-header'>
-			<h2 class='post-title'><?php the_title(); ?></h2>
+			<h1 class='post-title'><?php the_title(); ?></h1>
 			<?php get_template_part( 'content/post-byline' ); ?>
 		</div>
 		<?php ct_cele_featured_image(); ?>
