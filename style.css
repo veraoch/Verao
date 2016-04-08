@@ -45,7 +45,7 @@ h2, .comments-number h3, .comment-reply-title {
 .wp-caption-text,
 .gallery-caption, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea, input[type="submit"], .archive-header h2, .archive-header p, .sticky-status span, .comment-author .comment-date, .comment-footer a,
-.comment-footer i, .site-footer span, .tagline, .menu-primary a, .post-byline span, .post-tags a, .further-reading span {
+.comment-footer i, .site-footer span, .tagline, .menu-primary a, .post-byline span, .post-tags a, .further-reading span, .single-attachment .attachment-caption {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -1702,4 +1702,8 @@ li.pingback.bypostauthor:before {
 .social-media-icons .email:after,
 .social-media-icons .email-form:after {
   background: #666666;
+}
+
+.single-attachment .attachment-container img {
+  display: block;
 }
