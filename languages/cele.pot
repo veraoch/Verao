@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cele 1.01\n"
+"Project-Id-Version: Cele 1.04\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-04-11 19:39:01+00:00\n"
+"POT-Creation-Date: 2016-07-21 11:30:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -82,31 +82,23 @@ msgstr ""
 msgid "Next Image"
 msgstr ""
 
-#: content/post-nav.php:11
+#: content/post-nav.php:7
 msgid "Previous Post"
 msgstr ""
 
-#: content/post-nav.php:13
-msgid "The Previous Post"
-msgstr ""
-
-#: content/post-nav.php:20
+#: content/post-nav.php:10
 msgid "No Older Posts"
 msgstr ""
 
-#: content/post-nav.php:22 content/post-nav.php:44
+#: content/post-nav.php:16 content/post-nav.php:29
 msgid "Return to Blog"
 msgstr ""
 
-#: content/post-nav.php:33
+#: content/post-nav.php:20
 msgid "Next Post"
 msgstr ""
 
-#: content/post-nav.php:35
-msgid "The Next Post"
-msgstr ""
-
-#: content/post-nav.php:42
+#: content/post-nav.php:23
 msgid "No Newer Posts"
 msgstr ""
 
@@ -244,11 +236,11 @@ msgstr ""
 msgid "Show full posts on blog?"
 msgstr ""
 
-#: inc/customizer.php:150 inc/customizer.php:269
+#: inc/customizer.php:150 inc/customizer.php:268
 msgid "Yes"
 msgstr ""
 
-#: inc/customizer.php:151 inc/customizer.php:270
+#: inc/customizer.php:151 inc/customizer.php:269
 msgid "No"
 msgstr ""
 
@@ -268,33 +260,27 @@ msgstr ""
 msgid "Display Controls"
 msgstr ""
 
-#: inc/customizer.php:185
-msgid ""
-"Want more options like these? Check out the <a target=\"_blank\" "
-"href=\"%s\"> Cele Pro plugin</a>."
-msgstr ""
-
-#: inc/customizer.php:195
+#: inc/customizer.php:194
 msgid "Post author name in byline"
 msgstr ""
 
-#: inc/customizer.php:199 inc/customizer.php:215 inc/customizer.php:250
+#: inc/customizer.php:198 inc/customizer.php:214 inc/customizer.php:249
 msgid "Show"
 msgstr ""
 
-#: inc/customizer.php:200 inc/customizer.php:216 inc/customizer.php:251
+#: inc/customizer.php:199 inc/customizer.php:215 inc/customizer.php:250
 msgid "Hide"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:210
 msgid "Post date in byline"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:223
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:234
 msgid "Add Custom CSS Here:"
 msgstr ""
 
