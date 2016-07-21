@@ -181,8 +181,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'cele_display', array(
 		'title'       => __( 'Display Controls', 'cele' ),
-		'priority'    => 55,
-		'description' => sprintf( __( 'Want more options like these? Check out the <a target="_blank" href="%s"> Cele Pro plugin</a>.', 'cele' ), 'https://www.competethemes.com/cele-pro/' )
+		'priority'    => 55
 	) );
 	// setting - post author
 	$wp_customize->add_setting( 'display_post_author', array(
