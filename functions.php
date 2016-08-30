@@ -5,9 +5,11 @@ foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $file
 	include $filename;
 }
 
-function ct_cele_set_content_width() {
-	if ( ! isset( $content_width ) ) {
-		$content_width = 891;
+if ( ! function_exists( ( 'ct_cele_set_content_width' ) ) ) {
+	function ct_cele_set_content_width() {
+		if ( ! isset( $content_width ) ) {
+			$content_width = 891;
+		}
 	}
 }
 add_action( 'after_setup_theme', 'ct_cele_set_content_width', 0 );
@@ -40,17 +42,19 @@ if ( ! function_exists( ( 'ct_cele_theme_setup' ) ) ) {
 }
 add_action( 'after_setup_theme', 'ct_cele_theme_setup', 10 );
 
-function ct_cele_register_widget_areas() {
+if ( ! function_exists( ( 'ct_cele_register_widget_areas' ) ) ) {
+	function ct_cele_register_widget_areas() {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Primary Sidebar', 'cele' ),
-		'id'            => 'primary',
-		'description'   => esc_html__( 'Widgets in this area will be shown in the sidebar next to the main post content', 'cele' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>'
-	) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Primary Sidebar', 'cele' ),
+			'id'            => 'primary',
+			'description'   => esc_html__( 'Widgets in this area will be shown in the sidebar next to the main post content', 'cele' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>'
+		) );
+	}
 }
 add_action( 'widgets_init', 'ct_cele_register_widget_areas' );
 
@@ -357,132 +361,150 @@ if ( ! function_exists( 'ct_cele_social_icons_output' ) ) {
  * WP will apply the ".menu-primary-items" class & id to the containing <div> instead of <ul>
  * making styling difficult and confusing. Using this wrapper to add a unique class to make styling easier.
  */
-function ct_cele_wp_page_menu() {
-	wp_page_menu( array(
-			"menu_class" => "menu-unset",
-			"depth"      => - 1
-		)
-	);
+if ( ! function_exists( ( 'ct_cele_wp_page_menu' ) ) ) {
+	function ct_cele_wp_page_menu() {
+		wp_page_menu( array(
+				"menu_class" => "menu-unset",
+				"depth"      => - 1
+			)
+		);
+	}
 }
 
-function ct_cele_nav_dropdown_buttons( $item_output, $item, $depth, $args ) {
+if ( ! function_exists( ( 'ct_cele_nav_dropdown_buttons' ) ) ) {
+	function ct_cele_nav_dropdown_buttons( $item_output, $item, $depth, $args ) {
 
-	if ( $args->theme_location == 'primary' ) {
+		if ( $args->theme_location == 'primary' ) {
 
-		if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
-			$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . __( "open menu", "cele" ) . '</span></button>', $item_output );
+			if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
+				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . __( "open menu", "cele" ) . '</span></button>', $item_output );
+			}
 		}
-	}
 
-	return $item_output;
+		return $item_output;
+	}
 }
 add_filter( 'walker_nav_menu_start_el', 'ct_cele_nav_dropdown_buttons', 10, 4 );
 
-function ct_cele_sticky_post_marker() {
+if ( ! function_exists( ( 'ct_cele_sticky_post_marker' ) ) ) {
+	function ct_cele_sticky_post_marker() {
 
-	if ( is_sticky() && ! is_archive() ) {
-		echo '<div class="sticky-status"><span>' . __( "Featured", "cele" ) . '</span></div>';
+		if ( is_sticky() && ! is_archive() ) {
+			echo '<div class="sticky-status"><span>' . __( "Featured", "cele" ) . '</span></div>';
+		}
 	}
 }
 add_action( 'sticky_post_status', 'ct_cele_sticky_post_marker' );
 
-function ct_cele_reset_customizer_options() {
+if ( ! function_exists( ( 'ct_cele_reset_customizer_options' ) ) ) {
+	function ct_cele_reset_customizer_options() {
 
-	if ( empty( $_POST['cele_reset_customizer'] ) || 'cele_reset_customizer_settings' !== $_POST['cele_reset_customizer'] ) {
-		return;
+		if ( empty( $_POST['cele_reset_customizer'] ) || 'cele_reset_customizer_settings' !== $_POST['cele_reset_customizer'] ) {
+			return;
+		}
+
+		if ( ! wp_verify_nonce( $_POST['cele_reset_customizer_nonce'], 'cele_reset_customizer_nonce' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'edit_theme_options' ) ) {
+			return;
+		}
+
+		$mods_array = array(
+			'logo_upload',
+			'full_post',
+			'excerpt_length',
+			'read_more_text',
+			'display_post_author',
+			'display_post_date',
+			'custom_css'
+		);
+
+		$social_sites = ct_cele_social_array();
+
+		// add social site settings to mods array
+		foreach ( $social_sites as $social_site => $value ) {
+			$mods_array[] = $social_site;
+		}
+
+		$mods_array = apply_filters( 'ct_cele_mods_to_remove', $mods_array );
+
+		foreach ( $mods_array as $theme_mod ) {
+			remove_theme_mod( $theme_mod );
+		}
+
+		$redirect = admin_url( 'themes.php?page=cele-options' );
+		$redirect = add_query_arg( 'cele_status', 'deleted', $redirect );
+
+		// safely redirect
+		wp_safe_redirect( $redirect );
+		exit;
 	}
-
-	if ( ! wp_verify_nonce( $_POST['cele_reset_customizer_nonce'], 'cele_reset_customizer_nonce' ) ) {
-		return;
-	}
-
-	if ( ! current_user_can( 'edit_theme_options' ) ) {
-		return;
-	}
-
-	$mods_array = array(
-		'logo_upload',
-		'full_post',
-		'excerpt_length',
-		'read_more_text',
-		'display_post_author',
-		'display_post_date',
-		'custom_css'
-	);
-
-	$social_sites = ct_cele_social_array();
-
-	// add social site settings to mods array
-	foreach ( $social_sites as $social_site => $value ) {
-		$mods_array[] = $social_site;
-	}
-
-	$mods_array = apply_filters( 'ct_cele_mods_to_remove', $mods_array );
-
-	foreach ( $mods_array as $theme_mod ) {
-		remove_theme_mod( $theme_mod );
-	}
-
-	$redirect = admin_url( 'themes.php?page=cele-options' );
-	$redirect = add_query_arg( 'cele_status', 'deleted', $redirect );
-
-	// safely redirect
-	wp_safe_redirect( $redirect );
-	exit;
 }
 add_action( 'admin_init', 'ct_cele_reset_customizer_options' );
 
-function ct_cele_delete_settings_notice() {
+if ( ! function_exists( ( 'ct_cele_delete_settings_notice' ) ) ) {
+	function ct_cele_delete_settings_notice() {
 
-	if ( isset( $_GET['cele_status'] ) ) {
-		?>
-		<div class="updated">
-			<p><?php _e( 'Customizer settings deleted', 'cele' ); ?>.</p>
-		</div>
-		<?php
+		if ( isset( $_GET['cele_status'] ) ) {
+			?>
+			<div class="updated">
+				<p><?php _e( 'Customizer settings deleted', 'cele' ); ?>.</p>
+			</div>
+			<?php
+		}
 	}
 }
 add_action( 'admin_notices', 'ct_cele_delete_settings_notice' );
 
-function ct_cele_body_class( $classes ) {
+if ( ! function_exists( ( 'ct_cele_body_class' ) ) ) {
+	function ct_cele_body_class( $classes ) {
 
-	global $post;
-	$full_post       = get_theme_mod( 'full_post' );
+		global $post;
+		$full_post = get_theme_mod( 'full_post' );
 
-	if ( $full_post == 'yes' ) {
-		$classes[] = 'full-post';
+		if ( $full_post == 'yes' ) {
+			$classes[] = 'full-post';
+		}
+
+		return $classes;
 	}
-
-	return $classes;
 }
 add_filter( 'body_class', 'ct_cele_body_class' );
 
-function ct_cele_post_class( $classes ) {
-	$classes[] = 'entry';
-	return $classes;
+if ( ! function_exists( ( 'ct_cele_post_class' ) ) ) {
+	function ct_cele_post_class( $classes ) {
+		$classes[] = 'entry';
+
+		return $classes;
+	}
 }
 add_filter( 'post_class', 'ct_cele_post_class' );
 
-function ct_cele_custom_css_output() {
+if ( ! function_exists( ( 'ct_cele_custom_css_output' ) ) ) {
+	function ct_cele_custom_css_output() {
 
-	$custom_css = get_theme_mod( 'custom_css' );
+		$custom_css = get_theme_mod( 'custom_css' );
 
-	if ( ! empty( $custom_css ) ) {
-		$custom_css = ct_cele_sanitize_css( $custom_css );
+		if ( ! empty( $custom_css ) ) {
+			$custom_css = ct_cele_sanitize_css( $custom_css );
 
-		wp_add_inline_style( 'ct-cele-style', $custom_css );
-		wp_add_inline_style( 'ct-cele-style-rtl', $custom_css );
+			wp_add_inline_style( 'ct-cele-style', $custom_css );
+			wp_add_inline_style( 'ct-cele-style-rtl', $custom_css );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ct_cele_custom_css_output', 20 );
 
-function ct_cele_svg_output( $type ) {
+if ( ! function_exists( ( 'ct_cele_svg_output' ) ) ) {
+	function ct_cele_svg_output( $type ) {
 
-	$svg = '';
+		$svg = '';
 
-	if ( $type == 'toggle-navigation' ) {
+		if ( $type == 'toggle-navigation' ) {
 
-		$svg = '<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			$svg = '<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 				        <g transform="translate(-148.000000, -36.000000)" fill="#6B6B6B">
 				            <g transform="translate(123.000000, 25.000000)">
@@ -495,23 +517,26 @@ function ct_cele_svg_output( $type ) {
 				        </g>
 				    </g>
 				</svg>';
-	}
+		}
 
-	return $svg;
+		return $svg;
+	}
 }
 
-function ct_cele_add_meta_elements() {
+if ( ! function_exists( ( 'ct_cele_add_meta_elements' ) ) ) {
+	function ct_cele_add_meta_elements() {
 
-	$meta_elements = '';
+		$meta_elements = '';
 
-	$meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
-	$meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
+		$meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
+		$meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
 
-	$theme    = wp_get_theme( get_template() );
-	$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
-	$meta_elements .= $template;
+		$theme    = wp_get_theme( get_template() );
+		$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
+		$meta_elements .= $template;
 
-	echo $meta_elements;
+		echo $meta_elements;
+	}
 }
 add_action( 'wp_head', 'ct_cele_add_meta_elements', 1 );
 
@@ -519,10 +544,12 @@ add_action( 'wp_head', 'ct_cele_add_meta_elements', 1 );
 remove_action( 'wp_head', 'wp_generator' );
 add_action( 'wp_head', 'wp_generator', 1 );
 
-function ct_cele_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'content', 'archive' );
+if ( ! function_exists( ( 'ct_cele_infinite_scroll_render' ) ) ) {
+	function ct_cele_infinite_scroll_render() {
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'content', 'archive' );
+		}
 	}
 }
 
@@ -552,8 +579,11 @@ if ( ! function_exists( 'ct_cele_get_content_template' ) ) {
 }
 
 // allow skype URIs to be used
-function ct_cele_allow_skype_protocol( $protocols ){
-	$protocols[] = 'skype';
-	return $protocols;
+if ( ! function_exists( 'ct_cele_allow_skype_protocol' ) ) {
+	function ct_cele_allow_skype_protocol( $protocols ) {
+		$protocols[] = 'skype';
+
+		return $protocols;
+	}
 }
 add_filter( 'kses_allowed_protocols' , 'ct_cele_allow_skype_protocol' );
