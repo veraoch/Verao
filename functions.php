@@ -1,8 +1,11 @@
 <?php
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 891;
+function ct_cele_set_content_width() {
+	if ( ! isset( $content_width ) ) {
+		$content_width = 891;
+	}
 }
+add_action( 'after_setup_theme', 'ct_cele_set_content_width', 0 );
 
 if ( ! function_exists( ( 'ct_cele_theme_setup' ) ) ) {
 	function ct_cele_theme_setup() {
