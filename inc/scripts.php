@@ -12,11 +12,11 @@ function ct_cele_load_scripts_styles() {
 	wp_enqueue_style( 'ct-cele-google-fonts', $fonts_url );
 
 	wp_enqueue_script( 'ct-cele-js', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '', true );
-	wp_localize_script( 'ct-cele-js', 'objectL10n', array(
-		'openMenu'       => __( 'open menu', 'cele' ),
-		'closeMenu'      => __( 'close menu', 'cele' ),
-		'openChildMenu'  => __( 'open dropdown menu', 'cele' ),
-		'closeChildMenu' => __( 'close dropdown menu', 'cele' )
+	wp_localize_script( 'ct-cele-js', 'ct_cele_objectL10n', array(
+		'openMenu'       => esc_html__( 'open menu', 'cele' ),
+		'closeMenu'      => esc_html__( 'close menu', 'cele' ),
+		'openChildMenu'  => esc_html__( 'open dropdown menu', 'cele' ),
+		'closeChildMenu' => esc_html__( 'close dropdown menu', 'cele' )
 	) );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
