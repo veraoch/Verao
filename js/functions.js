@@ -182,6 +182,22 @@ jQuery(document).ready(function($){
         var sidebarBottom = sidebarInner.offset().top + sidebarInner.outerHeight(true);
         var scrolledUp = false;
         var st = $(this).scrollTop();
+        var rtl = false;
+        if (body.hasClass('rtl')) {
+            rtl = true;
+        }
+
+        function sidePositioning(rtl, offset) {
+            if (rtl && offset) {
+                sidebar.css('right', maxWidth.offset().left);
+            } else if (rtl) {
+                sidebar.css('right', '');
+            } else if (offset) {
+                sidebar.css('left', maxWidth.offset().left);
+            } else {
+                sidebar.css('left', '');
+            }
+        }
 
         if (st < lastScrollTop){
             scrolledUp = true;
@@ -190,10 +206,8 @@ jQuery(document).ready(function($){
 
         // if fixed to bottom and scrolling back up
         if ( scrolledUp == true && sidebar.hasClass('fixed-bottom') ) {
-            sidebar.css({
-                'top': sidebar.offset().top - adjustment + 'px',
-                'left': ''
-            });
+            sidebar.css('top', sidebar.offset().top - adjustment + 'px');
+            sidePositioning(rtl, false);
             sidebar.addClass('down-page');
             sidebar.removeClass('fixed-bottom');
         }
@@ -202,24 +216,18 @@ jQuery(document).ready(function($){
             sidebar.removeClass('down-page');
             sidebar.addClass('fixed-top');
             // b/c max-width won't always be all the way left
-            sidebar.css({
-                'top': '',
-                'left': maxWidth.offset().left
-            });
+            sidebar.css('top', '');
+            sidePositioning(rtl, true);
         }
         // scrolled to top, reset
         else if ( sidebar.hasClass('fixed-top') && $(window).scrollTop() <= parseInt(overflowContainer.offset().top) ) {
             sidebar.removeClass('fixed-top');
-            sidebar.css({
-                'left': ''
-            });
+            sidePositioning(rtl, false);
         }
         // if fixed to top, but now scrolling down
         else if ( sidebar.hasClass('fixed-top') && scrolledUp == false ) {
-            sidebar.css({
-                'top': sidebar.offset().top - adjustment + 'px',
-                'left': ''
-            });
+            sidebar.css('top', sidebar.offset().top - adjustment + 'px');
+            sidePositioning(rtl, false);
             sidebar.removeClass('fixed-top');
             sidebar.addClass('down-page');
         }
@@ -227,10 +235,8 @@ jQuery(document).ready(function($){
         else if ( windowBottom >= sidebarBottom && scrolledUp == false ) {
             sidebar.addClass('fixed-bottom');
             // b/c max-width won't always be all the way left
-            sidebar.css({
-                'top': '',
-                'left': maxWidth.offset().left
-            });
+            sidebar.css('top', '');
+            sidePositioning(rtl, true);
             sidebar.removeClass('down-page');
         }
     }
