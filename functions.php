@@ -114,7 +114,7 @@ if ( ! function_exists( 'ct_cele_update_fields' ) ) {
 		$fields['url'] =
 			'<p class="comment-form-url">
 	            <label for="url">' . __( "Website", "cele" ) . '</label>
-	            <input id="url" name="url" type="url"  placeholder="http://google.com" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	            <input id="url" name="url" type="url"  placeholder="' . __( "http://google.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
 
