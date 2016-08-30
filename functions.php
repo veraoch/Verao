@@ -1,5 +1,10 @@
 <?php
 
+require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
+foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
+	include $filename;
+}
+
 function ct_cele_set_content_width() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 891;
@@ -25,11 +30,6 @@ if ( ! function_exists( ( 'ct_cele_theme_setup' ) ) ) {
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_cele_infinite_scroll_render'
 		) );
-
-		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-		foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
-			include $filename;
-		}
 
 		register_nav_menus( array(
 			'primary' => __( 'Primary', 'cele' )
