@@ -1,10 +1,10 @@
-<?php do_action( 'main_bottom' ); ?>
+<?php do_action( 'ct_cele_main_bottom' ); ?>
 </section> <!-- .main -->
 
-<?php do_action( 'after_main' ); ?>
+<?php do_action( 'ct_cele_after_main' ); ?>
 
 <footer id="site-footer" class="site-footer" role="contentinfo">
-    <?php do_action( 'footer_top' ); ?>
+    <?php do_action( 'ct_cele_footer_top' ); ?>
     <div class="design-credit">
         <span>
             <?php
@@ -16,10 +16,10 @@
     </div>
 </footer>
 </div>
-<?php do_action( 'overflow_bottom' ); ?>
+<?php do_action( 'ct_cele_overflow_bottom' ); ?>
 </div><!-- .overflow-container -->
 
-<?php do_action( 'body_bottom' ); ?>
+<?php do_action( 'ct_cele_body_bottom' ); ?>
 
 <?php wp_footer(); ?>
 

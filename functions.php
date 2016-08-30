@@ -394,7 +394,7 @@ if ( ! function_exists( ( 'ct_cele_sticky_post_marker' ) ) ) {
 		}
 	}
 }
-add_action( 'sticky_post_status', 'ct_cele_sticky_post_marker' );
+add_action( 'ct_cele_sticky_post_status', 'ct_cele_sticky_post_marker' );
 
 if ( ! function_exists( ( 'ct_cele_reset_customizer_options' ) ) ) {
 	function ct_cele_reset_customizer_options() {

@@ -17,7 +17,7 @@ function ct_cele_options_content() {
 	?>
 	<div id="cele-dashboard-wrap" class="wrap">
 		<h2><?php _e( 'Cele Dashboard', 'cele' ); ?></h2>
-		<?php do_action( 'theme_options_before' ); ?>
+		<?php do_action( 'ct_cele_theme_options_before' ); ?>
 		<div class="content content-customization">
 			<h3><?php _e( 'Customization', 'cele' ); ?></h3>
 			<p><?php _e( 'Click the "Customize" link in your menu, or use the button below to get started customizing Cele', 'cele' ); ?>.</p>
@@ -68,6 +68,6 @@ function ct_cele_options_content() {
 				</p>
 			</form>
 		</div>
-		<?php do_action( 'theme_options_after' ); ?>
+		<?php do_action( 'ct_cele_theme_options_after' ); ?>
 	</div>
 <?php }
