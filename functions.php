@@ -531,10 +531,6 @@ if ( ! function_exists( ( 'ct_cele_add_meta_elements' ) ) ) {
 		$meta_elements .= sprintf( '<meta charset="%s" />' . "\n", get_bloginfo( 'charset' ) );
 		$meta_elements .= '<meta name="viewport" content="width=device-width, initial-scale=1" />' . "\n";
 
-		$theme    = wp_get_theme( get_template() );
-		$template = sprintf( '<meta name="template" content="%s %s" />' . "\n", esc_attr( $theme->get( 'Name' ) ), esc_attr( $theme->get( 'Version' ) ) );
-		$meta_elements .= $template;
-
 		echo $meta_elements;
 	}
 }
