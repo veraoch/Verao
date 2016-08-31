@@ -25,7 +25,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	class ct_cele_pro_ad extends WP_Customize_Control {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/cele-pro/';
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple — and fun too.', 'cele'), $link) . "</p>";
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple - and fun too.', 'cele'), $link) . "</p>";
 			echo "<ul>
 					<li>" . __('Custom Colors', 'cele') . "</li>
 					<li>" . __('Background Images', 'cele') . "</li>
@@ -48,7 +48,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		) );
 		// Upload - setting
 		$wp_customize->add_setting( 'cele_pro', array(
-
+			'sanitize_callback' => 'absint'
 		) );
 		// Upload - control
 		$wp_customize->add_control( new ct_cele_pro_ad(
