@@ -7,7 +7,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 
 	/***** Reorder default sections *****/
 
-	$wp_customize->get_section( 'title_tagline' )->priority = 1;
+	$wp_customize->get_section( 'title_tagline' )->priority = 2;
 
 	// check if exists in case user has no pages
 	if ( is_object( $wp_customize->get_section( 'static_front_page' ) ) ) {
@@ -19,6 +19,45 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	/***** Cele Pro Control *****/
+
+	class ct_cele_pro_ad extends WP_Customize_Control {
+		public function render_content() {
+			$link = 'https://www.competethemes.com/cele-pro/';
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple — and fun too.', 'cele'), $link) . "</p>";
+			echo "<ul>
+					<li>" . __('Custom Colors', 'cele') . "</li>
+					<li>" . __('Background Images', 'cele') . "</li>
+					<li>" . __('New Fonts', 'cele') . "</li>
+					<li>" . __('+ 8 more features', 'cele') . "</li>
+				  </ul>";
+			echo "<p>" . __('Download the Cele Pro Plugin to get started now.', 'cele') . "</p>";
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . __('Get Cele Pro', 'cele') . "</a></p>";
+		}
+	}
+
+	/***** Cele Pro Section *****/
+
+	// don't add if Cele Pro is active
+	if ( !function_exists( 'ct_cele_pro_init' ) ) {
+		// section
+		$wp_customize->add_section( 'ct_cele_pro', array(
+			'title'    => __( 'Cele Pro', 'cele' ),
+			'priority' => 1
+		) );
+		// Upload - setting
+		$wp_customize->add_setting( 'cele_pro', array(
+
+		) );
+		// Upload - control
+		$wp_customize->add_control( new ct_cele_pro_ad(
+			$wp_customize, 'cele_pro', array(
+				'section'  => 'ct_cele_pro',
+				'settings' => 'cele_pro'
+			)
+		) );
+	}
 
 	/***** Logo Upload *****/
 
@@ -286,13 +325,3 @@ function ct_cele_sanitize_css( $css ) {
 
 	return $css;
 }
-
-/***** Helper Functions *****/
-
-function ct_cele_customize_preview_js() {
-
-	$content = "<script>jQuery('#customize-info').append('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/cele-pro/\" target=\"_blank\">Add more features with Cele Pro <span class=\"ad-arrow\">&rarr;</span></a></div>')</script>";
-	echo apply_filters( 'ct_cele_customizer_ad', $content );
-}
-
-add_action( 'customize_controls_print_footer_scripts', 'ct_cele_customize_preview_js' );
