@@ -8,7 +8,7 @@
     <div class="design-credit">
         <span>
             <?php
-            $footer_text = sprintf( __( '<a href="%s">Cele WordPress Theme</a> by Compete Themes.', 'cele' ), 'https://www.competethemes.com/cele/' );
+            $footer_text = sprintf( __( '<a href="%s">Cele Theme</a> by Compete Themes.', 'cele' ), 'https://www.competethemes.com/cele/' );
             $footer_text = apply_filters( 'ct_cele_footer_text', $footer_text );
             echo wp_kses_post( $footer_text );
             ?>
