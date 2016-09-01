@@ -4,10 +4,10 @@
 function ct_cele_load_scripts_styles() {
 
 	$font_args = array(
-		'family' => 'Open+Sans:300,300italic,600',
+		'family' => urlencode( 'Open Sans:300,300italic,600' ),
 		'subset' => urlencode( 'latin,latin-ext' )
 	);
-	$fonts_url = esc_url_raw( add_query_arg( $font_args, '//fonts.googleapis.com/css' ) );
+	$fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
 
 	wp_enqueue_style( 'ct-cele-google-fonts', $fonts_url );
 
