@@ -104,21 +104,21 @@ if ( ! function_exists( 'ct_cele_update_fields' ) ) {
 		$fields['author'] =
 			'<p class="comment-form-author">
 	            <label for="author">' . __( "Name", "cele" ) . $label . '</label>
-	            <input id="author" name="author" type="text" placeholder="' . __( "Jane Doe", "cele" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
+	            <input id="author" name="author" type="text" placeholder="' . esc_attr__( "Jane Doe", "cele" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
 	            <label for="email">' . __( "Email", "cele" ) . $label . '</label>
-	            <input id="email" name="email" type="email" placeholder="' . __( "name@email.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
+	            <input id="email" name="email" type="email" placeholder="' . esc_attr__( "name@email.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['url'] =
 			'<p class="comment-form-url">
 	            <label for="url">' . __( "Website", "cele" ) . '</label>
-	            <input id="url" name="url" type="url"  placeholder="' . __( "http://google.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	            <input id="url" name="url" type="url"  placeholder="' . esc_attr__( "http://google.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
 
