@@ -1304,6 +1304,10 @@ li.pingback.bypostauthor:before {
   margin: 1.5em 0;
 }
 
+.search .sticky-status {
+  display: none;
+}
+
 .main-sidebar {
   -webkit-transform: translate3d(0px, 0px, 0px);
           transform: translate3d(0px, 0px, 0px);
