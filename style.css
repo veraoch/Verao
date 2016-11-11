@@ -56,7 +56,7 @@ textarea, input[type="submit"], .archive-header h1, .archive-header p, .sticky-s
   border: none;
   color: #333333;
   -webkit-transition: color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out;
+          transition: color 0.1s ease-in-out;
 }
 .site-title a:link, .post-title a:link, .site-title a:visited, .post-title a:visited {
   color: #333333;
@@ -118,7 +118,7 @@ a {
   border-bottom: solid 1px #A5D3ED;
   color: #333333;
   -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
+          transition: border-color 0.2s;
 }
 a:link {
   color: #333333;
@@ -162,7 +162,7 @@ a:hover, a:active, a:focus {
   height: 1px;
   background: #333333;
   -webkit-transition: right 0.2s ease-in-out;
-  transition: right 0.2s ease-in-out;
+          transition: right 0.2s ease-in-out;
 }
 .post-byline a:hover, .post-byline a:active, .post-byline a:focus,
 .post-content a:hover,
@@ -387,7 +387,7 @@ textarea {
   border-radius: 3px;
   -webkit-appearance: none;
   -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
 }
 input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]):focus,
 textarea:focus {
@@ -413,7 +413,7 @@ input[type="submit"] {
   border-radius: 3px;
   -webkit-appearance: none;
   -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
 }
 input[type="submit"]:hover {
   cursor: pointer;
@@ -483,7 +483,7 @@ a img {
   padding: 1.5em;
   background: #333333;
   -webkit-transition: top 0.2s ease-in-out;
-  transition: top 0.2s ease-in-out;
+          transition: top 0.2s ease-in-out;
 }
 .skip-content:focus {
   top: 0;
@@ -719,7 +719,7 @@ li.pingback.bypostauthor:before {
   color: #666666;
   float: left;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 .comment-footer i.fa-pencil {
   margin-left: 8px;
@@ -1021,7 +1021,7 @@ li.pingback.bypostauthor:before {
   padding: 0 0 0 0.75em;
   border-left: solid 1px #F0F0F0;
   -webkit-transition: max-height 0.2s ease-in-out;
-  transition: max-height 0.2s ease-in-out;
+          transition: max-height 0.2s ease-in-out;
 }
 .menu-primary-items .menu-item-has-children ul li,
 .menu-primary-items .page_item_has_children ul li,
@@ -1029,7 +1029,7 @@ li.pingback.bypostauthor:before {
 .menu-unset > ul .page_item_has_children ul li {
   opacity: 0;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 .menu-primary-items .menu-item-has-children ul li:first-child,
 .menu-primary-items .page_item_has_children ul li:first-child,
@@ -1042,8 +1042,7 @@ li.pingback.bypostauthor:before {
 .menu-unset > ul .menu-item-has-children.open > button,
 .menu-unset > ul .page_item_has_children.open > button {
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .menu-primary-items .menu-item-has-children.open > ul,
 .menu-primary-items .page_item_has_children.open > ul,
@@ -1075,7 +1074,7 @@ li.pingback.bypostauthor:before {
   color: #666666;
   border: solid 1px #E6E6E6;
   -webkit-transition: border-color 0.1s ease-in-out;
-  transition: border-color 0.1s ease-in-out;
+          transition: border-color 0.1s ease-in-out;
 }
 .toggle-dropdown:hover {
   cursor: pointer;
@@ -1088,7 +1087,7 @@ li.pingback.bypostauthor:before {
   content: '\f107';
   font-family: 'FontAwesome';
   -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+          transition: all 0.1s ease-in-out;
 }
 
 /* Current Menu item */
@@ -1146,7 +1145,7 @@ li.pingback.bypostauthor:before {
   background: white;
   opacity: 0;
   -webkit-transition: opacity 0.1s ease-in-out;
-  transition: opacity 0.1s ease-in-out;
+          transition: opacity 0.1s ease-in-out;
 }
 .featured-image > a:focus:after {
   opacity: 0.2;
@@ -1157,7 +1156,8 @@ li.pingback.bypostauthor:before {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .featured-image > img.no-object-fit,
 .featured-image > a > img.no-object-fit {
@@ -1171,8 +1171,7 @@ li.pingback.bypostauthor:before {
   right: 50%;
   left: auto;
   -webkit-transform: translateX(50%) translateY(-50%);
-  -ms-transform: translateX(50%) translateY(-50%);
-  transform: translateX(50%) translateY(-50%);
+          transform: translateX(50%) translateY(-50%);
 }
 
 .post-content {
@@ -1307,7 +1306,7 @@ li.pingback.bypostauthor:before {
 
 .main-sidebar {
   -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
   background: white;
   padding: 0 8.3334%;
 }
@@ -1359,7 +1358,7 @@ li.pingback.bypostauthor:before {
 @media all and (min-width: 56.25em) {
   .main-sidebar {
     -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+            transform: translateZ(0);
     position: absolute;
     z-index: 9;
     top: 0;
@@ -1554,7 +1553,7 @@ li.pingback.bypostauthor:before {
   z-index: 9;
   color: #666666;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 .social-media-icons a:link, .social-media-icons a:visited {
   color: #666666;
@@ -1566,8 +1565,7 @@ li.pingback.bypostauthor:before {
 }
 .social-media-icons a:hover:after, .social-media-icons a:active:after, .social-media-icons a:focus:after {
   -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
 }
 .social-media-icons a:after {
   content: '';
@@ -1578,11 +1576,10 @@ li.pingback.bypostauthor:before {
   left: 0;
   border-radius: 50%;
   -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
+          transform: scale(0);
   z-index: -1;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
 }
 
 @media all and (min-width: 68.75em) {
