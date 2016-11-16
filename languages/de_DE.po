@@ -1,0 +1,452 @@
+# Copyright (C) 2016 Compete Themes
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cele 1.04\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2016-11-14 21:43+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-11-14 22:02+0100\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+
+#: 404.php:6
+msgid "404: Page Not Found"
+msgstr "404: Seite nicht gefunden."
+
+#: 404.php:9
+msgid ""
+"Looks like nothing was found on this url.  Double-check that the url is "
+"correct or try the search form below to find what you were looking for."
+msgstr ""
+"Diese Seite wurde nicht gefunden. Überprüfe, ob die URL in der Adressleiste "
+"korrekt ist oder benutze das Suchformular, um zu finden was du suchst."
+
+#: comments.php:12 comments.php:32 comments.php:54
+msgid "Be First to Comment"
+msgstr "Als Erster einen Kommentar schreiben"
+
+#: comments.php:12 comments.php:32 comments.php:54
+msgid "One Comment"
+msgstr "Ein Kommentar"
+
+#: comments.php:12 comments.php:32 comments.php:54 content/comments-link.php:5
+#: content/comments-link.php:8
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: comments.php:46
+msgid ""
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
+"\">trackbacks</a> and pingbacks are open."
+msgstr ""
+"Kommentare sind nicht möglich, allerdings sind <a href=\"%s\" title="
+"\"Trackback-URL für diesen Beitrag\">trackbacks</a> und Pingbacks möglich."
+
+#: comments.php:68 comments.php:75
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: content/archive-header.php:4
+msgid "Posts"
+msgstr "Beiträge"
+
+#: content/comments-link.php:2
+msgid "comment icon"
+msgstr "Kommentarsymbol"
+
+#: content/comments-link.php:5
+msgid "Comments closed"
+msgstr "Kommentare geschlossen"
+
+#: content/comments-link.php:5 content/comments-link.php:8
+msgid "1 Comment"
+msgstr "Ein Kommentar"
+
+#: content/comments-link.php:8
+msgid "Leave a Comment"
+msgstr "Hinterlasse einen Kommentar"
+
+#: content/post-categories.php:9
+msgid "Read more posts about"
+msgstr "Lies mehr Beiträge über"
+
+#: content/post-categories.php:15
+msgid "View all posts in %s"
+msgstr "Schau Dir alle Beiträge in %s an"
+
+#: content/post-nav-attachment.php:3
+msgid "Previous Image"
+msgstr "Vorheriges Bild"
+
+#: content/post-nav-attachment.php:6
+msgid "Next Image"
+msgstr "Nächstes Bild"
+
+#: content/post-nav.php:7
+msgid "Previous Post"
+msgstr "Vorheriger Beitrag"
+
+#: content/post-nav.php:10
+msgid "No Older Posts"
+msgstr "Keine älteren Beiträge"
+
+#: content/post-nav.php:16 content/post-nav.php:29
+msgid "Return to Blog"
+msgstr "Zurück zum Blog"
+
+#: content/post-nav.php:20
+msgid "Next Post"
+msgstr "Nächster Beitrag"
+
+#: content/post-nav.php:23
+msgid "No Newer Posts"
+msgstr "Keine neueren Beiträge"
+
+#: content/post-tags.php:8
+msgid "View all posts tagged %s"
+msgstr "Schau Dir alle Beiträge, die mit %s getaggt sind, an"
+
+#: content/search-bar.php:11 searchform.php:3
+msgid "Search"
+msgstr "Suchen"
+
+#: content/search-bar.php:12
+msgid "Search..."
+msgstr "Suchen..."
+
+#: content/search-bar.php:13 searchform.php:5
+msgid "Search for:"
+msgstr "Suchen nach:"
+
+#: content-page.php:11 content.php:12
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: footer.php:11
+msgid "<a href=\"%s\">Cele WordPress Theme</a> by Compete Themes."
+msgstr "<a href=\"%s\">Cele WordPress Theme</a> von Compete Themes."
+
+#: functions.php:32
+msgid "Primary"
+msgstr "Primär"
+
+#: functions.php:43
+msgid "Primary Sidebar"
+msgstr "Primäre Seitenleiste"
+
+#: functions.php:45
+msgid ""
+"Widgets in this area will be shown in the sidebar next to the main post "
+"content"
+msgstr ""
+"Widgets in diesem Bereich werden in der Seitenleiste neben dem "
+"Beitragsinhalt angezeigt."
+
+#: functions.php:70
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Prüfung durch einen Moderator."
+
+#: functions.php:77
+msgid "Reply"
+msgstr "Antworten"
+
+#: functions.php:82
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: functions.php:94
+msgid "(optional)"
+msgstr "(optional)"
+
+#: functions.php:99
+msgid "Name"
+msgstr "Name"
+
+#: functions.php:100
+msgid "Jane Doe"
+msgstr "Erika Mustermann"
+
+#: functions.php:106
+msgid "Email"
+msgstr "E-Mail"
+
+#: functions.php:107
+msgid "name@email.com"
+msgstr "name@email.de"
+
+#: functions.php:113
+msgid "Website"
+msgstr "Webseite"
+
+#: functions.php:128
+msgid "Comment"
+msgstr "Kommentar"
+
+#: functions.php:159 functions.php:168 functions.php:184
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: functions.php:327 functions.php:328
+msgid "email"
+msgstr "E-Mail"
+
+#: functions.php:379 header.php:25 inc/scripts.php:10
+msgid "open menu"
+msgstr "Menü öffnen"
+
+#: functions.php:390
+msgid "Featured"
+msgstr "Vorgestellt"
+
+#: functions.php:446
+msgid "Customizer settings deleted"
+msgstr "Einstellungen des Customizers gelöscht"
+
+#: header.php:11
+msgid "Press \"Enter\" to skip to content"
+msgstr "\"Enter\" drücken, um zum Inhalt weiterzugehen"
+
+#: inc/customizer.php:15
+msgid "Front Page"
+msgstr "Startseite"
+
+#: inc/customizer.php:27
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/customizer.php:37
+msgid "Upload custom logo."
+msgstr "Benutzerdefiniertes Logo hochladen."
+
+#: inc/customizer.php:53
+msgid "Social Media Icons"
+msgstr "Social-Media-Icons"
+
+#: inc/customizer.php:55
+msgid "Add the URL for each of your social profiles."
+msgstr "Trage die URL für jedes Deiner Profile ein. "
+
+#: inc/customizer.php:68
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+#: inc/customizer.php:135
+msgid "Blog"
+msgstr "Blog"
+
+#: inc/customizer.php:145
+msgid "Show full posts on blog?"
+msgstr "Vollständige Posts im Blog anzeigen?"
+
+#: inc/customizer.php:150 inc/customizer.php:268
+msgid "Yes"
+msgstr "Ja"
+
+#: inc/customizer.php:151 inc/customizer.php:269
+msgid "No"
+msgstr "Nein"
+
+#: inc/customizer.php:161
+msgid "Excerpt word count"
+msgstr "Wortanzahl im Auszug"
+
+#: inc/customizer.php:168
+msgid "Continue Reading"
+msgstr "Weiterlesen"
+
+#: inc/customizer.php:173
+msgid "Read More button text"
+msgstr "Text des Weiterlesen-Buttons"
+
+#: inc/customizer.php:183
+msgid "Display Controls"
+msgstr "Schaltflächen anzeigen"
+
+#: inc/customizer.php:194
+msgid "Post author name in byline"
+msgstr "Name des Autors in der Titelzeile"
+
+#: inc/customizer.php:198 inc/customizer.php:214 inc/customizer.php:249
+msgid "Show"
+msgstr "Anzeigen"
+
+#: inc/customizer.php:199 inc/customizer.php:215 inc/customizer.php:250
+msgid "Hide"
+msgstr "Ausblenden"
+
+#: inc/customizer.php:210
+msgid "Post date in byline"
+msgstr "Beitragsdatum in der Titelzeile"
+
+#: inc/customizer.php:223
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+#: inc/customizer.php:234
+msgid "Add Custom CSS Here:"
+msgstr "Benutzerdefiniertes CSS hier eintragen:"
+
+#: inc/scripts.php:11
+msgid "close menu"
+msgstr "Menü schließen"
+
+#: inc/scripts.php:12
+msgid "open dropdown menu"
+msgstr "Dropdown-Menü öffnen"
+
+#: inc/scripts.php:13
+msgid "close dropdown menu"
+msgstr "Dropdown-Menü schließen"
+
+#: index.php:19
+msgid "Previous"
+msgstr "Vorherige"
+
+#: index.php:20
+msgid "Next"
+msgstr "Nächste"
+
+#: search.php:9
+msgid "%d search result for \"%s\""
+msgid_plural "%d search results for \"%s\""
+msgstr[0] "%d Suchergebnis für „%s“"
+msgstr[1] "%d Suchergebnisse für „%s“"
+
+#: search.php:11
+msgid "No search results for \"%s\""
+msgstr "Keine Suchergebnisse für \"%s\""
+
+#: search.php:35
+msgid "Can't find what you're looking for?  Try refining your search:"
+msgstr ""
+"Du findest nicht, wonach Du suchst? Versuche, Deine Suche zu verfeinern:"
+
+#: searchform.php:6
+msgid "Search for..."
+msgstr "Suchen nach..."
+
+#: searchform.php:7
+msgid "Go"
+msgstr "Los"
+
+#: theme-options.php:4 theme-options.php:19
+msgid "Cele Dashboard"
+msgstr "Cele Dashboard"
+
+#: theme-options.php:22
+msgid "Customization"
+msgstr "Anpassung"
+
+#: theme-options.php:23
+msgid ""
+"Click the \"Customize\" link in your menu, or use the button below to get "
+"started customizing Cele"
+msgstr ""
+"Den \"Anpassen\"-Link im Menü klicken oder den unten stehenden Button  "
+"benutzen, um Cele anzupassen"
+
+#: theme-options.php:26
+msgid "Use Customizer"
+msgstr "Customizer benutzen"
+
+#: theme-options.php:30
+msgid "Support"
+msgstr "Support"
+
+#: theme-options.php:31
+msgid ""
+"You can find the knowledgebase, changelog, support forum, and more in the "
+"Cele Support Center"
+msgstr ""
+"Im Cele Support Center findest Du die Wissensdatenbank, den Changelog, das "
+"Support-Forum und mehr"
+
+#: theme-options.php:34
+msgid "Visit Support Center"
+msgstr "Support Center besuchen"
+
+#: theme-options.php:38
+msgid "Cele Pro"
+msgstr "Cele Pro"
+
+#: theme-options.php:39
+msgid ""
+"Download the Cele Pro plugin and unlock custom colors, new fonts, sliders, "
+"and more"
+msgstr ""
+"Lade das Cele Pro Plugin herunter, um benutzerdefinerte Farben, neue "
+"Schriftarten, Sliders und mehr zu benutzen"
+
+#: theme-options.php:42
+msgid "See Full Feature List"
+msgstr "Komplette Featureliste ansehen"
+
+#: theme-options.php:46
+msgid "WordPress Resources"
+msgstr "WordPress-Ressourcen"
+
+#: theme-options.php:47
+msgid ""
+"Save time and money searching for WordPress products by following our "
+"recommendations"
+msgstr ""
+"Spare Zeit und Geld bei der Suche nach WordPress-Produkten, indem Du "
+"unseren Empfehlungen folgst"
+
+#: theme-options.php:50
+msgid "View Resources"
+msgstr "Ressourcen ansehen"
+
+#: theme-options.php:54 theme-options.php:56
+msgid "Leave a Review"
+msgstr "Verfasse eine Bewertung"
+
+#: theme-options.php:55
+msgid "Help others find Cele by leaving a review on wordpress.org."
+msgstr ""
+"Hilf anderen, Cele zu finden, indem Du eine Bewertung auf wordpress.org "
+"hinterlässt."
+
+#: theme-options.php:59 theme-options.php:67
+msgid "Reset Customizer Settings"
+msgstr "Customizer-Settings zurücksetzen."
+
+#: theme-options.php:61
+msgid ""
+"<strong>Warning:</strong> Clicking this button will erase the Cele theme's "
+"current settings in the <a href='%s'>Customizer</a>."
+msgstr ""
+"<strong>Warnung:</strong> Das Klicken dieses Buttons setzt die im <a "
+"href='%s'>Customizer</a> für Cele-Theme vorgenommenen Einstellungen zurück."
+
+#. Description of the plugin/theme
+msgid ""
+"Cele is a refreshingly simple and clean theme. It’s been carefully designed "
+"to look and perform great across phones, computers, and tablets. Get your "
+"visitors’ attention and keep it with this content-focused, minimalist theme."
+msgstr ""
+"Cele ist ein erfrischend einfach und aufgeräumtes Theme. Es wurde mit "
+"größter Sorgfalt entwickelt, um auf Smartphones, Computern und Tablets "
+"gleichermaßen gut auszusehen. Wecke die Aufmerksamkeit Deiner Besucher und "
+"halte sie mit diesem inhaltsfokussierten, minimalistischen Theme."
+
+#: content/post-byline.php:15
+msgctxt "This blog post was published on some date"
+msgid "Published %s"
+msgstr "Veröffentlicht am %s"
+
+#: content/post-byline.php:17
+msgctxt "This blog post was published by some author"
+msgid "Published by %s"
+msgstr "Veröffentlicht von %s"
+
+#: content/post-byline.php:19
+msgctxt "This blog post was published on some date by some author"
+msgid "Published %1$s by %2$s"
+msgstr "Veröffentlicht am %1$s von %2$s"
