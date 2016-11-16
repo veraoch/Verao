@@ -291,4 +291,46 @@
       background: $color-gray-40;
     }
   }
+  .bandcamp {
+
+    &:after {
+      background: $bandcamp;
+    }
+  }
+  .etsy {
+
+    &:after {
+      background: $etsy;
+    }
+  }
+  .quora {
+
+    &:after {
+      background: $quora;
+    }
+  }
+  .ravelry {
+
+    &:after {
+      background: $ravelry;
+    }
+  }
+  .meetup {
+
+    &:after {
+      background: $meetup;
+    }
+  }
+  .telegram {
+
+    &:after {
+      background: $telegram;
+    }
+  }
+  .podcast {
+
+    &:after {
+      background: $podcast;
+    }
+  }
 }

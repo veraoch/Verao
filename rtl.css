@@ -1709,6 +1709,27 @@ li.pingback.bypostauthor:before {
 .social-media-icons .email-form:after {
   background: #666666;
 }
+.social-media-icons .bandcamp:after {
+  background: #6F99A7;
+}
+.social-media-icons .etsy:after {
+  background: #E56C2C;
+}
+.social-media-icons .quora:after {
+  background: #AB382F;
+}
+.social-media-icons .ravelry:after {
+  background: #C33257;
+}
+.social-media-icons .meetup:after {
+  background: #DB3846;
+}
+.social-media-icons .telegram:after {
+  background: #459BD8;
+}
+.social-media-icons .podcast:after {
+  background: #9760D3;
+}
 
 .single-attachment .attachment-container img {
   display: block;
