@@ -14,7 +14,7 @@ function ct_cele_options_content() {
 		),
 		admin_url( 'customize.php' )
 	);
-	$support_url = 'https://www.competethemes.com/documentation/apex-support-center/';
+	$support_url = 'https://www.competethemes.com/documentation/cele-support-center/';
 	?>
 	<div id="cele-dashboard-wrap" class="wrap">
 		<h2><?php _e( 'Cele Dashboard', 'cele' ); ?></h2>
@@ -22,7 +22,7 @@ function ct_cele_options_content() {
 		<div class="welcome">
 			<h3><?php _e( 'Thanks for Choosing Cele!', 'cele' ); ?></h3>
 			<p>
-				<?php printf( __( 'If you need help getting started, there are detailed tutorials in the <a href="%s">Cele Support Center</a>.', 'cele' ), $support_url ); ?>
+				<?php printf( __( 'If you need help getting started, there are detailed tutorials in the <a target="_blank" href="%s">Cele Support Center</a>.', 'cele' ), $support_url ); ?>
 				<?php printf( __( 'Otherwise, you can dive right in with the <a href="%s">Customizer</a>.', 'cele' ), esc_url($customizer_url) ); ?>
 			</p>
 		</div>
