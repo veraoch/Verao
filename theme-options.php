@@ -19,62 +19,43 @@ function ct_cele_options_content() {
 	<div id="cele-dashboard-wrap" class="wrap">
 		<h2><?php _e( 'Cele Dashboard', 'cele' ); ?></h2>
 		<?php do_action( 'ct_cele_theme_options_before' ); ?>
-		<div class="welcome">
-			<h3><?php _e( 'Thanks for Choosing Cele!', 'cele' ); ?></h3>
-			<p>
-				<?php printf( __( 'If you need help getting started, there are detailed tutorials in the <a target="_blank" href="%s">Cele Support Center</a>.', 'cele' ), $support_url ); ?>
-				<?php printf( __( 'Otherwise, you can dive right in with the <a href="%s">Customizer</a>.', 'cele' ), esc_url($customizer_url) ); ?>
-			</p>
-		</div>
-		<div class="content content-customization">
-			<h3><?php _e( 'Customization', 'cele' ); ?></h3>
-			<p><?php _e( 'Click the "Customize" link in your menu, or use the button below to get started customizing Cele', 'cele' ); ?>.</p>
-			<p>
-				<a class="button-primary"
-				   href="<?php echo esc_url( $customizer_url ); ?>"><?php _e( 'Use Customizer', 'cele' ) ?></a>
-			</p>
-		</div>
-		<div class="content content-support">
-			<h3><?php _e( 'Support', 'cele' ); ?></h3>
-			<p><?php _e( "You can find the knowledgebase, changelog, support forum, and more in the Cele Support Center", "cele" ); ?>.</p>
-			<p>
-				<a target="_blank" class="button-primary"
-				   href="https://www.competethemes.com/documentation/cele-support-center/"><?php _e( 'Visit Support Center', 'cele' ); ?></a>
-			</p>
-		</div>
-		<div class="content content-premium-upgrade">
-			<h3><?php _e( 'Cele Pro', 'cele' ); ?></h3>
-			<p><?php _e( 'Download the Cele Pro plugin and unlock custom colors, new fonts, sliders, and more', 'cele' ); ?>...</p>
-			<p>
-				<a target="_blank" class="button-primary"
-				   href="https://www.competethemes.com/cele-pro/"><?php _e( 'See Full Feature List', 'cele' ); ?></a>
-			</p>
-		</div>
-		<div class="content content-resources">
-			<h3><?php _e( 'WordPress Resources', 'cele' ); ?></h3>
-			<p><?php _e( 'Save time and money searching for WordPress products by following our recommendations', 'cele' ); ?>.</p>
-			<p>
-				<a target="_blank" class="button-primary"
-				   href="https://www.competethemes.com/wordpress-resources/"><?php _e( 'View Resources', 'cele' ); ?></a>
-			</p>
-		</div>
-		<div class="content content-review">
-			<h3><?php _e( 'Leave a Review', 'cele' ); ?></h3>
-			<p><?php _e( 'Help others find Cele by leaving a review on wordpress.org.', 'cele' ); ?></p>
-			<a target="_blank" class="button-primary" href="https://wordpress.org/support/view/theme-reviews/cele"><?php _e( 'Leave a Review', 'cele' ); ?></a>
-		</div>
-		<div class="content content-delete-settings">
-			<h3><?php _e( 'Reset Customizer Settings', 'cele' ); ?></h3>
-			<p>
-				<?php printf( __( "<strong>Warning:</strong> Clicking this button will erase the Cele theme's current settings in the <a href='%s'>Customizer</a>.", 'cele' ), esc_url( $customizer_url ) ); ?>
-			</p>
-			<form method="post">
-				<input type="hidden" name="cele_reset_customizer" value="cele_reset_customizer_settings"/>
+		<div class="content-boxes">
+			<div class="content content-support">
+				<h3><?php _e( 'Get Started', 'cele' ); ?></h3>
+				<p><?php _e( "Not sure where to start? The Cele Support Center is filled with tutorials that will take you step-by-step through every feature in Cele.", "cele" ); ?></p>
 				<p>
-					<?php wp_nonce_field( 'cele_reset_customizer_nonce', 'cele_reset_customizer_nonce' ); ?>
-					<?php submit_button( __( 'Reset Customizer Settings', 'cele' ), 'delete', 'delete', false ); ?>
+					<a target="_blank" class="button-primary"
+					   href="https://www.competethemes.com/documentation/cele-support-center/"><?php _e( 'Visit Support Center', 'cele' ); ?></a>
 				</p>
-			</form>
+			</div>
+			<?php if ( !function_exists( 'ct_cele_pro_init' ) ) : ?>
+				<div class="content content-premium-upgrade">
+					<h3><?php _e( 'Cele Pro', 'cele' ); ?></h3>
+					<p><?php _e( 'Download the Cele Pro plugin and unlock custom colors, new fonts, sliders, and more', 'cele' ); ?>...</p>
+					<p>
+						<a target="_blank" class="button-primary"
+						   href="https://www.competethemes.com/cele-pro/"><?php _e( 'See Full Feature List', 'cele' ); ?></a>
+					</p>
+				</div>
+			<?php endif; ?>
+			<div class="content content-review">
+				<h3><?php _e( 'Leave a Review', 'cele' ); ?></h3>
+				<p><?php _e( 'Help others find Cele by leaving a review on wordpress.org.', 'cele' ); ?></p>
+				<a target="_blank" class="button-primary" href="https://wordpress.org/support/view/theme-reviews/cele"><?php _e( 'Leave a Review', 'cele' ); ?></a>
+			</div>
+			<div class="content content-delete-settings">
+				<h3><?php _e( 'Reset Customizer Settings', 'cele' ); ?></h3>
+				<p>
+					<?php printf( __( "<strong>Warning:</strong> Clicking this button will erase the Cele theme's current settings in the <a href='%s'>Customizer</a>.", 'cele' ), esc_url( $customizer_url ) ); ?>
+				</p>
+				<form method="post">
+					<input type="hidden" name="cele_reset_customizer" value="cele_reset_customizer_settings"/>
+					<p>
+						<?php wp_nonce_field( 'cele_reset_customizer_nonce', 'cele_reset_customizer_nonce' ); ?>
+						<?php submit_button( __( 'Reset Customizer Settings', 'cele' ), 'delete', 'delete', false ); ?>
+					</p>
+				</form>
+			</div>
 		</div>
 		<?php do_action( 'ct_cele_theme_options_after' ); ?>
 	</div>
