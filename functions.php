@@ -84,9 +84,9 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 					'reply_text' => __( 'Reply', 'cele' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
-					'after'     => '<i class="fa fa-reply"></i>'
+					'after'     => '<i class="fa fa-reply" aria-hidden="true"></i>'
 				) ) ); ?>
-				<?php edit_comment_link( __( 'Edit', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil"></i></div>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
 			</div>
 		</article>
 		<?php
