@@ -283,6 +283,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'hacker-news'   => 'cele_hacker-news_profile',
 			'steam'         => 'cele_steam_profile',
 			'vk'            => 'cele_vk_profile',
+			'snapchat'      => 'cele_snapchat_profile',
 			'bandcamp'      => 'cele_bandcamp_profile',
 			'etsy'          => 'cele_etsy_profile',
 			'quora'         => 'cele_quora_profile',
