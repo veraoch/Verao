@@ -25,15 +25,16 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	class ct_cele_pro_ad extends WP_Customize_Control {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/cele-pro/';
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple - and fun too.', 'cele'), $link) . "</p>";
+			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/cele-pro.png' srcset='" . get_template_directory_uri() . "/assets/images/cele-pro-2x.png 2x' /></a>";
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'cele'), $link) . "</p>";
+			echo "<p>" . __('Cele Pro adds the following features to Cele:', 'cele') . "</p>";
 			echo "<ul>
-					<li>" . __('Custom Colors', 'cele') . "</li>
-					<li>" . __('Background Images', 'cele') . "</li>
-					<li>" . __('New Fonts', 'cele') . "</li>
-					<li>" . __('+ 8 more features', 'cele') . "</li>
+					<li>" . __('Custom colors', 'cele') . "</li>
+					<li>" . __('New fonts', 'cele') . "</li>
+					<li>" . __('Flexible header image', 'cele') . "</li>
+					<li>" . __('+ 7 more features', 'cele') . "</li>
 				  </ul>";
-			echo "<p>" . __('Download the Cele Pro Plugin to get started now.', 'cele') . "</p>";
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . __('Get Cele Pro', 'cele') . "</a></p>";
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . __('View Cele Pro', 'cele') . "</a></p>";
 		}
 	}
 
