@@ -1,10 +1,22 @@
 .toggle-navigation {
+  position: relative;
   float: right;
   background: none;
   margin: 0;
   padding: 0;
   border: none;
 
+  &:after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -8px;
+    width: 40px;
+    height: 32px;
+    border: solid 1px $color-blue;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -12,9 +24,9 @@
   &.open {
     outline: none;
 
-    svg g {
-       fill: $color-blue;
-     }
+    &:after {
+      opacity: 1;
+    }
   }
 }
 .menu-primary-container {

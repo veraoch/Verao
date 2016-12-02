@@ -942,11 +942,24 @@ li.pingback.bypostauthor:before {
   }
 }
 .toggle-navigation {
+  position: relative;
   float: right;
   background: none;
   margin: 0;
   padding: 0;
   border: none;
+}
+.toggle-navigation:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -8px;
+  width: 40px;
+  height: 32px;
+  border: solid 1px #A5D3ED;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
 }
 .toggle-navigation:hover {
   cursor: pointer;
@@ -954,8 +967,8 @@ li.pingback.bypostauthor:before {
 .toggle-navigation:focus, .toggle-navigation.open {
   outline: none;
 }
-.toggle-navigation:focus svg g, .toggle-navigation.open svg g {
-  fill: #A5D3ED;
+.toggle-navigation:focus:after, .toggle-navigation.open:after {
+  opacity: 1;
 }
 
 .menu-primary-container {
