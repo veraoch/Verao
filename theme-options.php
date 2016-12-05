@@ -41,7 +41,7 @@ function ct_cele_options_content() {
 			<div class="content content-review">
 				<h3><?php _e( 'Leave a Review', 'cele' ); ?></h3>
 				<p><?php _e( 'Help others find Cele by leaving a review on wordpress.org.', 'cele' ); ?></p>
-				<a target="_blank" class="button-primary" href="https://wordpress.org/support/view/theme-reviews/cele"><?php _e( 'Leave a Review', 'cele' ); ?></a>
+				<a target="_blank" class="button-primary" href="https://wordpress.org/support/theme/cele/reviews/"><?php _e( 'Leave a Review', 'cele' ); ?></a>
 			</div>
 			<div class="content content-delete-settings">
 				<h3><?php _e( 'Reset Customizer Settings', 'cele' ); ?></h3>
