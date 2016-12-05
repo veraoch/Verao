@@ -456,11 +456,20 @@ if ( ! function_exists( ( 'ct_cele_delete_settings_notice' ) ) ) {
 	function ct_cele_delete_settings_notice() {
 
 		if ( isset( $_GET['cele_status'] ) ) {
-			?>
-			<div class="updated">
-				<p><?php _e( 'Customizer settings deleted', 'cele' ); ?>.</p>
-			</div>
-			<?php
+
+			if ( $_GET['cele_status'] == 'deleted' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Customizer settings deleted.', 'cele' ); ?></p>
+				</div>
+				<?php
+			} else if ( $_GET['cele_status'] == 'activated' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Cele successfully activated!', 'cele' ); ?></p>
+				</div>
+				<?php
+			}
 		}
 	}
 }
@@ -597,10 +606,11 @@ function ct_cele_welcome_redirect() {
 
 	$welcome_url = add_query_arg(
 		array(
-			'page' => 'cele-options'
+			'page'        => 'cele-options',
+			'cele_status' => 'activated'
 		),
 		admin_url( 'themes.php' )
 	);
-	wp_redirect( esc_url( $welcome_url ) );
+	wp_safe_redirect( esc_url_raw( $welcome_url ) );
 }
 add_action( 'after_switch_theme', 'ct_cele_welcome_redirect' );
