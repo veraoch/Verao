@@ -172,7 +172,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'cele_blog', array(
-		'title'    => __( 'Blog', 'cele' ),
+		'title'    => _x( 'Blog', 'noun: the blog section', 'cele' ),
 		'priority' => 45
 	) );
 	// setting

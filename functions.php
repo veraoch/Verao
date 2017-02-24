@@ -81,12 +81,12 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 			</div>
 			<div class="comment-footer">
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => __( 'Reply', 'cele' ),
+					'reply_text' => _x( 'Reply', 'verb: reply to this comment', 'cele' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
 					'after'     => '<i class="fa fa-reply" aria-hidden="true"></i>'
 				) ) ); ?>
-				<?php edit_comment_link( __( 'Edit', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
+				<?php edit_comment_link( _x( 'Edit', 'verb: reply to this comment', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
 			</div>
 		</article>
 		<?php
@@ -103,14 +103,14 @@ if ( ! function_exists( 'ct_cele_update_fields' ) ) {
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label for="author">' . __( "Name", "cele" ) . $label . '</label>
+	            <label for="author">' . _x( "Name", "noun", "cele" ) . $label . '</label>
 	            <input id="author" name="author" type="text" placeholder="' . esc_attr__( "Jane Doe", "cele" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label for="email">' . __( "Email", "cele" ) . $label . '</label>
+	            <label for="email">' . _x( "Email", "noun", "cele" ) . $label . '</label>
 	            <input id="email" name="email" type="email" placeholder="' . esc_attr__( "name@email.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
@@ -132,7 +132,7 @@ if ( ! function_exists( 'ct_cele_update_comment_field' ) ) {
 
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label for="comment">' . __( "Comment", "cele" ) . '</label>
+	            <label for="comment">' . _x( "Comment", "noun", "cele" ) . '</label>
 	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -342,8 +342,8 @@ if ( ! function_exists( 'ct_cele_social_icons_output' ) ) {
 				if ( $active_site == 'email' ) { ?>
 					<a class="email" target="_blank"
 					   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>">
-						<i class="fa fa-envelope" title="<?php esc_attr_e( 'email', 'cele' ); ?>"></i>
-						<span class="screen-reader-text"><?php esc_attr_e('email', 'cele'); ?></span>
+						<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'cele' ); ?>"></i>
+						<span class="screen-reader-text"><?php echo esc_attr_x('email', 'noun', 'cele'); ?></span>
 					</a>
 				<?php } elseif ( $active_site == 'skype' ) { ?>
 					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
@@ -388,7 +388,7 @@ if ( ! function_exists( ( 'ct_cele_nav_dropdown_buttons' ) ) ) {
 		if ( $args->theme_location == 'primary' ) {
 
 			if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
-				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . __( "open menu", "cele" ) . '</span></button>', $item_output );
+				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . _x( "open menu", "verb: open the menu", "cele" ) . '</span></button>', $item_output );
 			}
 		}
 

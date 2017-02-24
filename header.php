@@ -22,7 +22,7 @@
 						} ?>
 					</div>
 					<button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
-						<span class="screen-reader-text"><?php _e( 'open menu', 'cele' ); ?></span>
+						<span class="screen-reader-text"><?php _ex( 'open menu', 'verb: open the menu', 'cele' ); ?></span>
 						<?php echo ct_cele_svg_output( 'toggle-navigation' ); ?>
 					</button>
 					<div id="menu-primary-container" class="menu-primary-container">
