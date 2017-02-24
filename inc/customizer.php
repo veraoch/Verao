@@ -26,15 +26,15 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/cele-pro/';
 			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/cele-pro.png' srcset='" . get_template_directory_uri() . "/assets/images/cele-pro-2x.png 2x' /></a>";
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Cele Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'cele'), $link) . "</p>";
-			echo "<p>" . __('Cele Pro adds the following features to Cele:', 'cele') . "</p>";
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'cele'), $link, wp_get_theme( get_template() ) ) . "</p>";
+			echo "<p>" . sprintf( __('%1$s Pro adds the following features to %1$s:', 'cele'), wp_get_theme( get_template() ) ) . "</p>";
 			echo "<ul>
 					<li>" . __('Custom colors', 'cele') . "</li>
 					<li>" . __('New fonts', 'cele') . "</li>
 					<li>" . __('Flexible header image', 'cele') . "</li>
 					<li>" . __('+ 7 more features', 'cele') . "</li>
 				  </ul>";
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . __('View Cele Pro', 'cele') . "</a></p>";
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . sprintf( __('View %1$s Pro', 'cele'), wp_get_theme( get_template() ) ) . "</a></p>";
 		}
 	}
 
@@ -44,7 +44,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	if ( !function_exists( 'ct_cele_pro_init' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_cele_pro', array(
-			'title'    => __( 'Cele Pro', 'cele' ),
+			'title'    => sprintf( _( '%s Pro', 'cele' ), wp_get_theme( get_template() ) ),
 			'priority' => 1
 		) );
 		// Upload - setting

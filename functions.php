@@ -469,7 +469,7 @@ if ( ! function_exists( ( 'ct_cele_delete_settings_notice' ) ) ) {
 			} else if ( $_GET['cele_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Cele successfully activated!', 'cele' ); ?></p>
+					<p><?php printf( __( '%s successfully activated!', 'cele' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
