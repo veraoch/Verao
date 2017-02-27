@@ -186,6 +186,20 @@ if ( ! function_exists( 'ct_cele_filter_manual_excerpts' ) ) {
 }
 add_filter( 'get_the_excerpt', 'ct_cele_filter_manual_excerpts' );
 
+if ( ! function_exists( 'ct_cele_excerpt' ) ) {
+	function ct_cele_excerpt() {
+		global $post;
+		$show_full_post = get_theme_mod( 'full_post' );
+		$ismore         = strpos( $post->post_content, '<!--more-->' );
+
+		if ( $show_full_post === 'yes' || $ismore ) {
+			the_content();
+		} else {
+			the_excerpt();
+		}
+	}
+}
+
 if ( ! function_exists( 'ct_cele_custom_excerpt_length' ) ) {
 	function ct_cele_custom_excerpt_length( $length ) {
 
