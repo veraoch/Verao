@@ -56,7 +56,7 @@ Cele Pro: https://www.competethemes.com/cele-pro/
     Licenses:
 -------------------------------------------------------
 
-Cele WordPress Theme, Copyright 2016 Compete Themes
+Cele WordPress Theme, Copyright 2017 Compete Themes
 Cele is distributed under the terms of the GNU GPL
 
 License: GNU General Public License v2 or later
@@ -64,7 +64,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Cele also uses:
 
-* Fitvids, by Chris Coyier & Dave Rupert, https://github.com/davatron5000/FitVids.js/, licensed under the WTFPL license.
-* Google Fonts, http://google.com/fonts, licensed under open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
-* Font Awesome by Dave Gandy, licensed under open source licenses, see: http://fortawesome.github.io/Font-Awesome/license/.
-* Desert image in screenshot.png by Dika Soul Seva, https://unsplash.com/photos/zvf7cZ0PC20, licensed under Public Domain
+* Fitvids, https://github.com/davatron5000/FitVids.js/, Copyright 2011, Chris Coyier & Dave Rupert, WTFPL license, http://www.wtfpl.net/.
+* Google Fonts, http://google.com/fonts, Copyright 2010, Google, open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
+* Font Awesome, http://fontawesome.io/, Copyright 2011, Dave Gandy, MIT license, https://opensource.org/licenses/mit-license.html
+* Desert image in screenshot.png : CC0 by Dikaseva, https://unsplash.com/photos/zvf7cZ0PC20, licensed under Public Domain
