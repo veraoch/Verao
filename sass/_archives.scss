@@ -20,7 +20,7 @@
     }
   }
   .post-content {
-    padding-bottom: $baseline-height / 4;
+    padding-bottom: $baseline-height;
   }
 }
 .sticky-status {
@@ -58,9 +58,6 @@
 
     .entry {
       margin-top: $baseline-height * 2;
-    }
-    .post-content {
-      padding-bottom: $baseline-height;
     }
   }
 }
