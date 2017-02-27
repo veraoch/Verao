@@ -44,7 +44,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	if ( !function_exists( 'ct_cele_pro_init' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_cele_pro', array(
-			'title'    => sprintf( _( '%s Pro', 'cele' ), wp_get_theme( get_template() ) ),
+			'title'    => sprintf( __( '%s Pro', 'cele' ), wp_get_theme( get_template() ) ),
 			'priority' => 1
 		) );
 		// Upload - setting
