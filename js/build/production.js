@@ -158,9 +158,6 @@ jQuery(document).ready(function($){
         }
     }
 
-    // open the menu to display the current page if inside a dropdown menu
-    $( '.current-menu-ancestor').addClass('open');
-
     function openPrimaryMenu() {
 
         if( menuPrimaryContainer.hasClass('open') ) {
@@ -212,6 +209,8 @@ jQuery(document).ready(function($){
                 function(e) {
                     // in case sidebar now shorter than .main
                     setMainMinHeight();
+                    // update sidebar to switch from 'fixed' if necessary
+                    setupSidebar();
                 });
 
             // make child links/buttons keyboard inaccessible
@@ -241,6 +240,8 @@ jQuery(document).ready(function($){
                 function(e) {
                     // in case sidebar now taller than .main
                     setMainMinHeight();
+                    // update sidebar to switch from 'fixed' if necessary
+                    setupSidebar();
                 });
 
             // make child links/buttons keyboard accessible
@@ -257,6 +258,18 @@ jQuery(document).ready(function($){
             });
             counter = 0;
         });
+
+        // open the menu to display the current page if inside a dropdown menu
+        var currentMenuItem = $( '.current-menu-ancestor');
+        currentMenuItem.addClass('open');
+
+        currentMenuItem.children('ul').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+            function(e) {
+                // in case sidebar now taller than .main
+                setMainMinHeight();
+                // update sidebar to switch from 'fixed' if necessary
+                setupSidebar();
+            });
     }
 
     function positionSidebar() {
@@ -312,10 +325,11 @@ jQuery(document).ready(function($){
             sidePositioning(rtl, false);
         }
         // if fixed to top, but now scrolling down
-        else if ( sidebar.hasClass('fixed-top') && scrolledUp == false ) {
+        else if ( ( sidebar.hasClass('fixed-top') || sidebar.hasClass('fixed') ) && scrolledUp == false ) {
             sidebar.css('top', sidebar.offset().top - adjustment + 'px');
             sidePositioning(rtl, false);
             sidebar.removeClass('fixed-top');
+            sidebar.removeClass('fixed');
             sidebar.addClass('down-page');
         }
         // if the bottom of the window is as low or lower than the bottom of the sidebar
