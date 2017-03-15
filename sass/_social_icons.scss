@@ -333,4 +333,28 @@
       background: $podcast;
     }
   }
+  .amazon {
+
+    &:after {
+      background: $amazon;
+    }
+  }
+  .google-wallet {
+
+    &:after {
+      background: $google-wallet;
+    }
+  }
+  .yelp {
+
+    &:after {
+      background: $yelp;
+    }
+  }
+  .twitch {
+
+    &:after {
+      background: $twitch;
+    }
+  }
 }

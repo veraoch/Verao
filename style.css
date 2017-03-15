@@ -1756,6 +1756,18 @@ li.pingback.bypostauthor:before {
 .social-media-icons .podcast:after {
   background: #9760D3;
 }
+.social-media-icons .amazon:after {
+  background: #FF8A00;
+}
+.social-media-icons .google-wallet:after {
+  background: #009646;
+}
+.social-media-icons .yelp:after {
+  background: #E20010;
+}
+.social-media-icons .twitch:after {
+  background: #6034A0;
+}
 
 .single-attachment .attachment-container img {
   display: block;
