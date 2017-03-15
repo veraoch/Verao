@@ -289,6 +289,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'google-wallet' => 'cele_google_wallet_profile',
 			'yelp'          => 'cele_yelp_profile',
 			'podcast'       => 'cele_podcast_profile',
+			'twitch'        => 'cele_twitch_profile',
 			'weibo'         => 'cele_weibo_profile',
 			'tencent-weibo' => 'cele_tencent_weibo_profile',
 			'500px'         => 'cele_500px_profile',
