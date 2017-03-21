@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cele 1.11\n"
+"Project-Id-Version: Cele 1.12\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-02-27 18:42:18+00:00\n"
+"POT-Creation-Date: 2017-03-21 17:33:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,10 +51,6 @@ msgstr ""
 
 #: content/comments-link.php:5 content/comments-link.php:8
 msgid "1 Comment"
-msgstr ""
-
-#: content/comments-link.php:5 content/comments-link.php:8
-msgid "% Comments"
 msgstr ""
 
 #: content/comments-link.php:8
@@ -155,15 +151,15 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:399
+#: functions.php:400
 msgid "Featured"
 msgstr ""
 
-#: functions.php:461
+#: functions.php:462
 msgid "Customizer settings deleted."
 msgstr ""
 
-#: functions.php:467
+#: functions.php:468
 msgid "%s successfully activated!"
 msgstr ""
 
@@ -364,7 +360,8 @@ msgid ""
 "interactive live demo: https://www.competethemes.com/demos/?theme=cele"
 msgstr ""
 
-#: comments.php:12 comments.php:32 comments.php:54
+#: comments.php:12 comments.php:32 comments.php:54 content/comments-link.php:5
+#: content/comments-link.php:8
 msgctxt "noun: 5 comments"
 msgid "% Comments"
 msgstr ""
@@ -429,12 +426,12 @@ msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: functions.php:340 functions.php:341
+#: functions.php:341 functions.php:342
 msgctxt "noun"
 msgid "email"
 msgstr ""
 
-#: functions.php:386 header.php:25 inc/scripts.php:16
+#: functions.php:387 header.php:25 inc/scripts.php:16
 msgctxt "verb: open the menu"
 msgid "open menu"
 msgstr ""
