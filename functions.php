@@ -405,7 +405,7 @@ if ( ! function_exists( ( 'ct_cele_sticky_post_marker' ) ) ) {
 	function ct_cele_sticky_post_marker() {
 
 		if ( is_sticky() && ! is_archive() ) {
-			echo '<div class="sticky-status"><span>' . __( "Featured", "cele" ) . '</span></div>';
+			echo '<div class="sticky-status"><span>' . esc_html__( "Featured", "cele" ) . '</span></div>';
 		}
 	}
 }
