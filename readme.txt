@@ -1,70 +1,41 @@
+=== Cele ===
+Contributors: bensibley
+Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
+Requires at least: 4.5
+Tested up to: 4.8
+Stable tag: 1.11
 
-Thanks for downloading Cele!
+Cele is a refreshingly simple and clean theme.
 
--------------------------------------------------------
-    Support
--------------------------------------------------------
+== Description ==
 
-You can find tutorials and other support resources for Cele in the Cele Support Center:
-https://www.competethemes.com/documentation/cele-support-center/
+Cele is a refreshingly simple and clean theme. It’s been carefully designed to look and perform great across mobile devices, computers, and tablets. Get your visitors’ attention and keep it with this content first, minimalist theme.
 
-Additional support resources:
+**Live Demo**
 
-Support forum: http://wordpress.org/support/theme/cele
-Changelog: https://www.competethemes.com/cele-changelog/
-Cele on Github: https://github.com/BenSibley/cele
+View a fully-setup live demo of Cele here: [Live demo](https://www.competethemes.com/demos/?theme=cele)
 
--------------------------------------------------------
-    Features
--------------------------------------------------------
+**Features**
 
-Cele includes the following features:
+Cele comes with the following features:
 
-    * Custom logo
-    * Social media icons
-    * Show full posts or excerpts
-    * Custom excerpt length
-    * Custom Read More button text
-    * Hide/Show display controls
-    * Custom CSS
+* Custom logo
+* Social media icons
+* Show full posts or excerpts
+* Custom excerpt length
+* Custom Read More button text
+* Hide/Show display controls
 
-Cele also has a premium plugin upgrade called Cele Pro that includes the following features:
+**Cele Pro**
 
-    * Custom colors
-    * Featured sliders
-    * Featured videos
-    * Flexible header image
-    * Featured Image sizes
-    * New fonts
-    * Additional widget areas
-    * More Display controls
-    * Custom footer text
+Cele also has an upgrade called [Cele Pro](https://www.competethemes.com/cele-pro/) that comes with the following features:
 
-Cele Pro: https://www.competethemes.com/cele-pro/
-
--------------------------------------------------------
-    Additional Info:
--------------------------------------------------------
-
-    * All menus in Cele can have 1-3 tiers
-    * Featured Images have a 2x1 ratio at all screen sizes
-    * Cele is child theme compatible. Download a starter child theme here:
-        https://www.competethemes.com/help/child-theme-cele/
-
-
--------------------------------------------------------
-    Licenses:
--------------------------------------------------------
-
-Cele WordPress Theme, Copyright 2017 Compete Themes
-Cele is distributed under the terms of the GNU GPL
-
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-Cele also uses:
-
-* Fitvids, https://github.com/davatron5000/FitVids.js/, Copyright 2011, Chris Coyier & Dave Rupert, WTFPL license, http://www.wtfpl.net/.
-* Google Fonts, http://google.com/fonts, Copyright 2010, Google, open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
-* Font Awesome, http://fontawesome.io/, Copyright 2011, Dave Gandy, MIT license, https://opensource.org/licenses/mit-license.html
-* Desert image in screenshot.png : CC0 by Dikaseva, https://unsplash.com/photos/zvf7cZ0PC20, licensed under Public Domain
+* Custom colors
+* Featured sliders
+* Featured videos
+* Flexible header image
+* Featured Image sizes
+* New fonts
+* Additional widget areas
+* More Display controls
+* Custom footer text
