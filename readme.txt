@@ -9,7 +9,7 @@ Cele is a refreshingly simple and clean theme.
 
 == Description ==
 
-Cele is a refreshingly simple and clean theme. It’s been carefully designed to look and perform great across mobile devices, computers, and tablets. Get your visitors’ attention and keep it with this content first, minimalist theme.
+Cele is a refreshingly simple and clean theme. It’s been carefully designed to look and perform great across mobile devices, computers, and tablets. Use this responsive blogging theme for a personal journal, podcast, music review site, or even a travel blog. Thanks to the minimalist and professional design, Cele is also appropriate for corporate business blog websites.
 
 **Live Demo**
 
