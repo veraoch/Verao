@@ -5,13 +5,13 @@ Theme URI: https://www.competethemes.com/cele/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Cele is a refreshingly simple and clean theme. It’s been carefully designed to look and perform great across mobile devices, computers, and tablets. Use this responsive blogging theme for a personal journal, podcast, music review site, or even a travel blog. Thanks to the minimalist and professional design, Cele is also appropriate for corporate business blog websites. Preview Cele now on desktop, tablets, and mobile with the interactive live demo: https://www.competethemes.com/demos/?theme=cele
-Version: 1.15
+Version: 1.16
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, accessibility-ready, custom-logo, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
 Text Domain: cele
 
-Cele WordPress Theme, Copyright 2017 Compete Themes
+Cele WordPress Theme, Copyright 2018 Compete Themes
 Cele is distributed under the terms of the GNU GPL
 */
 /*===== Variables =====*/
@@ -369,7 +369,7 @@ img,
 
 .wp-caption-text,
 .gallery-caption {
-  margin: 0 0 1.84502em;
+  margin: 0 0 1.8450184502em;
   color: #666666;
 }
 
@@ -1298,8 +1298,8 @@ li.pingback.bypostauthor:before {
 }
 @media all and (min-width: 56.25em) {
   .featured-image {
-    left: -15.78929%;
-    width: 115.49762%;
+    left: -15.78929298%;
+    width: 115.49762398%;
     padding-bottom: 57.75%;
   }
 
