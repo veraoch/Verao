@@ -143,7 +143,7 @@ jQuery(document).ready(function($){
         if ( window.innerWidth > 899 ) {
 
             // if sidebar height is less than window, fixed position and quit
-            if ( sidebarInner.outerHeight(true) < window.innerHeight ) {
+            if ( sidebarInner.outerHeight(true) < window.innerHeight && headerImage.length == 0 ) {
                 sidebar.addClass('fixed');
                 sidebarAdjustment();
             } else {
@@ -333,10 +333,14 @@ jQuery(document).ready(function($){
             sidebar.addClass('down-page');
         }
         // if the bottom of the window is as low or lower than the bottom of the sidebar
-        else if ( windowBottom >= sidebarBottom && scrolledUp == false ) {
+        else if ( windowBottom >= sidebarBottom && scrolledUp == false && ($(window).scrollTop() >= adjustment) ) {
             sidebar.addClass('fixed-bottom');
+            if (sidebarInner.outerHeight(true) >= window.innerHeight) {
+                sidebar.css('top', '');
+            } else {
+                sidebar.css('top', -24);
+            }
             // b/c max-width won't always be all the way left
-            sidebar.css('top', '');
             sidePositioning(rtl, true);
             sidebar.removeClass('down-page');
         }
