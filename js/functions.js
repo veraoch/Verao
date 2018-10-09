@@ -30,7 +30,7 @@ jQuery(document).ready(function($){
     toggleNavigation.on('click', openPrimaryMenu);
     toggleDropdown.on('click', openDropdownMenu);
 
-    $(window).resize(function(){
+    $(window).on('resize', function(){
         objectFitAdjustment();
         setupSidebar();
         sidebarAdjustment();
