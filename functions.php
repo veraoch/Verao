@@ -299,6 +299,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'youtube'       => 'cele_youtube_profile',
 			'rss'           => 'cele_rss_profile',
 			'email'         => 'cele_email_profile',
+			'phone'         => 'cele_phone_profile',
 			'email-form'    => 'cele_email_form_profile',
 			'amazon'        => 'cele_amazon_profile',
 			'bandcamp'      => 'cele_bandcamp_profile',
@@ -402,6 +403,12 @@ if ( ! function_exists( 'ct_cele_social_icons_output' ) ) {
 					   href="<?php echo esc_url( get_theme_mod( $key ), array( 'http', 'https', 'skype' ) ); ?>">
 						<i class="<?php echo esc_attr( $class ); ?>"
 						   title="<?php echo esc_attr( $active_site ); ?>"></i>
+						<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
+					</a>
+				<?php } elseif ( $active_site == 'phone' ) { ?>
+					<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+							href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'tel' ) ); ?>">
+						<i class="<?php echo esc_attr( $class ); ?>"></i>
 						<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
 					</a>
 				<?php } else { ?>
