@@ -374,17 +374,27 @@ if ( ! function_exists( 'ct_cele_social_icons_output' ) ) {
 
 			foreach ( $active_sites as $key => $active_site ) {
 
-				if ( $active_site == 'email-form' ) {
-					$class = 'fa fa-envelope-o';
+				if ( $active_site == 'rss' ) {
+					$class = 'fas fa-rss';
+				} elseif ( $active_site == 'email-form' ) {
+					$class = 'far fa-envelope';
+				} elseif ( $active_site == 'podcast' ) {
+					$class = 'fas fa-podcast';
+				} elseif ( $active_site == 'ok-ru' ) {
+					$class = 'fab fa-odnoklassniki';
+				} elseif ( $active_site == 'wechat' ) {
+					$class = 'fab fa-weixin';
+				} elseif ( $active_site == 'phone' ) {
+					$class = 'fas fa-phone';
 				} else {
-					$class = 'fa fa-' . $active_site;
+					$class = 'fab fa-' . $active_site;
 				}
 
 				echo '<li>';
 				if ( $active_site == 'email' ) { ?>
 					<a class="email" target="_blank"
 					   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>">
-						<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'cele' ); ?>"></i>
+						<i class="fas fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'cele' ); ?>"></i>
 						<span class="screen-reader-text"><?php echo esc_attr_x('email', 'noun', 'cele'); ?></span>
 					</a>
 				<?php } elseif ( $active_site == 'skype' ) { ?>
