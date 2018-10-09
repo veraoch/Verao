@@ -22,10 +22,10 @@ function ct_cele_options_content() {
 		<div class="content-boxes">
 			<div class="content content-support">
 				<h3><?php esc_html_e( 'Get Started', 'cele' ); ?></h3>
-				<p><?php printf( esc_html__( 'Not sure where to start? The %1$s Support Center is filled with tutorials that will take you step-by-step through every feature in %1$s.', 'cele' ), wp_get_theme( get_template() ) ); ?></p>
+				<p><?php printf( __( 'Not sure where to start? The <strong>%1$s Getting Started Guide</strong> will take you step-by-step through every feature in %1$s.', 'cele' ), wp_get_theme( get_template() ) ); ?></p>
 				<p>
 					<a target="_blank" class="button-primary"
-					   href="https://www.competethemes.com/documentation/cele-support-center/"><?php esc_html_e( 'Visit Support Center', 'cele' ); ?></a>
+					   href="https://www.competethemes.com/help/getting-started-cele/"><?php esc_html_e( 'View Guide', 'cele' ); ?></a>
 				</p>
 			</div>
 			<?php if ( !function_exists( 'ct_cele_pro_init' ) ) : ?>
