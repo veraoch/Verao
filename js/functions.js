@@ -5,18 +5,13 @@ jQuery(document).ready(function($){
     var overflowContainer = $('#overflow-container');
     var maxWidth = $('#max-width');
     var headerImage = $('#header-image');
-    var siteHeader = $('#site-header');
-    var titleContainer = $('#title-container');
     var toggleNavigation = $('#toggle-navigation');
     var menuPrimaryContainer = $('#menu-primary-container');
-    var menuPrimary = $('#menu-primary');
     var menuPrimaryItems = $('#menu-primary-items');
     var toggleDropdown = $('.toggle-dropdown');
     var sidebar = $('#main-sidebar');
-    var sidebarPrimary = $('#sidebar-primary');
     var sidebarPrimaryContainer = $('#sidebar-primary-container');
     var sidebarInner = $('#sidebar-inner');
-    var menuLink = $('.menu-item').children('a');
     var adminBar = 0;
     if ( body.hasClass('admin-bar') ) {
         adminBar = 32;
