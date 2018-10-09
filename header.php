@@ -8,7 +8,7 @@
 
 <body id="<?php print get_stylesheet(); ?>" <?php body_class(); ?>>
 <?php do_action( 'ct_cele_body_top' ); ?>
-<a class="skip-content" href="#main"><?php _e( 'Press "Enter" to skip to content', 'cele' ); ?></a>
+<a class="skip-content" href="#main"><?php esc_html_e( 'Press "Enter" to skip to content', 'cele' ); ?></a>
 <div id="overflow-container" class="overflow-container">
 	<div id="max-width" class="max-width">
 		<div id="main-sidebar" class="main-sidebar">
@@ -22,7 +22,7 @@
 						} ?>
 					</div>
 					<button id="toggle-navigation" class="toggle-navigation" name="toggle-navigation" aria-expanded="false">
-						<span class="screen-reader-text"><?php _ex( 'open menu', 'verb: open the menu', 'cele' ); ?></span>
+						<span class="screen-reader-text"><?php echo esc_html_x( 'open menu', 'verb: open the menu', 'cele' ); ?></span>
 						<?php echo ct_cele_svg_output( 'toggle-navigation' ); ?>
 					</button>
 					<div id="menu-primary-container" class="menu-primary-container">

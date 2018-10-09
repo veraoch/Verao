@@ -12,11 +12,11 @@ $date   = "<a class='date' href='" . esc_url( get_month_link( get_the_date( 'Y' 
 echo '<div class="post-byline">';
 	echo '<span>';
 		if ( $author_display == 'hide' ) {
-			printf( _x( 'Published %s', 'This blog post was published on some date', 'cele' ), $date );
+			printf( esc_html_x( 'Published %s', 'This blog post was published on some date', 'cele' ), $date );
 		} elseif ( $date_display == 'hide' ) {
-			printf( _x( 'Published by %s', 'This blog post was published by some author', 'cele' ), $author );
+			printf( esc_html_x( 'Published by %s', 'This blog post was published by some author', 'cele' ), $author );
 		} else {
-			printf( _x( 'Published %1$s by %2$s', 'This blog post was published on some date by some author', 'cele' ), $date, $author );
+			printf( esc_html_x( 'Published %1$s by %2$s', 'This blog post was published on some date by some author', 'cele' ), $date, $author );
 		}
 	echo '</span>';
 echo '</div>';

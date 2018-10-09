@@ -82,19 +82,19 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 			</div>
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'cele' ) ?></em>
+					<em><?php esc_html_e( 'Your comment is awaiting moderation.', 'cele' ) ?></em>
 					<br/>
 				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
 			<div class="comment-footer">
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => _x( 'Reply', 'verb: reply to this comment', 'cele' ),
+					'reply_text' => esc_html_x( 'Reply', 'verb: reply to this comment', 'cele' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
 					'after'     => '<i class="fa fa-reply" aria-hidden="true"></i>'
 				) ) ); ?>
-				<?php edit_comment_link( _x( 'Edit', 'verb: reply to this comment', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
+				<?php edit_comment_link( esc_html_x( 'Edit', 'verb: reply to this comment', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
 			</div>
 		</article>
 		<?php
@@ -106,26 +106,26 @@ if ( ! function_exists( 'ct_cele_update_fields' ) ) {
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$label     = $req ? '*' : ' ' . __( '(optional)', 'cele' );
+		$label     = $req ? '*' : ' ' . esc_html__( '(optional)', 'cele' );
 		$aria_req  = $req ? "aria-required='true'" : '';
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label for="author">' . _x( "Name", "noun", "cele" ) . $label . '</label>
+	            <label for="author">' . esc_html_x( "Name", "noun", "cele" ) . $label . '</label>
 	            <input id="author" name="author" type="text" placeholder="' . esc_attr__( "Jane Doe", "cele" ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label for="email">' . _x( "Email", "noun", "cele" ) . $label . '</label>
+	            <label for="email">' . esc_html_x( "Email", "noun", "cele" ) . $label . '</label>
 	            <input id="email" name="email" type="email" placeholder="' . esc_attr__( "name@email.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 
 		$fields['url'] =
 			'<p class="comment-form-url">
-	            <label for="url">' . __( "Website", "cele" ) . '</label>
+	            <label for="url">' . esc_html__( "Website", "cele" ) . '</label>
 	            <input id="url" name="url" type="url"  placeholder="' . esc_attr__( "http://google.com", "cele" ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
@@ -140,7 +140,7 @@ if ( ! function_exists( 'ct_cele_update_comment_field' ) ) {
 
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label for="comment">' . _x( "Comment", "noun", "cele" ) . '</label>
+	            <label for="comment">' . esc_html_x( "Comment", "noun", "cele" ) . '</label>
 	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -172,7 +172,7 @@ if ( ! function_exists( 'ct_cele_filter_read_more_link' ) ) {
 		}
 		// Because i18n text cannot be stored in a variable
 		if ( empty( $read_more_text ) ) {
-			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Continue Reading', 'cele' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Continue Reading', 'cele' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		} else {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		}
@@ -236,7 +236,7 @@ add_filter( 'the_content_more_link', 'ct_cele_remove_more_link_scroll' );
 function ct_cele_update_yoast_og_description( $ogdesc ) {
 	$read_more_text = get_theme_mod( 'read_more_text' );
 	if ( empty( $read_more_text ) ) {
-		$read_more_text = __( 'Continue Reading', 'cele' );
+		$read_more_text = esc_html__( 'Continue Reading', 'cele' );
 	}
 	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
 
@@ -479,13 +479,13 @@ if ( ! function_exists( ( 'ct_cele_delete_settings_notice' ) ) ) {
 			if ( $_GET['cele_status'] == 'deleted' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Customizer settings deleted.', 'cele' ); ?></p>
+					<p><?php esc_html_e( 'Customizer settings deleted.', 'cele' ); ?></p>
 				</div>
 				<?php
 			} else if ( $_GET['cele_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php printf( __( '%s successfully activated!', 'cele' ), wp_get_theme( get_template() ) ); ?></p>
+					<p><?php printf( esc_html__( '%s successfully activated!', 'cele' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
