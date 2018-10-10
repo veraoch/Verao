@@ -878,6 +878,9 @@ li.pingback.bypostauthor:before {
 .gallery {
   margin: 2.25em auto;
 }
+.gallery a:after {
+  display: none;
+}
 
 .gallery-item {
   display: inline-block;

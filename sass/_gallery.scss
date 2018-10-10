@@ -4,6 +4,13 @@
 
 .gallery {
   margin: $baseline-height * 1.5 auto;
+
+  a {
+    
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .gallery-item {
