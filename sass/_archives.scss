@@ -22,6 +22,15 @@
   .post-content {
     padding-bottom: $baseline-height / 4;
   }
+  .infinite-wrap {
+
+    .entry {
+
+      &:first-child {
+        margin-top: 3em;
+      }
+    }
+  }
 }
 .more-link-wrapper {
   margin: $baseline-height 0;

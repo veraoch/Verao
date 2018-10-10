@@ -616,6 +616,11 @@ a img {
 .search .post-content {
   padding-bottom: 0.375em;
 }
+.blog .infinite-wrap .entry:first-child,
+.archive .infinite-wrap .entry:first-child,
+.search .infinite-wrap .entry:first-child {
+  margin-top: 3em;
+}
 
 .more-link-wrapper {
   margin: 1.5em 0;
@@ -992,6 +997,14 @@ li.pingback.bypostauthor:before {
 }
 .pagination .dots {
   margin: 0 -12px 0 12px;
+}
+
+.infinite-scroll .main .pagination {
+  display: none;
+}
+
+#infinite-handle {
+  margin-top: 1.5em;
 }
 
 @media all and (min-width: 68.75em) {
