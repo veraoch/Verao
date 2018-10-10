@@ -1731,7 +1731,7 @@ li.pingback.bypostauthor:before {
   background: #517fa4;
 }
 .social-media-icons .reddit:after {
-  background: #cee3f8;
+  background: #ff4500;
 }
 .social-media-icons .soundcloud:after {
   background: #ff3a00;
@@ -1809,7 +1809,8 @@ li.pingback.bypostauthor:before {
   background: #20b8e5;
 }
 .social-media-icons .email:after,
-.social-media-icons .email-form:after {
+.social-media-icons .email-form:after,
+.social-media-icons .phone:after {
   background: #666666;
 }
 .social-media-icons .bandcamp:after {
@@ -1844,6 +1845,27 @@ li.pingback.bypostauthor:before {
 }
 .social-media-icons .twitch:after {
   background: #6034A0;
+}
+.social-media-icons .bitbucket:after {
+  background: #0052CC;
+}
+.social-media-icons .discord:after {
+  background: #7289da;
+}
+.social-media-icons .medium:after {
+  background: #00ab6c;
+}
+.social-media-icons .ok-ru:after {
+  background: #ed812b;
+}
+.social-media-icons .mixcloud:after {
+  background: #52aad8;
+}
+.social-media-icons .snapchat:after {
+  background: #fffc00;
+}
+.social-media-icons .stack-overflow:after {
+  background: #f48024;
 }
 
 .single-attachment .attachment-container img {

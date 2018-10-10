@@ -285,7 +285,8 @@
     }
   }
   .email,
-  .email-form {
+  .email-form,
+  .phone {
 
     &:after {
       background: $color-gray-40;
@@ -355,6 +356,48 @@
 
     &:after {
       background: $twitch;
+    }
+  }
+  .bitbucket {
+
+    &:after {
+      background: $bitbucket;
+    }
+  }
+  .discord {
+
+    &:after {
+      background: $discord;
+    }
+  }
+  .medium {
+
+    &:after {
+      background: $medium;
+    }
+  }
+  .ok-ru {
+
+    &:after {
+      background: $ok-ru;
+    }
+  }
+  .mixcloud {
+
+    &:after {
+      background: $mixcloud;
+    }
+  }
+  .snapchat {
+
+    &:after {
+      background: $snapchat;
+    }
+  }
+  .stack-overflow {
+
+    &:after {
+      background: $stack-overflow;
     }
   }
 }
