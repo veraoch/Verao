@@ -149,6 +149,12 @@
     bottom: 0;
   }
 }
+.post-content a[href*="jpg"]:after,
+.post-content a[href*="jpeg"]:after,
+.post-content a[href*="png"]:after,
+.post-content a[href*="gif"]:after {
+  display: none;
+}
 
 @media all and (min-width: $six-hundred) {
 
