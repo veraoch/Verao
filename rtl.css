@@ -753,7 +753,7 @@ li.pingback.bypostauthor:before {
   -webkit-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
 }
-.comment-footer i.fa-pencil {
+.comment-footer i.fa-edit {
   margin-right: 8px;
 }
 .comment-footer .edit-comment-container {

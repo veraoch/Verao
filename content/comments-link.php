@@ -1,5 +1,5 @@
 <span class="comments-link">
-	<i class="fa fa-comment" title="<?php _e( 'comment icon', 'cele' ); ?>"></i>
+	<i class="fas fa-comment" title="<?php _e( 'comment icon', 'cele' ); ?>"></i>
 	<?php
 	if ( ! comments_open() && get_comments_number() < 1 ) :
 		comments_number( esc_html__( 'Comments closed', 'cele' ), esc_html__( '1 Comment', 'cele' ), esc_html_x( '% Comments', 'noun: 5 comments', 'cele' ) );

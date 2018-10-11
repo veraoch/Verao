@@ -105,9 +105,9 @@ if ( ! function_exists( ( 'ct_cele_customize_comments' ) ) ) {
 					'reply_text' => esc_html_x( 'Reply', 'verb: reply to this comment', 'cele' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
-					'after'     => '<i class="fa fa-reply" aria-hidden="true"></i>'
+					'after'     => '<i class="fas fa-reply" aria-hidden="true"></i>'
 				) ) ); ?>
-				<?php edit_comment_link( esc_html_x( 'Edit', 'verb: reply to this comment', 'cele' ), '<div class="edit-comment-container">', '<i class="fa fa-pencil" aria-hidden="true"></i></div>' ); ?>
+				<?php edit_comment_link( esc_html_x( 'Edit', 'verb: reply to this comment', 'cele' ), '<div class="edit-comment-container">', '<i class="fas fa-edit" aria-hidden="true"></i></div>' ); ?>
 			</div>
 		</article>
 		<?php
