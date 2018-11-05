@@ -18,7 +18,7 @@ function ct_cele_options_content() {
 	?>
 	<div id="cele-dashboard-wrap" class="wrap cele-dashboard-wrap">
 		<h2><?php printf( esc_html__( '%s Dashboard', 'cele' ), wp_get_theme() ); ?></h2>
-		<?php do_action( 'theme_options_before' ); ?>
+		<?php do_action( 'ct_cele_theme_options_before' ); ?>
 		<div class="main">
 			<?php if ( function_exists( 'ct_cele_pro_init' ) ) : ?>
 			<div class="thanks-upgrading" style="background-image: url(<?php echo trailingslashit(get_template_directory_uri()) . 'assets/images/bg-texture.png'; ?>)">
@@ -186,6 +186,6 @@ function ct_cele_options_content() {
 				</form>
 			</div>
 		</div>
-		<?php do_action( 'theme_options_after' ); ?>
+		<?php do_action( 'ct_cele_theme_options_after' ); ?>
 	</div>
 <?php }
