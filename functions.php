@@ -322,6 +322,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'meetup'        => 'cele_meetup_profile',
 			'mixcloud'      => 'cele_mixcloud_profile',
 			'ok-ru'      		=> 'cele_ok_ru_profile',
+			'patreon'       => 'cele_patreon_profile',
 			'paypal'        => 'cele_paypal_profile',
 			'podcast'       => 'cele_podcast_profile',
 			'qq'            => 'cele_qq_profile',
