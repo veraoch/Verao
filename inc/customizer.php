@@ -20,46 +20,6 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	/***** Cele Pro Control *****/
-
-	class ct_cele_pro_ad extends WP_Customize_Control {
-		public function render_content() {
-			$link = 'https://www.competethemes.com/cele-pro/';
-			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/cele-pro.gif' /></a>";
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'cele'), $link, wp_get_theme( get_template() ) ) . "</p>";
-			echo "<p>" . sprintf( __('%1$s Pro adds the following features to %1$s:', 'cele'), wp_get_theme( get_template() ) ) . "</p>";
-			echo "<ul>
-					<li>" . __('Custom colors', 'cele') . "</li>
-					<li>" . __('New fonts', 'cele') . "</li>
-					<li>" . __('Flexible header image', 'cele') . "</li>
-					<li>" . __('+ 7 more features', 'cele') . "</li>
-				  </ul>";
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='cele-pro-button' href='" . $link . "'>" . sprintf( __('View %1$s Pro', 'cele'), wp_get_theme( get_template() ) ) . "</a></p>";
-		}
-	}
-
-	/***** Cele Pro Section *****/
-
-	// don't add if Cele Pro is active
-	if ( !function_exists( 'ct_cele_pro_init' ) ) {
-		// section
-		$wp_customize->add_section( 'ct_cele_pro', array(
-			'title'    => sprintf( __( '%s Pro', 'cele' ), wp_get_theme( get_template() ) ),
-			'priority' => 1
-		) );
-		// Upload - setting
-		$wp_customize->add_setting( 'cele_pro', array(
-			'sanitize_callback' => 'absint'
-		) );
-		// Upload - control
-		$wp_customize->add_control( new ct_cele_pro_ad(
-			$wp_customize, 'cele_pro', array(
-				'section'  => 'ct_cele_pro',
-				'settings' => 'cele_pro'
-			)
-		) );
-	}
-
 	/***** Logo Upload *****/
 
 	// section
@@ -389,3 +349,13 @@ function ct_cele_sanitize_phone( $input ) {
 		return '';
 	}
 }
+
+
+function ct_cele_customize_preview_js() {
+	if ( !function_exists( 'ct_cele_pro_init' ) ) {
+		$url = 'https://www.competethemes.com/cele-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Cele%20Pro%20-%20Customizer';
+		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Customize Colors with Cele Pro <span>&rarr;</span></a></div>')</script>";
+		echo apply_filters('ct_cele_customizer_ad', $content);
+	}
+}
+add_action('customize_controls_print_footer_scripts', 'ct_cele_customize_preview_js');

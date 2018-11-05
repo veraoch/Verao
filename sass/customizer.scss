@@ -9,111 +9,18 @@
   }
 }
 .upgrades-ad {
-  text-align: center;
-  border-bottom: solid 1px #eee;
-
+  
   a {
     display: block;
-    padding: 9px 0;
+    padding: 12px 24px;
+    text-align: center;
     color: white;
-    background: #43b3c4;
-    transition: background 0.15s ease-in-out;
-
-    &:link,
-    &:visited,
-    &:hover,
-    &:active,
-    &:focus  {
-      color: white;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-      background: #3ea5b3;
-
-      span {
-        right: -3px;
-      }
-    }
-  }
-  span {
-    position: relative;
-    right: 0;
-    transition: right 0.15s ease-in-out;
-  }
-}
-
-// Cele Pro section
-#accordion-section-ct_cele_pro {
-
-  .accordion-section-title {
-    color: #fff;
+    text-decoration: none;
     background: #05B0E7;
     transition: background 0.2s;
 
-    &:after {
-      color: #fff;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      background: #3A96B5 !important;
-      color: #fff !important;
-
-      &:after {
-        color: #fff !important;
-      }
-    }
-  }
-}
-#customize-control-cele_pro {
-  background: white;
-  border: solid 1px $color-gray-90;
-  padding: 6px 24px;
-  box-sizing: border-box;
-
-  ul {
-    list-style: disc;
-    padding-left: 15px;
-  }
-  img {
-    position: relative;
-    max-width: none;
-    width: 273px;
-    top: -6px;
-    left: -24px;
-    border-bottom: solid 1px $color-gray-90;
-  }
-  .bold {
-    font-weight: 600;
-    font-size: 16px;
-  }
-  .button-wrapper {
-    text-align: center;
-  }
-  .cele-pro-button {
-    display: inline-block;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 15px 24px;
-    margin: 12px auto;
-    background: #FF931E;
-    color: #fff;
-    text-decoration: none;
-    transition: background 0.2s;
-
-    &:before {
-      content: '\f06e';
-      font-family: 'FontAwesome';
-      margin-right: 6px;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      background: #FF8A23;
+    &:hover {
+      background: #3FBEE8;  
     }
   }
 }
