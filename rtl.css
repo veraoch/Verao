@@ -1867,6 +1867,9 @@ li.pingback.bypostauthor:before {
 .social-media-icons .stack-overflow:after {
   background: #f48024;
 }
+.social-media-icons .patreon:after {
+  background: #f96854;
+}
 
 .single-attachment .attachment-container img {
   display: block;
