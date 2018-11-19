@@ -1344,6 +1344,35 @@ li.pingback.bypostauthor:before {
   display: none;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover {
+  position: relative;
+  left: -10%;
+  width: 120%;
+  max-width: none;
+}
+
+.wp-block-image.alignwide {
+  position: relative;
+  left: -5%;
+  width: 110%;
+  max-width: none;
+}
+
+.wp-block-quote.is-large {
+  padding-left: 0;
+  border-left: none;
+  margin: 1.5em;
+}
+
+.wp-block-embed {
+  margin: 1.5em 0;
+}
+
+.wp-block-code code {
+  background: none;
+}
+
 @media all and (min-width: 37.5em) {
   .post-title {
     font-size: 1.3125em;
@@ -1383,6 +1412,17 @@ li.pingback.bypostauthor:before {
   .further-reading:before, .further-reading:after {
     left: -15.83346%;
     right: -15.83346%;
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -16%;
+    width: 132%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -9%;
+    width: 118%;
   }
 }
 @media all and (min-width: 68.75em) {
