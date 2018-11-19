@@ -65,6 +65,34 @@ if ( ! function_exists( ( 'ct_cele_theme_setup' ) ) ) {
 		// Gutenberg - add support for editor styles
 		add_theme_support('editor-styles');
 
+		// Gutenberg - modify the font sizes
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+					'name' => __( 'small', 'cele' ),
+					'shortName' => __( 'S', 'cele' ),
+					'size' => 12,
+					'slug' => 'small'
+			),
+			array(
+					'name' => __( 'regular', 'cele' ),
+					'shortName' => __( 'M', 'cele' ),
+					'size' => 16,
+					'slug' => 'regular'
+			),
+			array(
+					'name' => __( 'large', 'cele' ),
+					'shortName' => __( 'L', 'cele' ),
+					'size' => 21,
+					'slug' => 'large'
+			),
+			array(
+					'name' => __( 'larger', 'cele' ),
+					'shortName' => __( 'XL', 'cele' ),
+					'size' => 28,
+					'slug' => 'larger'
+			)
+		) );
+
 		load_theme_textdomain( 'cele', get_template_directory() . '/languages' );
 	}
 }
