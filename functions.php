@@ -63,6 +63,16 @@ if ( ! function_exists( ( 'ct_cele_theme_setup' ) ) ) {
 }
 add_action( 'after_setup_theme', 'ct_cele_theme_setup', 10 );
 
+//-----------------------------------------------------------------------------
+// Load custom stylesheet for the post editor
+//-----------------------------------------------------------------------------
+if ( ! function_exists( 'ct_cele_add_editor_styles' ) ) {
+	function ct_cele_add_editor_styles() {
+		add_editor_style( 'styles/editor-style.css' );
+	}
+}
+add_action( 'admin_init', 'ct_cele_add_editor_styles' );
+
 if ( ! function_exists( ( 'ct_cele_register_widget_areas' ) ) ) {
 	function ct_cele_register_widget_areas() {
 
