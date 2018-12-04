@@ -406,4 +406,10 @@
       background: $patreon;
     }
   }
+  .goodreads {
+
+    &:after {
+      background: $goodreads;
+    }
+  }
 }

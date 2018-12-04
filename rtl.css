@@ -1910,6 +1910,9 @@ li.pingback.bypostauthor:before {
 .social-media-icons .patreon:after {
   background: #f96854;
 }
+.social-media-icons .goodreads:after {
+  background: #553b08;
+}
 
 .single-attachment .attachment-container img {
   display: block;
