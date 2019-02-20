@@ -679,6 +679,12 @@ if ( ! function_exists( ( 'ct_cele_infinite_scroll_render' ) ) ) {
 if ( ! function_exists( 'ct_cele_get_content_template' ) ) {
 	function ct_cele_get_content_template() {
 
+		if ( function_exists( 'is_bbpress' ) ) {
+			if ( is_bbpress() ) {
+				get_template_part( 'content/bbpress' );
+				return;
+			} 
+		}
 		if ( is_home() || is_archive() ) {
 			get_template_part( 'content-archive', get_post_type() );
 		} else {
@@ -755,4 +761,17 @@ function ct_cele_output_last_updated_date() {
 				echo '<p class="last-updated">'. esc_html__("Last updated on", "cele") . ' ' . get_the_modified_date() . ' </p>';
 			}
 	}
+}
+
+function ct_cele_pagination() {
+
+	if ( function_exists( 'is_bbpress' ) ) {
+		if ( is_bbpress() ) {
+			return;
+		} 
+	}
+	the_posts_pagination( array(
+    'prev_text' => esc_html__( 'Previous', 'cele' ),
+    'next_text' => esc_html__( 'Next', 'cele' )
+	) );
 }

@@ -2107,6 +2107,25 @@ li.pingback.bypostauthor:before {
   text-decoration: none;
 }
 
+div.bbp-breadcrumb {
+  display: inline-block;
+  float: none;
+}
+
+#subscription-toggle {
+  margin-left: 6px;
+}
+
+.bbp-reply-author a {
+  border: none;
+}
+
+span.bbp-admin-links,
+span.bbp-admin-links a,
+.bbp-reply-header a.bbp-reply-permalink {
+  color: #666666;
+}
+
 /*
 
 ATTENTION:

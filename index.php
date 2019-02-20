@@ -15,9 +15,6 @@ get_template_part( 'content/archive-header' ); ?>
 
 <?php
 
-the_posts_pagination( array(
-    'prev_text' => esc_html__( 'Previous', 'cele' ),
-    'next_text' => esc_html__( 'Next', 'cele' )
-) );
+ct_cele_pagination();
 
 get_footer();
