@@ -7,6 +7,7 @@
 		</div>
 		<?php ct_cele_featured_image(); ?>
 		<div class="post-content">
+			<?php ct_cele_output_last_updated_date(); ?>
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
 				'before' => '<p class="singular-pagination">' . esc_html__( 'Pages:', 'cele' ),

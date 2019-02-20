@@ -258,6 +258,30 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		)
 	) );
 
+	/***** Additional Options  *****/
+
+	// section
+	$wp_customize->add_section( 'ct_cele_additional_options', array(
+		'title'    => __( 'Additional Options', 'cele' ),
+		'priority' => 75
+	) );
+	// setting - last updated
+	$wp_customize->add_setting( 'last_updated', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_cele_sanitize_yes_no_settings'
+	) );
+	// control - last updated
+	$wp_customize->add_control( 'last_updated', array(
+		'label'    => __( 'Display the date each post was last updated?', 'cele' ),
+		'section'  => 'ct_cele_additional_options',
+		'settings' => 'last_updated',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'cele' ),
+			'no'  => __( 'No', 'cele' )
+		)
+	) );
+
 	/***** Custom CSS *****/
 
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
@@ -275,7 +299,7 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 		// section
 		$wp_customize->add_section( 'cele_custom_css', array(
 			'title'    => __( 'Custom CSS', 'cele' ),
-			'priority' => 75
+			'priority' => 80
 		) );
 		// setting
 		$wp_customize->add_setting( 'custom_css', array(
