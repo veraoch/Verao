@@ -1159,6 +1159,8 @@ li.pingback.bypostauthor:before {
   line-height: 1;
   background: none;
   color: #666666;
+  color: #B3B3B3;
+  color: #999999;
   border: solid 1px #E6E6E6;
   -webkit-transition: border-color 0.1s ease-in-out;
           transition: border-color 0.1s ease-in-out;
@@ -1170,11 +1172,9 @@ li.pingback.bypostauthor:before {
   outline: none;
   border-color: #A5D3ED;
 }
-.toggle-dropdown:after {
-  content: '\f107';
-  font-family: 'FontAwesome';
-  -webkit-transition: all 0.1s ease-in-out;
-          transition: all 0.1s ease-in-out;
+.toggle-dropdown i {
+  font-size: 13px;
+  margin-top: -1px;
 }
 
 /* Current Menu item */
@@ -1195,10 +1195,6 @@ li.pingback.bypostauthor:before {
   .toggle-dropdown {
     height: 1.125em;
     width: 1.125em;
-  }
-  .toggle-dropdown:after {
-    display: block;
-    font-size: 0.75em;
   }
 }
 .post-header {

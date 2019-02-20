@@ -162,6 +162,8 @@
   line-height: 1;
   background: none;
   color: $color-gray-40;
+  color: $color-gray-70;
+  color: #999999;
   border: solid 1px $color-gray-90;
   transition: border-color 0.1s ease-in-out;
 
@@ -174,10 +176,9 @@
     outline: none;
     border-color: $color-blue;
   }
-  &:after {
-    content: '\f107';
-    font-family: 'FontAwesome';
-    transition: all 0.1s ease-in-out;
+  i {
+    font-size: 13px;
+    margin-top: -1px;
   }
 }
 
@@ -201,10 +202,5 @@
   .toggle-dropdown {
     height: $baseline-height * .75;
     width: $baseline-height * .75;
-
-    &:after {
-      display: block;
-      font-size: 0.75em;
-    }
   }
 }
