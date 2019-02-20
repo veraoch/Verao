@@ -763,6 +763,9 @@ function ct_cele_output_last_updated_date() {
 	}
 }
 
+//----------------------------------------------------------------------------------
+// Output standar pagination and account for bbPress forum archives
+//----------------------------------------------------------------------------------
 function ct_cele_pagination() {
 
 	if ( function_exists( 'is_bbpress' ) ) {
