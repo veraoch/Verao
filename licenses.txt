@@ -1,4 +1,4 @@
-Cele WordPress Theme, Copyright 2018 Compete Themes
+Cele WordPress Theme, Copyright 2019 Compete Themes
 Cele is distributed under the terms of the GNU GPL
 
 License: GNU General Public License v2 or later
