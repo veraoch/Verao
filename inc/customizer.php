@@ -119,6 +119,8 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 				$label = __('Stack Overflow', 'cele');
 			} elseif ( $social_site == 'ok-ru' ) {
 				$label = __('OK.ru', 'cele');
+			} elseif ( $social_site == 'artstation' ) {
+				$label = __('ArtStation', 'cele');
 			} elseif ( $social_site == 'email-form' ) {
 				$label = __('Contact Form', 'cele');
 			}

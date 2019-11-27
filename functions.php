@@ -348,6 +348,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'phone'         => 'cele_phone_profile',
 			'email-form'    => 'cele_email_form_profile',
 			'amazon'        => 'cele_amazon_profile',
+			'artstation'    => 'cele_artstation_profile',
 			'bandcamp'      => 'cele_bandcamp_profile',
 			'behance'       => 'cele_behance_profile',
 			'bitbucket'     => 'cele_bitbucket_profile',
