@@ -213,7 +213,7 @@ if ( ! function_exists( 'ct_cele_update_comment_field' ) ) {
 		return $comment_field;
 	}
 }
-add_filter( 'comment_form_field_comment', 'ct_cele_update_comment_field' );
+add_filter( 'comment_form_field_comment', 'ct_cele_update_comment_field', 7 );
 
 if ( ! function_exists( 'ct_cele_remove_comments_notes_after' ) ) {
 	function ct_cele_remove_comments_notes_after( $defaults ) {
