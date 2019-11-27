@@ -1321,6 +1321,10 @@ li.pingback.bypostauthor:before {
   padding: 4px 12px 4px 4px;
   font-size: 13px;
 }
+.featured-image .ccfic a {
+  color: #fff;
+  margin-right: 4px;
+}
 
 .post-content {
   margin-top: 1.5em;
