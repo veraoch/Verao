@@ -371,6 +371,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'ok-ru'      		=> 'cele_ok_ru_profile',
 			'patreon'       => 'cele_patreon_profile',
 			'paypal'        => 'cele_paypal_profile',
+			'pocket'       	=> 'cele_pocket_profile',
 			'podcast'       => 'cele_podcast_profile',
 			'qq'            => 'cele_qq_profile',
 			'quora'         => 'cele_quora_profile',
@@ -433,7 +434,9 @@ if ( ! function_exists( 'ct_cele_social_icons_output' ) ) {
 					$class = 'fab fa-odnoklassniki';
 				} elseif ( $active_site == 'wechat' ) {
 					$class = 'fab fa-weixin';
-				} elseif ( $active_site == 'phone' ) {
+				} elseif ( $active_site == 'pocket' ) {
+					$class = 'fab fa-get-pocket';
+				}  elseif ( $active_site == 'phone' ) {
 					$class = 'fas fa-phone';
 				} else {
 					$class = 'fab fa-' . $active_site;
