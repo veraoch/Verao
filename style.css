@@ -828,6 +828,9 @@ li.pingback.bypostauthor:before {
 .comment-respond input[type="submit"] {
   margin-top: 0.75em;
 }
+.comment-respond .comment-form-cookies-consent label {
+  display: inline-block;
+}
 
 .comment-pagination p {
   display: inline-block;

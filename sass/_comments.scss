@@ -134,6 +134,12 @@ li.pingback {
   input[type="submit"] {
     margin-top: $baseline-height / 2;
   }
+  .comment-form-cookies-consent {
+
+    label {
+      display: inline-block;
+    }
+  }
 }
 
 .comment-pagination {
