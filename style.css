@@ -1426,6 +1426,10 @@ li.pingback.bypostauthor:before {
   background: none;
 }
 
+.wp-block-button a:after {
+  display: none;
+}
+
 @media all and (min-width: 37.5em) {
   .post-title {
     font-size: 1.3125em;

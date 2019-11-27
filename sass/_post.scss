@@ -184,6 +184,9 @@
 .wp-block-code code {
   background: none;
 }
+.wp-block-button a:after {
+  display: none;
+}
 
 @media all and (min-width: $six-hundred) {
 
