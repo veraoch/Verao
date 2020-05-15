@@ -34,7 +34,8 @@ h2, .comments-number h2, .comment-reply-title {
   /* 24px */
 }
 
-.pagination a,
+.post-categories-blog,
+.post-tags-blog, .pagination a,
 .pagination span, .widget > * {
   font-size: 0.875em;
   /* 14px / 16px */
@@ -684,6 +685,33 @@ a img {
   padding: 2px 6px;
   border: solid 1px #E6E6E6;
   border-radius: 3px;
+}
+
+.post-categories-blog,
+.post-tags-blog {
+  display: inline-block;
+  margin-top: 0;
+  padding-bottom: 1.5em;
+}
+.post-categories-blog a,
+.post-tags-blog a {
+  margin-right: 8px;
+  border-bottom: none;
+}
+.post-categories-blog a:hover, .post-categories-blog a:active, .post-categories-blog a:focus,
+.post-tags-blog a:hover,
+.post-tags-blog a:active,
+.post-tags-blog a:focus {
+  text-decoration: underline;
+}
+.post-categories-blog i,
+.post-tags-blog i {
+  margin-right: 12px;
+  color: #B3B3B3;
+}
+
+.post-categories-blog {
+  margin-right: 12px;
 }
 
 @media all and (min-width: 56.25em) {

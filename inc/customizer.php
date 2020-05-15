@@ -234,6 +234,38 @@ function ct_cele_add_customizer_content( $wp_customize ) {
 			'hide' => __( 'Hide', 'cele' )
 		)
 	) );
+	// setting - post categories blog
+	$wp_customize->add_setting( 'display_post_categories_blog', array(
+		'default'           => 'hide',
+		'sanitize_callback' => 'ct_cele_sanitize_show_hide'
+	) );
+	// control - post categories blog
+	$wp_customize->add_control( 'display_post_categories_blog', array(
+		'type'    => 'radio',
+		'label'   => __( 'Post categories on blog page', 'cele' ),
+		'section' => 'cele_display',
+		'setting' => 'display_post_categories_blog',
+		'choices' => array(
+			'show' => __( 'Show', 'cele' ),
+			'hide' => __( 'Hide', 'cele' )
+		)
+	) );
+	// setting - post tags blog
+	$wp_customize->add_setting( 'display_post_tags_blog', array(
+		'default'           => 'hide',
+		'sanitize_callback' => 'ct_cele_sanitize_show_hide'
+	) );
+	// control - post tags blog
+	$wp_customize->add_control( 'display_post_tags_blog', array(
+		'type'    => 'radio',
+		'label'   => __( 'Post tags on blog page', 'cele' ),
+		'section' => 'cele_display',
+		'setting' => 'display_post_tags_blog',
+		'choices' => array(
+			'show' => __( 'Show', 'cele' ),
+			'hide' => __( 'Hide', 'cele' )
+		)
+	) );
 
 	/***** Scroll-to-stop Arrow  *****/
 

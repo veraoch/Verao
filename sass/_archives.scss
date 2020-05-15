@@ -45,6 +45,31 @@
     border-radius: 3px;
   }
 }
+.post-categories-blog,
+.post-tags-blog {
+  @extend %fourteen-pixels;
+  display: inline-block;
+  margin-top: 0;
+  padding-bottom: $baseline-height;
+
+  a {
+    margin-right: 8px;
+    border-bottom: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  i {
+    margin-right: 12px;
+    color: $color-gray-70;
+  }
+}
+.post-categories-blog {
+  margin-right: 12px;
+}
 
 @media all and (min-width: $nine-hundred) {
 
