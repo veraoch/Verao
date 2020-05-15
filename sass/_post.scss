@@ -192,6 +192,18 @@
 .wp-block-button a:after {
   display: none;
 }
+.wp-block-social-links a {
+  color: #fff;
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    &:after {
+      display: none;
+    }
+  }
+}
 
 @media all and (min-width: $six-hundred) {
 

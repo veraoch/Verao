@@ -1465,6 +1465,13 @@ li.pingback.bypostauthor:before {
   display: none;
 }
 
+.wp-block-social-links a {
+  color: #fff;
+}
+.wp-block-social-links a:hover:after, .wp-block-social-links a:active:after, .wp-block-social-links a:focus:after {
+  display: none;
+}
+
 @media all and (min-width: 37.5em) {
   .post-title {
     font-size: 1.3125em;
