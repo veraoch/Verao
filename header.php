@@ -14,6 +14,10 @@
 		<div id="main-sidebar" class="main-sidebar">
 			<div id="sidebar-inner" class="sidebar-inner">
 				<?php do_action( 'ct_cele_before_header' ); ?>
+				<?php
+				// Elementor `header` location
+				if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) :
+				?>
 				<header class="site-header" id="site-header" role="banner">
 					<div id="title-container" class="title-container">
 						<?php get_template_part( 'logo' ) ?>
@@ -30,6 +34,7 @@
 						<?php ct_cele_social_icons_output(); ?>
 					</div>
 				</header>
+				<?php endif; ?>
 				<?php do_action( 'ct_cele_after_header' ); ?>
 				<?php get_sidebar( 'primary' ); ?>
 			</div>
