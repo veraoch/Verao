@@ -18,6 +18,13 @@ h2 {
   /* 24px */
 }
 
+.wp-block-table figcaption {
+  font-size: 0.875em;
+  /* 14px / 16px */
+  line-height: 1.714;
+  /* 24px */
+}
+
 img figcaption,
 .alignright figcaption,
 .alignleft figcaption,
@@ -181,6 +188,12 @@ th {
 .wp-block-table.is-style-stripes td,
 .wp-block-table.is-style-stripes th {
   border-color: #E6E6E6;
+}
+
+.wp-block-table figcaption {
+  margin: -12px 0 0 0;
+  color: #333333;
+  text-align: center;
 }
 
 /* Images */

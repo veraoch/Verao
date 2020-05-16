@@ -200,6 +200,12 @@ th {
     border-color: $color-gray-90;
   }
 }
+.wp-block-table figcaption {
+  @extend %fourteen-pixels;
+  margin: -12px 0 0 0;
+  color: $color-gray-20;
+  text-align: center;
+}
 
 /* Images */
 .wp-block-image {

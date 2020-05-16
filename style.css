@@ -34,7 +34,7 @@ h2, .comments-number h2, .comment-reply-title {
   /* 24px */
 }
 
-.post-categories-blog,
+.wp-block-table figcaption, .post-categories-blog,
 .post-tags-blog, .pagination a,
 .pagination span, .widget > * {
   font-size: 0.875em;
@@ -373,6 +373,12 @@ th {
 .wp-block-table.is-style-stripes td,
 .wp-block-table.is-style-stripes th {
   border-color: #E6E6E6;
+}
+
+.wp-block-table figcaption {
+  margin: -12px 0 0 0;
+  color: #333333;
+  text-align: center;
 }
 
 /* Images */
