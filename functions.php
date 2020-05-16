@@ -362,7 +362,6 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'foursquare'    => 'cele_foursquare_profile',
 			'github'        => 'cele_github_profile',
 			'goodreads'			=> 'cele_goodreads_profile',
-			'google-plus'   => 'cele_googleplus_profile',
 			'google-wallet' => 'cele_google_wallet_profile',
 			'hacker-news'   => 'cele_hacker-news_profile',
 			'medium'        => 'cele_medium_profile',
