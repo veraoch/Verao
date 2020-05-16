@@ -407,7 +407,7 @@ function ct_cele_sanitize_phone( $input ) {
 
 
 function ct_cele_customize_preview_js() {
-	if ( !function_exists( 'ct_cele_pro_init' ) ) {
+	if ( !function_exists( 'ct_cele_pro_init' ) && !(isset($_GET['mailoptin_optin_campaign_id']) || isset($_GET['mailoptin_email_campaign_id'])) ) {
 		$url = 'https://www.competethemes.com/cele-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Cele%20Pro%20-%20Customizer';
 		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Customize Colors with Cele Pro <span>&rarr;</span></a></div>')</script>";
 		echo apply_filters('ct_cele_customizer_ad', $content);
