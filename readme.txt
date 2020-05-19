@@ -2,8 +2,8 @@
 Contributors: bensibley
 Tags: one-column, two-columns, left-sidebar, accessibility-ready, custom-logo, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.24
+Tested up to: 5.4
+Stable tag: 1.25
 
 Cele is a refreshingly simple and clean theme.
 
