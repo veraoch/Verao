@@ -27,23 +27,33 @@ h1 {
   /* 24px */
 }
 
-h2, .comments-number h2, .comment-reply-title {
+.comment-reply-title, .comments-number h2, h2 {
   font-size: 1.125em;
   /* 18px / 16px */
   line-height: 1.333;
   /* 24px */
 }
 
-.wp-block-table figcaption, .post-categories-blog,
-.post-tags-blog, .pagination a,
-.pagination span, .widget > * {
+.widget > *, .pagination a,
+.pagination span, .post-categories-blog,
+.post-tags-blog, .wp-block-table figcaption {
   font-size: 0.875em;
   /* 14px / 16px */
   line-height: 1.714;
   /* 24px */
 }
 
-img figcaption,
+.single-attachment .attachment-caption, .further-reading span, .post-tags a, .post-byline span, .menu-primary a, .tagline, .site-footer span, .comment-footer a,
+.comment-footer i, .comment-author .comment-date, .sticky-status span, .archive-header p, .archive-header h1, input[type=submit], input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=url],
+textarea, .wp-caption-text,
+.gallery-caption,
+.wp-caption-dd, img figcaption,
 .alignright figcaption,
 .alignleft figcaption,
 .aligncenter figcaption,
@@ -53,17 +63,7 @@ img figcaption,
 .size-large figcaption,
 .size-medium figcaption,
 .size-thumbnail figcaption,
-.wp-block-image figcaption, .wp-caption-text,
-.gallery-caption,
-.wp-caption-dd, input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-textarea, input[type="submit"], .archive-header h1, .archive-header p, .sticky-status span, .comment-author .comment-date, .comment-footer a,
-.comment-footer i, .site-footer span, .tagline, .menu-primary a, .post-byline span, .post-tags a, .further-reading span, .single-attachment .attachment-caption {
+.wp-block-image figcaption {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -75,16 +75,16 @@ textarea, input[type="submit"], .archive-header h1, .archive-header p, .sticky-s
   letter-spacing: 0.05em;
 }
 
-.site-title a, .post-title a {
+.post-title a, .site-title a {
   border: none;
   color: #333333;
   -webkit-transition: color 0.1s ease-in-out;
           transition: color 0.1s ease-in-out;
 }
-.site-title a:link, .post-title a:link, .site-title a:visited, .post-title a:visited {
+.post-title a:link, .site-title a:link, .post-title a:visited, .site-title a:visited {
   color: #333333;
 }
-.site-title a:hover, .post-title a:hover, .site-title a:active, .post-title a:active, .site-title a:focus, .post-title a:focus {
+.post-title a:hover, .site-title a:hover, .post-title a:active, .site-title a:active, .post-title a:focus, .site-title a:focus {
   color: #666666;
 }
 
@@ -177,7 +177,7 @@ a:hover, a:active, a:focus {
 .comment a:after,
 .widget a:after,
 .comment-pagination a:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -445,13 +445,13 @@ img figcaption,
 }
 
 /* Form styles */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=url],
 textarea {
   font-weight: 300;
   width: 100%;
@@ -466,13 +466,13 @@ textarea {
   -webkit-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
 textarea:focus {
   background: white;
   border-color: #B3B3B3;
@@ -485,7 +485,7 @@ textarea {
   /* to hide scrollbar in IE */
 }
 
-input[type="submit"] {
+input[type=submit] {
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   padding: 8px 16px;
@@ -498,15 +498,15 @@ input[type="submit"] {
   -webkit-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
 }
-input[type="submit"]:hover {
+input[type=submit]:hover {
   cursor: pointer;
 }
-input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
   outline: none;
   border-color: #333333;
 }
 
-input[type="search"] {
+input[type=search] {
   padding-right: 0.375em;
   /* so safari 'x' doesn't get cut off */
 }
@@ -663,7 +663,7 @@ a img {
 .blog .entry:after,
 .archive .entry:after,
 .search .entry:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: -10.00008%;
@@ -722,28 +722,27 @@ a img {
 
 @media all and (min-width: 56.25em) {
   .blog .entry:after,
-  .archive .entry:after,
-  .search .entry:after {
+.archive .entry:after,
+.search .entry:after {
     left: -15.83346%;
     right: -15.83346%;
   }
 }
 @media all and (min-width: 68.75em) {
   .blog .entry,
-  .archive .entry,
-  .search .entry {
+.archive .entry,
+.search .entry {
     margin-top: 3em;
   }
   .blog .post-content,
-  .archive .post-content,
-  .search .post-content {
+.archive .post-content,
+.search .post-content {
     padding-bottom: 1.5em;
   }
 }
 .comments-number {
   margin-top: 2.25em;
 }
-
 .comment-list {
   list-style: none;
   margin: 3em 0;
@@ -771,7 +770,7 @@ li.pingback:last-child {
 }
 li.comment.bypostauthor:before,
 li.pingback.bypostauthor:before {
-  content: '';
+  content: "";
   position: absolute;
   top: -1.5em;
   left: 0;
@@ -859,7 +858,7 @@ li.pingback.bypostauthor:before {
   display: block;
   margin-bottom: 0.75em;
 }
-.comment-respond input[type="submit"] {
+.comment-respond input[type=submit] {
   margin-top: 0.75em;
 }
 .comment-respond .comment-form-cookies-consent label {
@@ -886,7 +885,7 @@ li.pingback.bypostauthor:before {
 
 @media all and (min-width: 37.5em) {
   .comments-number h3,
-  .comment-respond h3 {
+.comment-respond h3 {
     font-size: 1.3125em;
     /* 21px / 16px */
     line-height: 1.143;
@@ -900,7 +899,7 @@ li.pingback.bypostauthor:before {
   padding: 0.75em 8.3334%;
 }
 .site-footer:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -909,7 +908,6 @@ li.pingback.bypostauthor:before {
   background: #F0F0F0;
   z-index: -1;
 }
-
 .scroll-to-top {
   position: fixed;
   bottom: -45px;
@@ -1114,7 +1112,7 @@ li.pingback.bypostauthor:before {
   border: none;
 }
 .toggle-navigation:after {
-  content: '';
+  content: "";
   position: absolute;
   top: -7px;
   left: -8px;
@@ -1309,7 +1307,7 @@ li.pingback.bypostauthor:before {
   border: none;
 }
 .featured-image > a:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -1414,7 +1412,7 @@ li.pingback.bypostauthor:before {
   font-style: italic;
 }
 .further-reading:before, .further-reading:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -10.00008%;
@@ -1427,10 +1425,10 @@ li.pingback.bypostauthor:before {
   bottom: 0;
 }
 
-.post-content a[href*="jpg"]:after,
-.post-content a[href*="jpeg"]:after,
-.post-content a[href*="png"]:after,
-.post-content a[href*="gif"]:after {
+.post-content a[href*=jpg]:after,
+.post-content a[href*=jpeg]:after,
+.post-content a[href*=png]:after,
+.post-content a[href*=gif]:after {
   display: none;
 }
 
@@ -1520,7 +1518,7 @@ li.pingback.bypostauthor:before {
   }
 
   .wp-block-image.alignfull,
-  .wp-block-cover {
+.wp-block-cover {
     left: -16%;
     width: 132%;
   }
@@ -1723,7 +1721,7 @@ li.pingback.bypostauthor:before {
   margin-bottom: 1.5em;
 }
 
-.widget_search input[type="search"] {
+.widget_search input[type=search] {
   margin-bottom: 6px;
 }
 
@@ -1820,7 +1818,7 @@ li.pingback.bypostauthor:before {
           transform: scale(1);
 }
 .social-media-icons a:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -2022,7 +2020,6 @@ li.pingback.bypostauthor:before {
 .single-attachment .attachment-container img {
   display: block;
 }
-
 .woocommerce .entry {
   padding: 1.5em 5.5556%;
   background: white;
@@ -2119,7 +2116,7 @@ li.pingback.bypostauthor:before {
   width: 49% !important;
   padding: 10px 12px;
 }
-.woocommerce-cart .coupon input[type="text"] {
+.woocommerce-cart .coupon input[type=text] {
   font-size: 14px !important;
   padding: 7px 12px 8px !important;
 }
