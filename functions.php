@@ -393,6 +393,7 @@ if ( ! function_exists( 'ct_cele_social_array' ) ) {
 			'tencent-weibo' => 'cele_tencent_weibo_profile',
 			'tumblr'        => 'cele_tumblr_profile',
 			'twitch'        => 'cele_twitch_profile',
+			'untappd'       => 'cele_untappd_profile',
 			'vimeo'         => 'cele_vimeo_profile',
 			'vine'          => 'cele_vine_profile',
 			'vk'            => 'cele_vk_profile',
