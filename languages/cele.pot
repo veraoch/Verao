@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cele 1.24\n"
+"Project-Id-Version: Cele 1.25\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2020-05-19 16:56:41+00:00\n"
+"POT-Creation-Date: 2020-08-19 15:01:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,35 +186,35 @@ msgstr ""
 msgid "http://google.com"
 msgstr ""
 
-#: functions.php:240 functions.php:304 inc/customizer.php:185
+#: functions.php:244 functions.php:308 inc/customizer.php:185
 msgid "Continue Reading"
 msgstr ""
 
-#: functions.php:513
+#: functions.php:518
 msgid "Featured"
 msgstr ""
 
-#: functions.php:575
+#: functions.php:580
 msgid "Customizer settings deleted."
 msgstr ""
 
-#: functions.php:724
+#: functions.php:729
 msgid "Scroll to the top"
 msgstr ""
 
-#: functions.php:743
+#: functions.php:748
 msgid "Last updated on"
 msgstr ""
 
-#: functions.php:759
+#: functions.php:764
 msgid "Previous"
 msgstr ""
 
-#: functions.php:760
+#: functions.php:765
 msgid "Next"
 msgstr ""
 
-#: header.php:11
+#: header.php:17
 msgid "Press \"Enter\" to skip to content"
 msgstr ""
 
@@ -517,12 +517,12 @@ msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: functions.php:448 functions.php:449
+#: functions.php:453 functions.php:454
 msgctxt "noun"
 msgid "email"
 msgstr ""
 
-#: functions.php:500 header.php:29 inc/scripts.php:17
+#: functions.php:505 header.php:35 inc/scripts.php:17
 msgctxt "verb: open the menu"
 msgid "open menu"
 msgstr ""
