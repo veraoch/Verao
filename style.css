@@ -2020,6 +2020,9 @@ li.pingback.bypostauthor:before {
 .social-media-icons .goodreads:after {
   background: #553b08;
 }
+.social-media-icons .untappd:after {
+  background: #ffc000;
+}
 
 .single-attachment .attachment-container img {
   display: block;

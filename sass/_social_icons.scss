@@ -412,4 +412,10 @@
       background: $goodreads;
     }
   }
+  .untappd {
+
+    &:after {
+      background: $untappd;
+    }
+  }
 }
