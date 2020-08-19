@@ -282,7 +282,12 @@ jQuery(document).ready(function($){
 
     // increase main height when needed so fixed sidebar can be scrollable
     function setMainMinHeight() {
-        main.css('min-height', sidebarInner.outerHeight(true) + sidebar.offset().top);
+        var sidebarHeight = sidebarInner.outerHeight(true) + sidebar.offset().top;
+        if ( sidebarHeight < window.innerHeight ) {
+            main.css('min-height', window.innerHeight);
+        } else {
+            main.css('min-height', sidebarHeight);
+        }
     }
 
     // mimic cover positioning without using cover
