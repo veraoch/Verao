@@ -79,20 +79,26 @@ textarea, .wp-caption-text,
 
 .post-title a, .site-title a {
   border: none;
-  color: #333333;
+  color: #000000;
   -webkit-transition: color 0.1s ease-in-out;
           transition: color 0.1s ease-in-out;
 }
 .post-title a:link, .site-title a:link, .post-title a:visited, .site-title a:visited {
-  color: #333333;
+  color: #000000;
+  font-size: 24pt;
+	font-family: "Helvetica neue", serif, monospace;
 }
 .post-title a:hover, .site-title a:hover, .post-title a:active, .site-title a:active, .post-title a:focus, .site-title a:focus {
-  color: #666666;
+  font-weight: 300;  
+  color: #000000;
 }
 
 /*===== Basic Styles =====*/
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
+  font-family:"Helvetica neue", serif, monospace;
+	font-size: 12pt;
+  color: #000000;
   box-sizing: border-box;
 }
 
@@ -104,7 +110,7 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
   font-weight: 300;
-  background: #F0F0F0;
+  background: #FFFFFF;
   color: #333333;
   -webkit-font-smoothing: subpixel-antialiased;
   word-wrap: break-word;
@@ -119,7 +125,7 @@ body {
 }
 
 .main {
-  background: #FAFAFA;
+  background: #FFFFFF;
   margin: 0 auto;
   padding: 1.875em 8.3334%;
   min-height: 100vh;
@@ -136,6 +142,8 @@ body {
 
 p {
   margin: 1.5em 0;
+  font-size: 11pt;
+	font-family: "Helvetica neue", serif, monospace;
 }
 
 a {
@@ -282,7 +290,11 @@ a:hover, a:active, a:focus {
 }
 
 .menu-primary a:after {
-  background: #A5D3ED;
+  background: #FFFFFF;
+}
+
+.menu-primary a:before {
+  background: #333333;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -911,7 +923,7 @@ li.pingback.bypostauthor:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #F0F0F0;
+  background: #FFFFFF;
   z-index: -1;
 }
 .scroll-to-top {
@@ -1063,6 +1075,16 @@ li.pingback.bypostauthor:before {
   max-width: 100%;
   width: auto;
   height: auto;
+}
+
+.subtitle { 
+	font-family: "Georgia ",regular, serif, monospace;
+	font-size: 13pt;
+	letter-spacing: 1px;
+	margin-top: 60px;
+	margin-bottom: -5px;
+	font-weight: 600;
+ 	color: #000000;
 }
 
 @media all and (min-width: 50em) {
@@ -1274,7 +1296,10 @@ li.pingback.bypostauthor:before {
 /* Current Menu item */
 .current-menu-item > a,
 .current_page_item > a {
-  font-weight: 600;
+  font-weight: 300;
+	text-decoration: underline;
+	text-underline-offset: px;
+	color: #000000;
 }
 
 @media all and (min-width: 56.25em) {
